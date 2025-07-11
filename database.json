@@ -13,7 +13,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5ac38e9c",
-      "lastUpdated": "2025-07-11T10:54:33.747168",
+      "lastUpdated": "2025-07-11T10:58:32.908342",
       "nickname": "Ocala",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -349,7 +349,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_16f22bfe",
-      "lastUpdated": "2025-07-11T10:54:33.747190",
+      "lastUpdated": "2025-07-11T10:58:32.908360",
       "nickname": "Columbus",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -685,7 +685,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_67dca73d",
-      "lastUpdated": "2025-07-11T10:54:33.747201",
+      "lastUpdated": "2025-07-11T10:58:32.908366",
       "nickname": "Brownsville",
       "siteType": "plant",
       "weatherConditions": {
@@ -1021,7 +1021,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_09080162",
-      "lastUpdated": "2025-07-11T10:54:33.747211",
+      "lastUpdated": "2025-07-11T10:58:32.908372",
       "nickname": "Desoto",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1357,7 +1357,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a201d156",
-      "lastUpdated": "2025-07-11T10:54:33.747221",
+      "lastUpdated": "2025-07-11T10:58:32.908377",
       "nickname": "Lebanon",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1693,7 +1693,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3bbbf8cd",
-      "lastUpdated": "2025-07-11T10:54:33.747230",
+      "lastUpdated": "2025-07-11T10:58:32.908384",
       "nickname": "Chelmsford",
       "siteType": "parking",
       "weatherConditions": {
@@ -2029,7 +2029,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9a6470ab",
-      "lastUpdated": "2025-07-11T10:54:33.747240",
+      "lastUpdated": "2025-07-11T10:58:32.908389",
       "nickname": "Hartsville",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2365,7 +2365,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50cb02b7",
-      "lastUpdated": "2025-07-11T10:54:33.747250",
+      "lastUpdated": "2025-07-11T10:58:32.908396",
       "nickname": "Rio Bravo",
       "siteType": "plant"
     },
@@ -2382,7 +2382,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6bba7836",
-      "lastUpdated": "2025-07-11T10:54:33.747253",
+      "lastUpdated": "2025-07-11T10:58:32.908398",
       "nickname": "Greensboro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2718,7 +2718,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf0883a6",
-      "lastUpdated": "2025-07-11T10:54:33.747262",
+      "lastUpdated": "2025-07-11T10:58:32.908405",
       "nickname": "Manteno",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3054,7 +3054,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f1b005c3",
-      "lastUpdated": "2025-07-11T10:54:33.747271",
+      "lastUpdated": "2025-07-11T10:58:32.908412",
       "nickname": "Raleigh",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3390,7 +3390,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5cec04f",
-      "lastUpdated": "2025-07-11T10:54:33.747281",
+      "lastUpdated": "2025-07-11T10:58:32.908419",
       "nickname": "Florence",
       "siteType": "plant",
       "weatherConditions": {
@@ -3726,7 +3726,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_fff230fd",
-      "lastUpdated": "2025-07-11T10:54:33.747291",
+      "lastUpdated": "2025-07-11T10:58:32.908426",
       "nickname": "Jackson",
       "siteType": "plant",
       "weatherConditions": {
@@ -4062,7 +4062,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_df83f208",
-      "lastUpdated": "2025-07-11T10:54:33.747300",
+      "lastUpdated": "2025-07-11T10:58:32.908437",
       "nickname": "Walton",
       "siteType": "plant",
       "weatherConditions": {
@@ -4398,7 +4398,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_c24c96ca",
-      "lastUpdated": "2025-07-11T10:54:33.747310",
+      "lastUpdated": "2025-07-11T10:58:32.908443",
       "nickname": "Reno",
       "siteType": "plant",
       "weatherConditions": {
@@ -4734,7 +4734,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ddb5cd89",
-      "lastUpdated": "2025-07-11T10:54:33.747319",
+      "lastUpdated": "2025-07-11T10:58:32.908449",
       "nickname": "Abilene",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -5070,7 +5070,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7b3a1f9a",
-      "lastUpdated": "2025-07-11T10:54:33.747329",
+      "lastUpdated": "2025-07-11T10:58:32.908455",
       "nickname": "Cornwall",
       "siteType": "warehouse"
     },
@@ -5087,7 +5087,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8735e50a",
-      "lastUpdated": "2025-07-11T10:54:33.747333",
+      "lastUpdated": "2025-07-11T10:58:32.908462",
       "nickname": "Greenville",
       "siteType": "office",
       "weatherConditions": {
@@ -5423,7 +5423,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7922e3d2",
-      "lastUpdated": "2025-07-11T10:54:33.747343",
+      "lastUpdated": "2025-07-11T10:58:32.908471",
       "nickname": "Grove City - Specialty Laminations",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -5759,7 +5759,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e2c9df4d",
-      "lastUpdated": "2025-07-11T10:54:33.747354",
+      "lastUpdated": "2025-07-11T10:58:32.908477",
       "nickname": "Guadalajara (Zapopan)",
       "siteType": "warehouse"
     },
@@ -5776,7 +5776,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_be38dfd0",
-      "lastUpdated": "2025-07-11T10:54:33.747359",
+      "lastUpdated": "2025-07-11T10:58:32.908480",
       "nickname": "Hartsville - Hilex",
       "siteType": "office",
       "weatherConditions": {
@@ -6112,7 +6112,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3db98058",
-      "lastUpdated": "2025-07-11T10:54:33.747369",
+      "lastUpdated": "2025-07-11T10:58:32.908488",
       "nickname": "Hanover - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6448,7 +6448,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ff1d475a",
-      "lastUpdated": "2025-07-11T10:54:33.747380",
+      "lastUpdated": "2025-07-11T10:58:32.908495",
       "nickname": "Mt. Vernon - Burrows",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6784,7 +6784,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_069a2dcc",
-      "lastUpdated": "2025-07-11T10:54:33.747390",
+      "lastUpdated": "2025-07-11T10:58:32.908508",
       "nickname": "Charlotte - Novolex",
       "siteType": "office",
       "weatherConditions": {
@@ -7120,7 +7120,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_bf638000",
-      "lastUpdated": "2025-07-11T10:54:33.747401",
+      "lastUpdated": "2025-07-11T10:58:32.908516",
       "nickname": "Farmers Branch",
       "siteType": "plant",
       "weatherConditions": {
@@ -7456,7 +7456,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_36a59344",
-      "lastUpdated": "2025-07-11T10:54:33.747411",
+      "lastUpdated": "2025-07-11T10:58:32.908524",
       "nickname": "Brampton",
       "siteType": "warehouse"
     },
@@ -7473,7 +7473,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_189bf5aa",
-      "lastUpdated": "2025-07-11T10:54:33.747416",
+      "lastUpdated": "2025-07-11T10:58:32.908530",
       "nickname": "Richmond - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -7809,7 +7809,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6ea0bcde",
-      "lastUpdated": "2025-07-11T10:54:33.747427",
+      "lastUpdated": "2025-07-11T10:58:32.908540",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -8145,7 +8145,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_35d4f7a0",
-      "lastUpdated": "2025-07-11T10:54:33.747439",
+      "lastUpdated": "2025-07-11T10:58:32.908552",
       "nickname": "Chicago - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8481,7 +8481,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e57be14b",
-      "lastUpdated": "2025-07-11T10:54:33.747450",
+      "lastUpdated": "2025-07-11T10:58:32.908560",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8817,7 +8817,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_868bac9a",
-      "lastUpdated": "2025-07-11T10:54:33.747462",
+      "lastUpdated": "2025-07-11T10:58:32.908568",
       "nickname": "Toronto - Bagcraft",
       "siteType": "plant"
     },
@@ -8834,7 +8834,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ad6631a3",
-      "lastUpdated": "2025-07-11T10:54:33.747467",
+      "lastUpdated": "2025-07-11T10:58:32.908575",
       "nickname": "Stockton - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -9170,7 +9170,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b5298ec1",
-      "lastUpdated": "2025-07-11T10:54:33.747478",
+      "lastUpdated": "2025-07-11T10:58:32.908584",
       "nickname": "North Vernon - Hilex",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9506,7 +9506,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5f9bb60",
-      "lastUpdated": "2025-07-11T10:54:33.747493",
+      "lastUpdated": "2025-07-11T10:58:32.908596",
       "nickname": "Orangeville - Shields",
       "siteType": "plant"
     },
@@ -9523,7 +9523,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18375374",
-      "lastUpdated": "2025-07-11T10:54:33.747499",
+      "lastUpdated": "2025-07-11T10:58:32.908599",
       "nickname": "Lebanon - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9859,7 +9859,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_da401efe",
-      "lastUpdated": "2025-07-11T10:54:33.747510",
+      "lastUpdated": "2025-07-11T10:58:32.908606",
       "nickname": "Downingtown - Pactiv",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10195,7 +10195,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_19eda8e9",
-      "lastUpdated": "2025-07-11T10:54:33.747522",
+      "lastUpdated": "2025-07-11T10:58:32.908614",
       "nickname": "Yakima - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -10531,7 +10531,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f7eeebf7",
-      "lastUpdated": "2025-07-11T10:54:33.747533",
+      "lastUpdated": "2025-07-11T10:58:32.908627",
       "nickname": "Devens - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10867,7 +10867,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_0c459c6f",
-      "lastUpdated": "2025-07-11T10:54:33.747545",
+      "lastUpdated": "2025-07-11T10:58:32.908635",
       "nickname": "Elizabeth - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11203,7 +11203,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_4761449f",
-      "lastUpdated": "2025-07-11T10:54:33.747556",
+      "lastUpdated": "2025-07-11T10:58:32.908647",
       "nickname": "Houston - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11539,7 +11539,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e46c54ff",
-      "lastUpdated": "2025-07-11T10:54:33.747568",
+      "lastUpdated": "2025-07-11T10:58:32.908656",
       "nickname": "Houston - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -11875,7 +11875,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_86d75473",
-      "lastUpdated": "2025-07-11T10:54:33.747579",
+      "lastUpdated": "2025-07-11T10:58:32.908664",
       "nickname": "Brampton - Waddington ",
       "siteType": "plant"
     },
@@ -11892,7 +11892,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e361a43",
-      "lastUpdated": "2025-07-11T10:54:33.747586",
+      "lastUpdated": "2025-07-11T10:58:32.908668",
       "nickname": "Boulder - Eco-Products",
       "siteType": "office",
       "weatherConditions": {
@@ -12228,7 +12228,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9debd5c8",
-      "lastUpdated": "2025-07-11T10:54:33.747603",
+      "lastUpdated": "2025-07-11T10:58:32.908676",
       "nickname": "Milesburg - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -12564,7 +12564,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ca09ebdb",
-      "lastUpdated": "2025-07-11T10:54:33.747616",
+      "lastUpdated": "2025-07-11T10:58:32.908683",
       "nickname": "Elizabeth - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -12900,7 +12900,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a8d2c66e",
-      "lastUpdated": "2025-07-11T10:54:33.747627",
+      "lastUpdated": "2025-07-11T10:58:32.908691",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -13236,7 +13236,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_857852dc",
-      "lastUpdated": "2025-07-11T10:54:33.747648",
+      "lastUpdated": "2025-07-11T10:58:32.908706",
       "nickname": "West Chester - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -13572,7 +13572,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_46d48e1a",
-      "lastUpdated": "2025-07-11T10:54:33.747660",
+      "lastUpdated": "2025-07-11T10:58:32.908715",
       "nickname": "Roanoke - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -13908,7 +13908,7 @@
       ],
       "currentAlert": "watch",
       "id": "loc_d1f95665",
-      "lastUpdated": "2025-07-11T10:54:33.747678",
+      "lastUpdated": "2025-07-11T10:58:32.908724",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14244,7 +14244,7 @@
       ],
       "currentAlert": "watch",
       "id": "loc_881b361f",
-      "lastUpdated": "2025-07-11T10:54:33.747695",
+      "lastUpdated": "2025-07-11T10:58:32.908735",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14580,7 +14580,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_003f3860",
-      "lastUpdated": "2025-07-11T10:54:33.747709",
+      "lastUpdated": "2025-07-11T10:58:32.908744",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "plant"
     },
@@ -14597,7 +14597,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8de8a0ab",
-      "lastUpdated": "2025-07-11T10:54:33.747716",
+      "lastUpdated": "2025-07-11T10:58:32.908748",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -14933,7 +14933,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ee941cbc",
-      "lastUpdated": "2025-07-11T10:54:33.747728",
+      "lastUpdated": "2025-07-11T10:58:32.908755",
       "nickname": "Alsip - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -15269,7 +15269,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_0bc3b5a8",
-      "lastUpdated": "2025-07-11T10:54:33.747742",
+      "lastUpdated": "2025-07-11T10:58:32.908763",
       "nickname": "Carrolton - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -15605,7 +15605,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_83527cc5",
-      "lastUpdated": "2025-07-11T10:54:33.747755",
+      "lastUpdated": "2025-07-11T10:58:32.908777",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse"
     },
@@ -15622,7 +15622,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5b8d284b",
-      "lastUpdated": "2025-07-11T10:54:33.747763",
+      "lastUpdated": "2025-07-11T10:58:32.908782",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant"
     },
@@ -15639,7 +15639,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_eef655b5",
-      "lastUpdated": "2025-07-11T10:54:33.747770",
+      "lastUpdated": "2025-07-11T10:58:32.908786",
       "nickname": "Erlanger - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -15975,7 +15975,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d60aacca",
-      "lastUpdated": "2025-07-11T10:54:33.747783",
+      "lastUpdated": "2025-07-11T10:58:32.908796",
       "nickname": "Chelmsford - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16311,7 +16311,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39279966",
-      "lastUpdated": "2025-07-11T10:54:33.747797",
+      "lastUpdated": "2025-07-11T10:58:32.908805",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16647,7 +16647,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_217b97f5",
-      "lastUpdated": "2025-07-11T10:54:33.747811",
+      "lastUpdated": "2025-07-11T10:58:32.908813",
       "nickname": "Lancaster - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16983,7 +16983,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18df5a03",
-      "lastUpdated": "2025-07-11T10:54:33.747824",
+      "lastUpdated": "2025-07-11T10:58:32.908821",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17319,7 +17319,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f3ea1d7c",
-      "lastUpdated": "2025-07-11T10:54:33.747837",
+      "lastUpdated": "2025-07-11T10:58:32.908828",
       "nickname": "Dallas - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -17655,7 +17655,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50a29d53",
-      "lastUpdated": "2025-07-11T10:54:33.747850",
+      "lastUpdated": "2025-07-11T10:58:32.908836",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17991,7 +17991,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b22ce5de",
-      "lastUpdated": "2025-07-11T10:54:33.747864",
+      "lastUpdated": "2025-07-11T10:58:32.908851",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18327,7 +18327,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e52916bd",
-      "lastUpdated": "2025-07-11T10:54:33.747878",
+      "lastUpdated": "2025-07-11T10:58:32.908865",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -18663,7 +18663,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_364d2cd9",
-      "lastUpdated": "2025-07-11T10:54:33.747907",
+      "lastUpdated": "2025-07-11T10:58:32.908875",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -18999,7 +18999,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_96ffead8",
-      "lastUpdated": "2025-07-11T10:54:33.747921",
+      "lastUpdated": "2025-07-11T10:58:32.908883",
       "nickname": "Baxter Springs - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19335,7 +19335,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_04c529ea",
-      "lastUpdated": "2025-07-11T10:54:33.747935",
+      "lastUpdated": "2025-07-11T10:58:32.908895",
       "nickname": "Jacksonville - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -19671,7 +19671,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39dc480c",
-      "lastUpdated": "2025-07-11T10:54:33.747949",
+      "lastUpdated": "2025-07-11T10:58:32.908905",
       "nickname": "Tolleson - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -20007,7 +20007,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d30603c5",
-      "lastUpdated": "2025-07-11T10:54:33.747963",
+      "lastUpdated": "2025-07-11T10:58:32.908914",
       "nickname": "Tolleson - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20343,7 +20343,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d21b6f10",
-      "lastUpdated": "2025-07-11T10:54:33.747978",
+      "lastUpdated": "2025-07-11T10:58:32.908926",
       "nickname": "McCook - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20680,7 +20680,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e1e3d46",
-      "lastUpdated": "2025-07-11T10:54:33.747992",
+      "lastUpdated": "2025-07-11T10:58:32.908940",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "warehouse",
       "state": "IL",
@@ -21019,7 +21019,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f20e21aa",
-      "lastUpdated": "2025-07-11T10:54:33.748007",
+      "lastUpdated": "2025-07-11T10:58:32.908950",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "plant",
       "weatherConditions": {
@@ -21355,7 +21355,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_356c4f89",
-      "lastUpdated": "2025-07-11T10:54:33.748022",
+      "lastUpdated": "2025-07-11T10:58:32.908963",
       "nickname": "Covington - Waddington",
       "siteType": "office",
       "weatherConditions": {
@@ -21691,7 +21691,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_622f91b3",
-      "lastUpdated": "2025-07-11T10:54:33.748037",
+      "lastUpdated": "2025-07-11T10:58:32.908972",
       "nickname": "Shawano - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -22027,7 +22027,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_027ff0a2",
-      "lastUpdated": "2025-07-11T10:54:33.748052",
+      "lastUpdated": "2025-07-11T10:58:32.908980",
       "nickname": "Rancho Cucamonga",
       "siteType": "plant",
       "weatherConditions": {
@@ -22363,7 +22363,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5c8c2787",
-      "lastUpdated": "2025-07-11T10:54:33.748066",
+      "lastUpdated": "2025-07-11T10:58:32.908992",
       "nickname": "Logan Township - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -22699,7 +22699,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_02bbb600",
-      "lastUpdated": "2025-07-11T10:54:33.748082",
+      "lastUpdated": "2025-07-11T10:58:32.909002",
       "nickname": "Fairfield - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23035,7 +23035,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3a91284e",
-      "lastUpdated": "2025-07-11T10:54:33.748097",
+      "lastUpdated": "2025-07-11T10:58:32.909012",
       "nickname": "Villa Rica - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23372,7 +23372,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a2c2073b",
-      "lastUpdated": "2025-07-11T10:54:33.748113",
+      "lastUpdated": "2025-07-11T10:58:32.909022",
       "nickname": "Chelmsford - Waddington",
       "siteType": "warehouse",
       "state": "MA",
@@ -23712,7 +23712,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf8aa2a1",
-      "lastUpdated": "2025-07-11T10:54:33.748129",
+      "lastUpdated": "2025-07-11T10:58:32.909032",
       "nickname": "Brampton - Waddington",
       "siteType": "plant",
       "state": "ON",
@@ -23720,5 +23720,5 @@
       "zipcode": "L6R 4E6"
     }
   ],
-  "lastUpdated": "2025-07-11T10:54:33.748132"
+  "lastUpdated": "2025-07-11T10:58:32.909034"
 }
