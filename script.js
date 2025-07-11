@@ -222,6 +222,7 @@ class WeatherAlertMonitor {
         });
         document.getElementById('legendBtn').addEventListener('click', () => this.openLegendModal());
         document.getElementById('legendClose').addEventListener('click', () => this.closeLegendModal());
+        document.getElementById('defaultZoomBtn').addEventListener('click', () => this.setDefaultZoom());
         
 
         
@@ -813,6 +814,41 @@ class WeatherAlertMonitor {
                 </div>
             `);
         });
+    }
+
+    setDefaultZoom() {
+        if (this.map) {
+            // Set the map to show the continental US from Florida to California
+            // Using bounds that cover from Florida to California, zoomed in 40% more
+            const bounds = [
+                [24.396308, -125.000000], // Southwest (includes California)
+                [49.384358, -66.934570]   // Northeast (includes Florida)
+            ];
+            
+            // Calculate center point
+            const centerLat = (bounds[0][0] + bounds[1][0]) / 2;
+            const centerLng = (bounds[0][1] + bounds[1][1]) / 2;
+            
+            // Calculate bounds size and reduce by 40% to zoom in 40% more
+            const latSpan = bounds[1][0] - bounds[0][0];
+            const lngSpan = bounds[1][1] - bounds[0][1];
+            const reductionFactor = 0.6; // 40% reduction = 60% of original size
+            
+            const newLatSpan = latSpan * reductionFactor;
+            const newLngSpan = lngSpan * reductionFactor;
+            
+            const newBounds = [
+                [centerLat - newLatSpan/2, centerLng - newLngSpan/2], // Southwest
+                [centerLat + newLatSpan/2, centerLng + newLngSpan/2]  // Northeast
+            ];
+            
+            this.map.fitBounds(newBounds, { 
+                padding: [20, 20],
+                animate: true,
+                duration: 1.0
+            });
+            console.log('Default zoom applied - continental US view (Florida to California) zoomed in 40%');
+        }
     }
 
 
@@ -3413,6 +3449,16 @@ class WeatherAlertMonitor {
             });
         });
         
+        // Add click listeners to alert cards (zoom map to site)
+        document.querySelectorAll('.alert-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't trigger if clicking on action buttons or collapse toggle
+                if (e.target.closest('.alert-card-actions') || e.target.closest('.alert-collapse-toggle') || e.target.closest('.alert-edit-btn')) return;
+                const locationId = card.dataset.locationId;
+                this.focusOnLocation(locationId);
+            });
+        });
+        
         // Add listeners for edit buttons in alert cards
         document.querySelectorAll('.alert-edit-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -3686,18 +3732,24 @@ class WeatherAlertMonitor {
     focusOnLocation(locationId) {
         const location = this.locations.find(loc => loc.id === locationId);
         if (location) {
-            this.map.setView(location.coordinates, 10);
-            
-            // Find and open the marker popup
-            const marker = this.markers.find(m => {
-                const markerLatLng = m.getLatLng();
-                return markerLatLng.lat === location.coordinates[0] && 
-                       markerLatLng.lng === location.coordinates[1];
+            // Animate the map to the location with smooth zoom
+            this.map.flyTo(location.coordinates, 12, {
+                duration: 1.5, // Animation duration in seconds
+                easeLinearity: 0.25 // Smoothness of the animation
             });
             
-            if (marker) {
-                marker.openPopup();
-            }
+            // Find and open the marker popup after animation
+            setTimeout(() => {
+                const marker = this.markers.find(m => {
+                    const markerLatLng = m.getLatLng();
+                    return markerLatLng.lat === location.coordinates[0] && 
+                           markerLatLng.lng === location.coordinates[1];
+                });
+                
+                if (marker) {
+                    marker.openPopup();
+                }
+            }, 1500); // Wait for animation to complete
         }
     }
 
@@ -4195,6 +4247,36 @@ class WeatherAlertMonitor {
             'parking': 'Parking'
         };
         return descriptions[siteType] || 'Unknown Site Type';
+    }
+
+    // Returns an inline SVG for the alert cause, prioritizing tornado > thunderstorm > heat > flood > others
+    getWeatherCauseIcon(location) {
+        const allText = [
+            location.currentAlertDescription || '',
+            location.shortForecast || '',
+            location.detailedForecast || '',
+            location.alertTitle || ''
+        ].join(' ').toLowerCase();
+
+        // Priority: tornado > thunderstorm > heat > flood > others
+        if (/tornado/.test(allText)) {
+            // Tornado SVG
+            return `<svg class="alert-cause-icon tornado" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="black" stroke-width="2"><path d="M4 6 Q16 2 28 6 Q24 10 8 10 Q12 14 24 14 Q20 18 12 18 Q16 22 24 22 Q20 26 8 26" fill="none"/></svg>`;
+        }
+        if (/thunderstorm|lightning|storm/.test(allText)) {
+            // Thunderstorm SVG
+            return `<svg class="alert-cause-icon thunderstorm" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="black" stroke-width="2"><polygon points="16,4 12,18 18,18 14,28 24,12 18,12 22,4" fill="black"/></svg>`;
+        }
+        if (/heat|hot|temperature/.test(allText)) {
+            // Heat SVG
+            return `<svg class="alert-cause-icon heat" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="black" stroke-width="2"><circle cx="16" cy="16" r="8" fill="none"/><line x1="16" y1="2" x2="16" y2="8"/><line x1="16" y1="24" x2="16" y2="30"/><line x1="2" y1="16" x2="8" y2="16"/><line x1="24" y1="16" x2="30" y2="16"/><line x1="7" y1="7" x2="11" y2="11"/><line x1="21" y1="21" x2="25" y2="25"/><line x1="7" y1="25" x2="11" y2="21"/><line x1="21" y1="11" x2="25" y2="7"/></svg>`;
+        }
+        if (/flood|inundation|overflow|high water/.test(allText)) {
+            // Flood SVG
+            return `<svg class="alert-cause-icon flood" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="black" stroke-width="2"><path d="M4 24 Q8 20 12 24 Q16 28 20 24 Q24 20 28 24" fill="none"/><path d="M4 20 Q8 16 12 20 Q16 24 20 20 Q24 16 28 20" fill="none"/><circle cx="8" cy="26" r="1.5" fill="black"/><circle cx="24" cy="26" r="1.5" fill="black"/></svg>`;
+        }
+        // Default: warning triangle
+        return `<svg class="alert-cause-icon warning" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="black" stroke-width="2"><polygon points="16,4 28,28 4,28" fill="none"/><line x1="16" y1="12" x2="16" y2="20"/><circle cx="16" cy="24" r="1.5" fill="black"/></svg>`;
     }
 }
 

@@ -123,10 +123,11 @@ body {
 
 /* Tab Navigation */
 .tab-navigation {
-    background: white;
+    background: linear-gradient(135deg, #d1d5db 0%, #e5e7eb 50%, #f3f4f6 100%);
     border-bottom: 1px solid #e5e7eb;
     display: flex;
     padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-btn {
@@ -650,7 +651,16 @@ body {
     right: 15px;
     z-index: 1000;
     display: flex;
+    flex-direction: column;
     gap: 10px;
+}
+
+/* Position the default zoom button under the Leaflet zoom controls */
+#defaultZoomBtn {
+    position: absolute;
+    top: 120px; /* Position below the Leaflet zoom controls */
+    left: 15px; /* Align with the left side like Leaflet controls */
+    z-index: 1000;
 }
 
 .map-control-btn {
@@ -1795,4 +1805,42 @@ body {
 /* Legend NWS Warning Color */
 .legend-color.nws-warning {
     background: linear-gradient(135deg, #7f1d1d 0%, #450a0a 100%);
+} 
+
+.alert-cause-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.alert-cause-icon text {
+  font-family: Arial, sans-serif;
+  dominant-baseline: middle;
+}
+
+/* Optional: style for tornado, thunderstorm, heat, etc. */
+.alert-cause-icon.tornado path {
+  stroke: black;
+  stroke-width: 2;
+}
+.alert-cause-icon.thunderstorm polygon {
+  stroke: black;
+  stroke-width: 2;
+  fill: black;
+}
+.alert-cause-icon.heat circle,
+.alert-cause-icon.heat line {
+  stroke: black;
+  stroke-width: 2;
+} 
+
+.alert-cause-icon.flood path,
+.alert-cause-icon.flood circle {
+  stroke: black;
+  stroke-width: 2;
+}
+.alert-cause-icon.flood circle {
+  fill: black;
 } 
