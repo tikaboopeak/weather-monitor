@@ -1720,6 +1720,18 @@ body {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
 }
+
+/* Selected state for alert cards */
+.alert-card.selected {
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  border: 2px solid rgba(102, 126, 234, 0.6);
+}
+
+.alert-card.selected .alert-card-header {
+  background: rgba(102, 126, 234, 0.1);
+}
+
 /* Remove old .location-item styles that conflict */
 .location-item { display: none !important; } 
 
