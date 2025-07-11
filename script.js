@@ -190,6 +190,11 @@ class WeatherAlertMonitor {
             this.closeLocationModal();
         });
         
+        // Map controls
+        document.getElementById('refreshBtn').addEventListener('click', () => this.refreshAlerts());
+        document.getElementById('legendBtn').addEventListener('click', () => this.openLegendModal());
+        document.getElementById('defaultZoomBtn').addEventListener('click', () => this.setDefaultZoom());
+        
         // Info modal controls
         document.getElementById('infoClose').addEventListener('click', () => {
             this.closeInfoModal();
@@ -763,7 +768,9 @@ class WeatherAlertMonitor {
         
         try {
             console.log('Creating map...');
-            this.map = L.map('map').setView([39.8283, -98.5795], 4);
+            this.map = L.map('map', {
+                zoomControl: false // Disable default zoom controls
+            }).setView([39.8283, -98.5795], 4);
             console.log('Map created successfully');
             
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -774,6 +781,9 @@ class WeatherAlertMonitor {
             
             // Add weather overlay
             this.addWeatherOverlay();
+            
+            // Setup custom zoom controls
+            this.setupZoomControls();
             
             console.log('Map initialization complete');
             
@@ -818,6 +828,21 @@ class WeatherAlertMonitor {
                     </span>
                 </div>
             `);
+        });
+    }
+
+    setupZoomControls() {
+        // Add event listeners for custom zoom controls
+        document.getElementById('zoomInBtn').addEventListener('click', () => {
+            if (this.map) {
+                this.map.zoomIn();
+            }
+        });
+        
+        document.getElementById('zoomOutBtn').addEventListener('click', () => {
+            if (this.map) {
+                this.map.zoomOut();
+            }
         });
     }
 

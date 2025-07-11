@@ -715,15 +715,13 @@ body {
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* Position the default zoom button under the Leaflet zoom controls */
-#defaultZoomBtn {
-    position: absolute;
-    top: 120px; /* Position below the Leaflet zoom controls */
-    left: 15px; /* Align with the left side like Leaflet controls */
-    z-index: 1000;
+.zoom-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .map-control-btn {
