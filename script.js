@@ -3822,12 +3822,12 @@ class WeatherAlertMonitor {
 
     selectLocationInPane(locationId) {
         // Remove previous selection
-        document.querySelectorAll('.location-item.selected').forEach(item => {
+        document.querySelectorAll('.alert-card.selected').forEach(item => {
             item.classList.remove('selected');
         });
         
         // Find and select the location item in the alerts pane
-        const locationItem = document.querySelector(`.location-item[data-location-id="${locationId}"]`);
+        const locationItem = document.querySelector(`.alert-card[data-location-id="${locationId}"]`);
         if (locationItem) {
             locationItem.classList.add('selected');
             

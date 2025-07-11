@@ -14,7 +14,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5ac38e9c",
-      "lastUpdated": "2025-07-11T16:50:22.393042",
+      "lastUpdated": "2025-07-11T16:56:03.601624",
       "nickname": "Ocala",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -351,7 +351,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_16f22bfe",
-      "lastUpdated": "2025-07-11T16:50:22.393059",
+      "lastUpdated": "2025-07-11T16:56:03.601654",
       "nickname": "Columbus",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -688,7 +688,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_67dca73d",
-      "lastUpdated": "2025-07-11T16:50:22.393064",
+      "lastUpdated": "2025-07-11T16:56:03.601663",
       "nickname": "Brownsville",
       "siteType": "plant",
       "weatherConditions": {
@@ -733,8 +733,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:21+00:00",
-          "updateTime": "2025-07-11T21:30:20+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:45:17+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -1025,7 +1025,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_09080162",
-      "lastUpdated": "2025-07-11T16:50:22.393069",
+      "lastUpdated": "2025-07-11T16:56:03.601671",
       "nickname": "Desoto",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1362,7 +1362,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a201d156",
-      "lastUpdated": "2025-07-11T16:50:22.393074",
+      "lastUpdated": "2025-07-11T16:56:03.601679",
       "nickname": "Lebanon",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1699,7 +1699,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3bbbf8cd",
-      "lastUpdated": "2025-07-11T16:50:22.393080",
+      "lastUpdated": "2025-07-11T16:56:03.601686",
       "nickname": "Chelmsford",
       "siteType": "parking",
       "weatherConditions": {
@@ -2036,7 +2036,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9a6470ab",
-      "lastUpdated": "2025-07-11T16:50:22.393085",
+      "lastUpdated": "2025-07-11T16:56:03.601694",
       "nickname": "Hartsville",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2372,7 +2372,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50cb02b7",
-      "lastUpdated": "2025-07-11T16:50:22.393090",
+      "lastUpdated": "2025-07-11T16:56:03.601703",
       "nickname": "Rio Bravo",
       "siteType": "plant"
     },
@@ -2390,7 +2390,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6bba7836",
-      "lastUpdated": "2025-07-11T16:50:22.393092",
+      "lastUpdated": "2025-07-11T16:56:03.601706",
       "nickname": "Greensboro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2727,7 +2727,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf0883a6",
-      "lastUpdated": "2025-07-11T16:50:22.393098",
+      "lastUpdated": "2025-07-11T16:56:03.601718",
       "nickname": "Manteno",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2772,8 +2772,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:08+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -3064,7 +3064,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f1b005c3",
-      "lastUpdated": "2025-07-11T16:50:22.393104",
+      "lastUpdated": "2025-07-11T16:56:03.601726",
       "nickname": "Raleigh",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3401,7 +3401,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5cec04f",
-      "lastUpdated": "2025-07-11T16:50:22.393112",
+      "lastUpdated": "2025-07-11T16:56:03.601734",
       "nickname": "Florence",
       "siteType": "plant",
       "weatherConditions": {
@@ -3738,7 +3738,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_fff230fd",
-      "lastUpdated": "2025-07-11T16:50:22.393118",
+      "lastUpdated": "2025-07-11T16:56:03.601743",
       "nickname": "Jackson",
       "siteType": "plant",
       "weatherConditions": {
@@ -4075,7 +4075,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_df83f208",
-      "lastUpdated": "2025-07-11T16:50:22.393124",
+      "lastUpdated": "2025-07-11T16:56:03.601756",
       "nickname": "Walton",
       "siteType": "plant",
       "weatherConditions": {
@@ -4412,7 +4412,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_c24c96ca",
-      "lastUpdated": "2025-07-11T16:50:22.393129",
+      "lastUpdated": "2025-07-11T16:56:03.601764",
       "nickname": "Reno",
       "siteType": "plant",
       "weatherConditions": {
@@ -4749,7 +4749,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_ddb5cd89",
-      "lastUpdated": "2025-07-11T16:50:22.393134",
+      "lastUpdated": "2025-07-11T16:56:03.601773",
       "nickname": "Abilene",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -5085,7 +5085,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7b3a1f9a",
-      "lastUpdated": "2025-07-11T16:50:22.393140",
+      "lastUpdated": "2025-07-11T16:56:03.601784",
       "nickname": "Cornwall",
       "siteType": "warehouse"
     },
@@ -5103,7 +5103,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8735e50a",
-      "lastUpdated": "2025-07-11T16:50:22.393143",
+      "lastUpdated": "2025-07-11T16:56:03.601787",
       "nickname": "Greenville",
       "siteType": "office",
       "weatherConditions": {
@@ -5440,7 +5440,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7922e3d2",
-      "lastUpdated": "2025-07-11T16:50:22.393149",
+      "lastUpdated": "2025-07-11T16:56:03.601798",
       "nickname": "Grove City - Specialty Laminations",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -5776,7 +5776,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e2c9df4d",
-      "lastUpdated": "2025-07-11T16:50:22.393155",
+      "lastUpdated": "2025-07-11T16:56:03.601806",
       "nickname": "Guadalajara (Zapopan)",
       "siteType": "warehouse"
     },
@@ -5794,7 +5794,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_be38dfd0",
-      "lastUpdated": "2025-07-11T16:50:22.393157",
+      "lastUpdated": "2025-07-11T16:56:03.601810",
       "nickname": "Hartsville - Hilex",
       "siteType": "office",
       "weatherConditions": {
@@ -6131,7 +6131,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3db98058",
-      "lastUpdated": "2025-07-11T16:50:22.393163",
+      "lastUpdated": "2025-07-11T16:56:03.601820",
       "nickname": "Hanover - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6468,7 +6468,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ff1d475a",
-      "lastUpdated": "2025-07-11T16:50:22.393168",
+      "lastUpdated": "2025-07-11T16:56:03.601829",
       "nickname": "Mt. Vernon - Burrows",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6805,7 +6805,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_069a2dcc",
-      "lastUpdated": "2025-07-11T16:50:22.393173",
+      "lastUpdated": "2025-07-11T16:56:03.601838",
       "nickname": "Charlotte - Novolex",
       "siteType": "office",
       "weatherConditions": {
@@ -7142,7 +7142,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_bf638000",
-      "lastUpdated": "2025-07-11T16:50:22.393179",
+      "lastUpdated": "2025-07-11T16:56:03.601846",
       "nickname": "Farmers Branch",
       "siteType": "plant",
       "weatherConditions": {
@@ -7478,7 +7478,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_36a59344",
-      "lastUpdated": "2025-07-11T16:50:22.393184",
+      "lastUpdated": "2025-07-11T16:56:03.601855",
       "nickname": "Brampton",
       "siteType": "warehouse"
     },
@@ -7496,7 +7496,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_189bf5aa",
-      "lastUpdated": "2025-07-11T16:50:22.393186",
+      "lastUpdated": "2025-07-11T16:56:03.601859",
       "nickname": "Richmond - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -7833,7 +7833,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6ea0bcde",
-      "lastUpdated": "2025-07-11T16:50:22.393192",
+      "lastUpdated": "2025-07-11T16:56:03.601869",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -8170,7 +8170,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_35d4f7a0",
-      "lastUpdated": "2025-07-11T16:50:22.393198",
+      "lastUpdated": "2025-07-11T16:56:03.601893",
       "nickname": "Chicago - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8215,8 +8215,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:08+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -8507,7 +8507,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e57be14b",
-      "lastUpdated": "2025-07-11T16:50:22.393203",
+      "lastUpdated": "2025-07-11T16:56:03.601903",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8843,7 +8843,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_868bac9a",
-      "lastUpdated": "2025-07-11T16:50:22.393209",
+      "lastUpdated": "2025-07-11T16:56:03.601917",
       "nickname": "Toronto - Bagcraft",
       "siteType": "plant"
     },
@@ -8861,7 +8861,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ad6631a3",
-      "lastUpdated": "2025-07-11T16:50:22.393212",
+      "lastUpdated": "2025-07-11T16:56:03.601922",
       "nickname": "Stockton - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -9198,7 +9198,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b5298ec1",
-      "lastUpdated": "2025-07-11T16:50:22.393218",
+      "lastUpdated": "2025-07-11T16:56:03.601937",
       "nickname": "North Vernon - Hilex",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9243,8 +9243,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:23:29+00:00",
-          "updateTime": "2025-07-11T21:16:27+00:00",
+          "generatedAt": "2025-07-11T21:56:03+00:00",
+          "updateTime": "2025-07-11T21:45:35+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -9534,7 +9534,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5f9bb60",
-      "lastUpdated": "2025-07-11T16:50:22.393224",
+      "lastUpdated": "2025-07-11T16:56:03.601949",
       "nickname": "Orangeville - Shields",
       "siteType": "plant"
     },
@@ -9552,7 +9552,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18375374",
-      "lastUpdated": "2025-07-11T16:50:22.393227",
+      "lastUpdated": "2025-07-11T16:56:03.601954",
       "nickname": "Lebanon - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9889,7 +9889,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_da401efe",
-      "lastUpdated": "2025-07-11T16:50:22.393232",
+      "lastUpdated": "2025-07-11T16:56:03.601964",
       "nickname": "Downingtown - Pactiv",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10226,7 +10226,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_19eda8e9",
-      "lastUpdated": "2025-07-11T16:50:22.393238",
+      "lastUpdated": "2025-07-11T16:56:03.601975",
       "nickname": "Yakima - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -10563,7 +10563,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f7eeebf7",
-      "lastUpdated": "2025-07-11T16:50:22.393244",
+      "lastUpdated": "2025-07-11T16:56:03.601987",
       "nickname": "Devens - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10900,7 +10900,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_0c459c6f",
-      "lastUpdated": "2025-07-11T16:50:22.393250",
+      "lastUpdated": "2025-07-11T16:56:03.602001",
       "nickname": "Elizabeth - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11237,7 +11237,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_4761449f",
-      "lastUpdated": "2025-07-11T16:50:22.393256",
+      "lastUpdated": "2025-07-11T16:56:03.602042",
       "nickname": "Houston - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11574,7 +11574,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e46c54ff",
-      "lastUpdated": "2025-07-11T16:50:22.393262",
+      "lastUpdated": "2025-07-11T16:56:03.602053",
       "nickname": "Houston - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -11910,7 +11910,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_86d75473",
-      "lastUpdated": "2025-07-11T16:50:22.393269",
+      "lastUpdated": "2025-07-11T16:56:03.602065",
       "nickname": "Brampton - Waddington ",
       "siteType": "plant"
     },
@@ -11928,7 +11928,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e361a43",
-      "lastUpdated": "2025-07-11T16:50:22.393272",
+      "lastUpdated": "2025-07-11T16:56:03.602070",
       "nickname": "Boulder - Eco-Products",
       "siteType": "office",
       "weatherConditions": {
@@ -12265,7 +12265,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9debd5c8",
-      "lastUpdated": "2025-07-11T16:50:22.393283",
+      "lastUpdated": "2025-07-11T16:56:03.602083",
       "nickname": "Milesburg - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -12602,7 +12602,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_ca09ebdb",
-      "lastUpdated": "2025-07-11T16:50:22.393290",
+      "lastUpdated": "2025-07-11T16:56:03.602093",
       "nickname": "Elizabeth - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -12939,7 +12939,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a8d2c66e",
-      "lastUpdated": "2025-07-11T16:50:22.393296",
+      "lastUpdated": "2025-07-11T16:56:03.602108",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -12984,7 +12984,7 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T20:44:06+00:00",
+          "generatedAt": "2025-07-11T21:09:08+00:00",
           "updateTime": "2025-07-11T20:30:46+00:00",
           "validTimes": "2025-07-11T14:00:00+00:00/P7DT14H",
           "elevation": {
@@ -12995,7 +12995,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-11T13:00:00-07:00",
+              "startTime": "2025-07-11T14:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 87,
@@ -13005,11 +13005,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 0
               },
-              "windSpeed": "5 to 10 mph",
+              "windSpeed": "10 mph",
               "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 87. South southwest wind 5 to 10 mph, with gusts as high as 20 mph."
+              "detailedForecast": "Sunny, with a high near 87. South southwest wind around 10 mph, with gusts as high as 20 mph."
             },
             {
               "number": 2,
@@ -13276,7 +13276,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_857852dc",
-      "lastUpdated": "2025-07-11T16:50:22.393303",
+      "lastUpdated": "2025-07-11T16:56:03.602120",
       "nickname": "West Chester - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -13613,7 +13613,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_46d48e1a",
-      "lastUpdated": "2025-07-11T16:50:22.393310",
+      "lastUpdated": "2025-07-11T16:56:03.602133",
       "nickname": "Roanoke - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -13950,7 +13950,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_d1f95665",
-      "lastUpdated": "2025-07-11T16:50:22.393316",
+      "lastUpdated": "2025-07-11T16:56:03.602147",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -13995,8 +13995,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:09:08+00:00",
-          "updateTime": "2025-07-11T21:01:00+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:45:42+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT13H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -14287,7 +14287,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_881b361f",
-      "lastUpdated": "2025-07-11T16:50:22.393323",
+      "lastUpdated": "2025-07-11T16:56:03.602159",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14332,8 +14332,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:09:08+00:00",
-          "updateTime": "2025-07-11T21:01:00+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:45:42+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT13H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -14623,7 +14623,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_003f3860",
-      "lastUpdated": "2025-07-11T16:50:22.393330",
+      "lastUpdated": "2025-07-11T16:56:03.602179",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "plant"
     },
@@ -14641,7 +14641,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8de8a0ab",
-      "lastUpdated": "2025-07-11T16:50:22.393334",
+      "lastUpdated": "2025-07-11T16:56:03.602186",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -14686,8 +14686,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:21+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:03+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -14978,7 +14978,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ee941cbc",
-      "lastUpdated": "2025-07-11T16:50:22.393344",
+      "lastUpdated": "2025-07-11T16:56:03.602199",
       "nickname": "Alsip - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -15023,8 +15023,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:21+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:02+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -15315,7 +15315,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_0bc3b5a8",
-      "lastUpdated": "2025-07-11T16:50:22.393351",
+      "lastUpdated": "2025-07-11T16:56:03.602210",
       "nickname": "Carrolton - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -15640,20 +15640,344 @@
     },
     {
       "address": "1101 Samuelson Street, City of Industry, CA 91748",
-      "alertDescription": "Unable to fetch weather data",
+      "alertDescription": "",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
       "contactTitle": "",
       "coordinates": [
-        45.4561266,
-        -75.584239
+        33.99902269962359,
+        -117.91048629140191
       ],
       "currentAlert": "none",
       "id": "loc_83527cc5",
-      "lastUpdated": "2025-07-11T16:50:22.393358",
+      "lastUpdated": "2025-07-11T16:56:03.602224",
       "nickname": "City of Industry - Waddington",
-      "siteType": "warehouse"
+      "siteType": "warehouse",
+      "streetAddress": "1101 Samuelson Street",
+      "city": "City of Industry",
+      "state": "CA",
+      "zipcode": "91748",
+      "weatherConditions": {
+        "@context": [
+          "https://geojson.org/geojson-ld/geojson-context.jsonld",
+          {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#"
+          }
+        ],
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.8902,
+                34.0012
+              ],
+              [
+                -117.89479999999999,
+                34.023399999999995
+              ],
+              [
+                -117.92159999999998,
+                34.019599899999996
+              ],
+              [
+                -117.91699999999999,
+                33.9974
+              ],
+              [
+                -117.8902,
+                34.0012
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "units": "us",
+          "forecastGenerator": "BaselineForecastGenerator",
+          "generatedAt": "2025-07-11T21:55:29+00:00",
+          "updateTime": "2025-07-11T20:30:46+00:00",
+          "validTimes": "2025-07-11T14:00:00+00:00/P7DT14H",
+          "elevation": {
+            "unitCode": "wmoUnit:m",
+            "value": 127.1016
+          },
+          "periods": [
+            {
+              "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T14:00:00-07:00",
+              "endTime": "2025-07-11T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 87,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "10 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+              "shortForecast": "Sunny",
+              "detailedForecast": "Sunny, with a high near 87. South southwest wind around 10 mph, with gusts as high as 20 mph."
+            },
+            {
+              "number": 2,
+              "name": "Tonight",
+              "startTime": "2025-07-11T18:00:00-07:00",
+              "endTime": "2025-07-12T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 64,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/night/fog?size=medium",
+              "shortForecast": "Patchy Fog",
+              "detailedForecast": "Patchy fog after 11pm. Partly cloudy, with a low around 64. South southwest wind 0 to 10 mph, with gusts as high as 20 mph."
+            },
+            {
+              "number": 3,
+              "name": "Saturday",
+              "startTime": "2025-07-12T06:00:00-07:00",
+              "endTime": "2025-07-12T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 83,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/day/fog/sct?size=medium",
+              "shortForecast": "Patchy Fog then Mostly Sunny",
+              "detailedForecast": "Patchy fog before 11am. Mostly sunny, with a high near 83. South southwest wind 0 to 10 mph."
+            },
+            {
+              "number": 4,
+              "name": "Saturday Night",
+              "startTime": "2025-07-12T18:00:00-07:00",
+              "endTime": "2025-07-13T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 63,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/night/fog?size=medium",
+              "shortForecast": "Patchy Fog",
+              "detailedForecast": "Patchy fog after 11pm. Partly cloudy, with a low around 63. Southwest wind 0 to 10 mph."
+            },
+            {
+              "number": 5,
+              "name": "Sunday",
+              "startTime": "2025-07-13T06:00:00-07:00",
+              "endTime": "2025-07-13T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 86,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/fog/sct?size=medium",
+              "shortForecast": "Patchy Fog then Mostly Sunny",
+              "detailedForecast": "Patchy fog before 11am. Mostly sunny, with a high near 86. Southwest wind 0 to 10 mph, with gusts as high as 20 mph."
+            },
+            {
+              "number": 6,
+              "name": "Sunday Night",
+              "startTime": "2025-07-13T18:00:00-07:00",
+              "endTime": "2025-07-14T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 62,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+              "shortForecast": "Partly Cloudy",
+              "detailedForecast": "Partly cloudy, with a low around 62."
+            },
+            {
+              "number": 7,
+              "name": "Monday",
+              "startTime": "2025-07-14T06:00:00-07:00",
+              "endTime": "2025-07-14T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 85,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 1
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+              "shortForecast": "Mostly Sunny",
+              "detailedForecast": "Mostly sunny, with a high near 85."
+            },
+            {
+              "number": 8,
+              "name": "Monday Night",
+              "startTime": "2025-07-14T18:00:00-07:00",
+              "endTime": "2025-07-15T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 61,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 1
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+              "shortForecast": "Mostly Clear",
+              "detailedForecast": "Mostly clear, with a low around 61."
+            },
+            {
+              "number": 9,
+              "name": "Tuesday",
+              "startTime": "2025-07-15T06:00:00-07:00",
+              "endTime": "2025-07-15T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 82,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+              "shortForecast": "Sunny",
+              "detailedForecast": "Sunny, with a high near 82."
+            },
+            {
+              "number": 10,
+              "name": "Tuesday Night",
+              "startTime": "2025-07-15T18:00:00-07:00",
+              "endTime": "2025-07-16T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 60,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+              "shortForecast": "Partly Cloudy",
+              "detailedForecast": "Partly cloudy, with a low around 60."
+            },
+            {
+              "number": 11,
+              "name": "Wednesday",
+              "startTime": "2025-07-16T06:00:00-07:00",
+              "endTime": "2025-07-16T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 82,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+              "shortForecast": "Mostly Sunny",
+              "detailedForecast": "Mostly sunny, with a high near 82."
+            },
+            {
+              "number": 12,
+              "name": "Wednesday Night",
+              "startTime": "2025-07-16T18:00:00-07:00",
+              "endTime": "2025-07-17T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 60,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+              "shortForecast": "Partly Cloudy",
+              "detailedForecast": "Partly cloudy, with a low around 60."
+            },
+            {
+              "number": 13,
+              "name": "Thursday",
+              "startTime": "2025-07-17T06:00:00-07:00",
+              "endTime": "2025-07-17T18:00:00-07:00",
+              "isDaytime": true,
+              "temperature": 83,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 1
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+              "shortForecast": "Mostly Sunny",
+              "detailedForecast": "Mostly sunny, with a high near 83."
+            },
+            {
+              "number": 14,
+              "name": "Thursday Night",
+              "startTime": "2025-07-17T18:00:00-07:00",
+              "endTime": "2025-07-18T06:00:00-07:00",
+              "isDaytime": false,
+              "temperature": 61,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 0
+              },
+              "windSpeed": "0 to 10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+              "shortForecast": "Mostly Clear",
+              "detailedForecast": "Mostly clear, with a low around 61."
+            }
+          ]
+        }
+      },
+      "alertSource": "nws"
     },
     {
       "address": "1125 Samuelson Street, City of Industry, CA 91748",
@@ -15663,14 +15987,18 @@
       "contactPhone": "",
       "contactTitle": "",
       "coordinates": [
-        45.4561266,
-        -75.584239
+        33.99911609440745,
+        -117.91049166441799
       ],
       "currentAlert": "none",
       "id": "loc_5b8d284b",
-      "lastUpdated": "2025-07-11T16:50:22.393362",
+      "lastUpdated": "2025-07-11T16:56:22.433883",
       "nickname": "City of Industry - Waddington",
-      "siteType": "plant"
+      "siteType": "plant",
+      "streetAddress": "1125 Samuelson Street",
+      "city": "City of Industry",
+      "state": "CA",
+      "zipcode": "91748"
     },
     {
       "address": "630 Erlanger Road, Erlanger, KY 41018",
@@ -15686,7 +16014,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_eef655b5",
-      "lastUpdated": "2025-07-11T16:50:22.393366",
+      "lastUpdated": "2025-07-11T16:56:03.602237",
       "nickname": "Erlanger - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -16023,7 +16351,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d60aacca",
-      "lastUpdated": "2025-07-11T16:50:22.393373",
+      "lastUpdated": "2025-07-11T16:56:03.602250",
       "nickname": "Chelmsford - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16360,7 +16688,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39279966",
-      "lastUpdated": "2025-07-11T16:50:22.393380",
+      "lastUpdated": "2025-07-11T16:56:03.602262",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16697,7 +17025,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_217b97f5",
-      "lastUpdated": "2025-07-11T16:50:22.393393",
+      "lastUpdated": "2025-07-11T16:56:03.602276",
       "nickname": "Lancaster - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17034,7 +17362,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18df5a03",
-      "lastUpdated": "2025-07-11T16:50:22.393400",
+      "lastUpdated": "2025-07-11T16:56:03.602288",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17371,7 +17699,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f3ea1d7c",
-      "lastUpdated": "2025-07-11T16:50:22.393407",
+      "lastUpdated": "2025-07-11T16:56:03.602303",
       "nickname": "Dallas - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -17708,7 +18036,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50a29d53",
-      "lastUpdated": "2025-07-11T16:50:22.393414",
+      "lastUpdated": "2025-07-11T16:56:03.602316",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18045,7 +18373,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b22ce5de",
-      "lastUpdated": "2025-07-11T16:50:22.393422",
+      "lastUpdated": "2025-07-11T16:56:03.602332",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18382,7 +18710,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e52916bd",
-      "lastUpdated": "2025-07-11T16:50:22.393430",
+      "lastUpdated": "2025-07-11T16:56:03.602345",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -18719,7 +19047,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_364d2cd9",
-      "lastUpdated": "2025-07-11T16:50:22.393438",
+      "lastUpdated": "2025-07-11T16:56:03.602363",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19056,7 +19384,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_96ffead8",
-      "lastUpdated": "2025-07-11T16:50:22.393445",
+      "lastUpdated": "2025-07-11T16:56:03.602378",
       "nickname": "Baxter Springs - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19393,7 +19721,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_04c529ea",
-      "lastUpdated": "2025-07-11T16:50:22.393453",
+      "lastUpdated": "2025-07-11T16:56:03.602391",
       "nickname": "Jacksonville - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -19730,7 +20058,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39dc480c",
-      "lastUpdated": "2025-07-11T16:50:22.393465",
+      "lastUpdated": "2025-07-11T16:56:03.602406",
       "nickname": "Tolleson - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -20067,7 +20395,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d30603c5",
-      "lastUpdated": "2025-07-11T16:50:22.393473",
+      "lastUpdated": "2025-07-11T16:56:03.602421",
       "nickname": "Tolleson - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20404,7 +20732,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d21b6f10",
-      "lastUpdated": "2025-07-11T16:50:22.393481",
+      "lastUpdated": "2025-07-11T16:56:03.602436",
       "nickname": "McCook - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20449,8 +20777,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:08+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:03+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -20742,7 +21070,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e1e3d46",
-      "lastUpdated": "2025-07-11T16:50:22.393489",
+      "lastUpdated": "2025-07-11T16:56:03.602450",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "warehouse",
       "state": "IL",
@@ -20789,8 +21117,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:08+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:03+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -21082,7 +21410,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f20e21aa",
-      "lastUpdated": "2025-07-11T16:50:22.393498",
+      "lastUpdated": "2025-07-11T16:56:03.602464",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "plant",
       "weatherConditions": {
@@ -21127,8 +21455,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T21:39:08+00:00",
-          "updateTime": "2025-07-11T21:35:38+00:00",
+          "generatedAt": "2025-07-11T21:56:03+00:00",
+          "updateTime": "2025-07-11T21:41:53+00:00",
           "validTimes": "2025-07-11T15:00:00+00:00/P7DT10H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -21419,7 +21747,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_356c4f89",
-      "lastUpdated": "2025-07-11T16:50:22.393505",
+      "lastUpdated": "2025-07-11T16:56:03.602477",
       "nickname": "Covington - Waddington",
       "siteType": "office",
       "weatherConditions": {
@@ -21756,7 +22084,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_622f91b3",
-      "lastUpdated": "2025-07-11T16:50:22.393514",
+      "lastUpdated": "2025-07-11T16:56:03.602494",
       "nickname": "Shawano - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -22093,7 +22421,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_027ff0a2",
-      "lastUpdated": "2025-07-11T16:50:22.393525",
+      "lastUpdated": "2025-07-11T16:56:03.602508",
       "nickname": "Rancho Cucamonga",
       "siteType": "plant",
       "weatherConditions": {
@@ -22430,7 +22758,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5c8c2787",
-      "lastUpdated": "2025-07-11T16:50:22.393533",
+      "lastUpdated": "2025-07-11T16:56:03.602522",
       "nickname": "Logan Township - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -22767,7 +23095,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_02bbb600",
-      "lastUpdated": "2025-07-11T16:50:22.393541",
+      "lastUpdated": "2025-07-11T16:56:03.602537",
       "nickname": "Fairfield - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23104,7 +23432,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3a91284e",
-      "lastUpdated": "2025-07-11T16:50:22.393550",
+      "lastUpdated": "2025-07-11T16:56:03.602552",
       "nickname": "Villa Rica - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23442,7 +23770,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a2c2073b",
-      "lastUpdated": "2025-07-11T16:50:22.393558",
+      "lastUpdated": "2025-07-11T16:56:03.602567",
       "nickname": "Chelmsford - Waddington",
       "siteType": "warehouse",
       "state": "MA",
@@ -23782,7 +24110,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf8aa2a1",
-      "lastUpdated": "2025-07-11T16:50:22.393566",
+      "lastUpdated": "2025-07-11T16:56:03.602583",
       "nickname": "Brampton - Waddington",
       "siteType": "plant",
       "state": "ON",
@@ -23790,5 +24118,5 @@
       "zipcode": "L6R 4E6"
     }
   ],
-  "lastUpdated": "2025-07-11T16:50:22.393568"
+  "lastUpdated": "2025-07-11T16:56:22.433911"
 }
