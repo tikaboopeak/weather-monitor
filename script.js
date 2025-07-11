@@ -146,13 +146,6 @@ class WeatherAlertMonitor {
     }
 
     initializeFilters() {
-        // Set initial filter panel state (collapsed by default)
-        const filterControls = document.getElementById('filterControls');
-        const filterToggle = document.getElementById('filterToggle');
-        
-        filterControls.classList.add('collapsed');
-        filterToggle.querySelector('i').className = 'fas fa-chevron-down';
-        
         // Set initial checkbox states for site types
         Object.keys(this.siteFilters).forEach(siteType => {
             const checkbox = document.getElementById(`filter-${siteType}`);
@@ -164,6 +157,7 @@ class WeatherAlertMonitor {
                 });
             }
         });
+        
         // Set initial checkbox states for alert levels
         Object.keys(this.alertLevelFilters).forEach(level => {
             const checkbox = document.getElementById(`filter-alert-${level}`);
@@ -175,8 +169,6 @@ class WeatherAlertMonitor {
                 });
             }
         });
-        
-
     }
 
     setupEventListeners() {
@@ -226,8 +218,21 @@ class WeatherAlertMonitor {
         
 
         
-        // Filter controls
-        document.getElementById('filterToggle').addEventListener('click', () => this.toggleFilterPanel());
+        // Filter dropdown
+        const filterBtn = document.getElementById('filterBtn');
+        const filterDropdown = document.getElementById('filterDropdown');
+        
+        filterBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleFilterDropdown();
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!filterDropdown.contains(e.target) && !filterBtn.contains(e.target)) {
+                this.closeFilterDropdown();
+            }
+        });
         
         // Filter checkboxes
         Object.keys(this.siteFilters).forEach(siteType => {
@@ -3241,19 +3246,56 @@ class WeatherAlertMonitor {
     
 
 
-    toggleFilterPanel() {
-        const filterControls = document.getElementById('filterControls');
-        const filterToggle = document.getElementById('filterToggle');
+    toggleFilterDropdown() {
+        const filterDropdown = document.getElementById('filterDropdown');
+        const filterBtn = document.getElementById('filterBtn');
         
-        filterControls.classList.toggle('collapsed');
-        
-        // Update toggle button icon
-        const icon = filterToggle.querySelector('i');
-        if (filterControls.classList.contains('collapsed')) {
-            icon.className = 'fas fa-chevron-down';
+        if (filterDropdown.classList.contains('active')) {
+            this.closeFilterDropdown();
         } else {
-            icon.className = 'fas fa-chevron-up';
+            this.openFilterDropdown();
         }
+    }
+
+    openFilterDropdown() {
+        const filterDropdown = document.getElementById('filterDropdown');
+        const filterBtn = document.getElementById('filterBtn');
+        
+        // Calculate available space
+        const btnRect = filterBtn.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const spaceBelow = viewportHeight - btnRect.bottom;
+        const spaceAbove = btnRect.top;
+        
+        // Reset any previous positioning
+        filterDropdown.style.top = '';
+        filterDropdown.style.bottom = '';
+        filterDropdown.style.maxHeight = '';
+        
+        // Let the dropdown size naturally to its content
+        // Only check if we need to position it above to avoid going off-screen
+        const dropdownContent = filterDropdown.querySelector('.filter-dropdown-content');
+        const estimatedHeight = dropdownContent ? dropdownContent.scrollHeight + 32 : 300; // Add padding
+        
+        if (spaceBelow < estimatedHeight && spaceAbove > spaceBelow) {
+            // Position above the button if not enough space below
+            filterDropdown.style.bottom = '100%';
+            filterDropdown.style.top = 'auto';
+        } else {
+            // Position below the button (default)
+            filterDropdown.style.top = '100%';
+        }
+        
+        filterDropdown.classList.add('active');
+        filterBtn.classList.add('active');
+    }
+
+    closeFilterDropdown() {
+        const filterDropdown = document.getElementById('filterDropdown');
+        const filterBtn = document.getElementById('filterBtn');
+        
+        filterDropdown.classList.remove('active');
+        filterBtn.classList.remove('active');
     }
 
     getFilteredLocations() {
