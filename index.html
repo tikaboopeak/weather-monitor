@@ -35,10 +35,6 @@
                     <i class="fas fa-bolt"></i>
                     Live Alerts
                 </button>
-                <button class="tab-btn" id="futureTabBtn">
-                    <i class="fas fa-crystal-ball"></i>
-                    Future Predictions
-                </button>
             </div>
 
             <!-- Live Tab Content -->
@@ -157,124 +153,7 @@
                 </div>
             </div>
 
-            <!-- Future Tab Content -->
-            <div class="tab-content" id="futureTab">
-                <div class="app-layout">
-                    <!-- Left Panel - Location List -->
-                    <div class="locations-panel" id="futureLocationsPanel">
-                        <div class="panel-header">
-                            <h2>Monitored Locations <span id="futureLocationCount" class="location-count">(0)</span></h2>
-                            <div class="alert-summary">
-                                <span class="alert-count severe" id="futureSevereCount">0</span>
-                                <span class="alert-count moderate" id="futureModerateCount">0</span>
-                                <span class="alert-count minor" id="futureMinorCount">0</span>
-                            </div>
-                            <div class="filter-section">
-                                <div class="filter-header">
-                                    <h3>Filter by Site Type</h3>
-                                    <button class="filter-toggle" id="futureFilterToggle">
-                                        <i class="fas fa-chevron-down"></i>
-                                    </button>
-                                </div>
-                                <div class="filter-controls" id="futureFilterControls">
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-warehouse" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-warehouse"></i>
-                                            Warehouse
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-plant" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-industry"></i>
-                                            Plant
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-3pl-warehouse" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-truck"></i>
-                                            3PL Warehouse
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-office" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-building"></i>
-                                            Office
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-supplier" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-boxes"></i>
-                                            Supplier
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-machine-shop" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-cogs"></i>
-                                            Machine Shop
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-land" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            Land
-                                        </label>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label class="filter-checkbox">
-                                            <input type="checkbox" id="future-filter-parking" checked>
-                                            <span class="checkmark"></span>
-                                            <i class="fas fa-parking"></i>
-                                            Parking
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="locations-list" id="futureLocationsList">
-                            <!-- Location items will be populated by JavaScript -->
-                            <div class="no-locations">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>No locations added yet</p>
-                                <button class="add-first-location">Add Your First Location</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resizer handle -->
-                    <div class="resizer" id="futureResizer"></div>
-
-                    <!-- Right Panel - Map -->
-                    <div class="map-panel" id="futureMapPanel">
-                        <div id="futureMap" class="weather-map"></div>
-                        <div class="map-controls">
-                            <button id="futureRefreshBtn" class="map-control-btn" title="Refresh Predictions">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                            <button id="futureLegendBtn" class="map-control-btn" title="Show Legend">
-                                <i class="fas fa-info-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Add Location Modal -->
+            <!-- Add Location Modal -->
         <div class="modal-overlay" id="locationModal">
             <div class="modal">
                 <div class="modal-header">

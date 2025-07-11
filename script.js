@@ -27,12 +27,9 @@ class WeatherAlertMonitor {
         }
         
         this.map = null;
-        this.futureMap = null;
         this.locations = [];
         this.markers = [];
-        this.futureMarkers = [];
         this.alertPolygons = []; // Array to store alert polygons
-        this.futurePolygons = []; // Array to store future prediction polygons
         this.currentEditingId = null;
         
         // API Configuration
@@ -40,7 +37,7 @@ class WeatherAlertMonitor {
         this.GEOCODING_API = 'https://maps.googleapis.com/maps/api/geocode/json';
         this.GOOGLE_API_KEY = 'AIzaSyCLc97NiXejbt5gnpMOOECCB-cOFBE2RAE';
         // Use the current hostname for the server API to work from remote computers
-        this.SERVER_API = `http://${window.location.hostname}:8203/api`;
+        this.SERVER_API = `http://${window.location.hostname}:8201/api`;
         this.updateInterval = null;
         this.lastUpdateTime = null;
         
@@ -81,17 +78,11 @@ class WeatherAlertMonitor {
             'parking': true
         };
         
-        // Future weather events
-        this.futureEvents = [];
-        
         this.alertSeverity = {
             'warning': { level: 3, class: 'severe', color: '#dc2626' },
             'watch': { level: 2, class: 'moderate', color: '#ea580c' },
             'advisory': { level: 1, class: 'minor', color: '#ca8a04' },
-            'none': { level: 0, class: 'none', color: '#16a34a' },
-            'future-warning': { level: 4, class: 'future-severe', color: '#dc2626' },
-            'future-watch': { level: 3, class: 'future-moderate', color: '#ea580c' },
-            'future-advisory': { level: 2, class: 'future-minor', color: '#ca8a04' }
+            'none': { level: 0, class: 'none', color: '#16a34a' }
         };
         
         this.siteIcons = {
@@ -138,9 +129,7 @@ class WeatherAlertMonitor {
         this.updateDisplay();
         this.updateLastUpdated();
         
-        // Initialize future tab display
-        console.log('Initializing future display...');
-        this.updateFutureDisplay();
+
         
         // Start real-time weather updates
         console.log('Starting real-time updates...');
@@ -209,27 +198,14 @@ class WeatherAlertMonitor {
         
 
         
-        // Future tab map controls
-        document.getElementById('futureRefreshBtn').addEventListener('click', () => {
-            console.log('Future predictions refresh button clicked');
-            this.refreshFuturePredictions();
-        });
-        document.getElementById('futureLegendBtn').addEventListener('click', () => this.openLegendModal());
-        
         // Filter controls
         document.getElementById('filterToggle').addEventListener('click', () => this.toggleFilterPanel());
-        document.getElementById('futureFilterToggle').addEventListener('click', () => this.toggleFutureFilterPanel());
         
         // Filter checkboxes
         Object.keys(this.siteFilters).forEach(siteType => {
             const checkbox = document.getElementById(`filter-${siteType}`);
             if (checkbox) {
                 checkbox.addEventListener('change', () => this.toggleSiteFilter(siteType));
-            }
-            
-            const futureCheckbox = document.getElementById(`future-filter-${siteType}`);
-            if (futureCheckbox) {
-                futureCheckbox.addEventListener('change', () => this.toggleFutureSiteFilter(siteType));
             }
         });
         
@@ -327,9 +303,6 @@ class WeatherAlertMonitor {
                 if (targetTab === 'live') {
                     console.log('Initializing Live Map...');
                     this.initializeLiveMap();
-                } else if (targetTab === 'future') {
-                    console.log('Initializing Future Map...');
-                    this.initializeFutureMap();
                 }
             });
         });
@@ -355,556 +328,33 @@ class WeatherAlertMonitor {
                         }
                     }, 150);
                 }
-                // Also refresh future map to prevent issues
-                if (this.futureMap) {
-                    this.futureMap.invalidateSize();
-                }
             }, 100);
         }
         this.updateDisplay();
     }
 
-    initializeFutureMap() {
-        console.log('Initializing Future Map...');
-        
-        if (!this.futureMap) {
-            console.log('Creating new Future Map instance...');
-            this.initializeFutureMapInstance();
-        } else {
-            console.log('Refreshing existing Future Map...');
-            // Clear existing map content
-            const futureMapContainer = document.getElementById('futureMap');
-            if (futureMapContainer) {
-                futureMapContainer.innerHTML = '';
-            }
-            
-            // Reinitialize the map
-            this.initializeFutureMapInstance();
-            
-            // Refresh map size when switching to future tab
-            setTimeout(() => {
-                if (this.futureMap) {
-                    this.futureMap.invalidateSize();
-                    // Force multiple refreshes to ensure proper sizing
-                    setTimeout(() => {
-                        if (this.futureMap) {
-                            this.futureMap.invalidateSize();
-                        }
-                    }, 50);
-                    setTimeout(() => {
-                        if (this.futureMap) {
-                            this.futureMap.invalidateSize();
-                        }
-                    }, 150);
-                }
-                // Also refresh live map to prevent issues
-                if (this.map) {
-                    this.map.invalidateSize();
-                }
-            }, 300); // Increased delay for more reliable resizing
-        }
-        this.updateFutureDisplay();
-    }
 
-    initializeFutureMapInstance() {
-        console.log('Initializing Future Map Instance...');
-        
-        // Clear any existing map in the futureMap container
-        const futureMapContainer = document.getElementById('futureMap');
-        if (futureMapContainer) {
-            futureMapContainer.innerHTML = '';
-        }
-        
-        // Create new map instance specifically for future predictions
-        this.futureMap = L.map('futureMap').setView([39.8283, -98.5795], 4);
-        
-        console.log('Future map created:', this.futureMap);
-        
-        // Add tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(this.futureMap);
-        
-        // Add weather overlay
-        this.addFutureWeatherOverlay();
-        
-        // Force map refresh to ensure proper rendering
-        setTimeout(() => {
-            if (this.futureMap) {
-                this.futureMap.invalidateSize();
-                console.log('Future map invalidated');
-            }
-        }, 200);
-    }
 
-    addFutureWeatherOverlay() {
-        // Add weather radar overlay for future predictions
-        const weatherOverlay = L.tileLayer('https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=demo', {
-            attribution: '© OpenWeatherMap',
-            opacity: 0.6
-        }).addTo(this.futureMap);
-    }
 
-    async refreshFuturePredictions() {
-        console.log('Refreshing future weather predictions...');
-        
-        try {
-            // Clear existing predictions
-            this.clearFuturePredictions();
-            
-            // Get filtered locations
-            const filteredLocations = this.getFilteredLocations();
-            
-            if (filteredLocations.length === 0) {
-                console.log('No locations to analyze for future predictions');
-                return;
-            }
-            
-            // Analyze each location for future weather risks
-            const predictions = await this.analyzeFutureWeatherRisks(filteredLocations);
-            
-            // Update the future display with predictions
-            this.updateFutureDisplay(predictions);
-            
-            console.log('Future predictions refreshed successfully');
-        } catch (error) {
-            console.error('Error refreshing future predictions:', error);
-        }
-    }
 
-    clearFuturePredictions() {
-        // Clear future markers and polygons
-        if (this.futureMarkers) {
-            this.futureMarkers.forEach(marker => marker.remove());
-            this.futureMarkers = [];
-        }
-        
-        if (this.futurePolygons) {
-            this.futurePolygons.forEach(polygon => polygon.remove());
-            this.futurePolygons = [];
-        }
-    }
 
-    async analyzeFutureWeatherRisks(locations) {
-        const predictions = [];
-        
-        for (const location of locations) {
-            try {
-                console.log(`Analyzing future weather risks for: ${location.nickname}`);
-                
-                // Get 10-day forecast for the location
-                const forecast = await this.get10DayForecast(location);
-                
-                // Use AI to analyze the forecast and predict severe weather events
-                const prediction = await this.predictSevereWeatherEvents(location, forecast);
-                
-                if (prediction) {
-                    predictions.push(prediction);
-                }
-                
-            } catch (error) {
-                console.error(`Error analyzing future risks for ${location.nickname}:`, error);
-            }
-        }
-        
-        return predictions;
-    }
 
-    async get10DayForecast(location) {
-        try {
-            // Use OpenWeatherMap API for 10-day forecast
-            const apiKey = 'demo'; // Replace with actual API key
-            const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lng}&appid=${apiKey}&units=imperial`;
-            
-            const response = await fetch(url);
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            } else {
-                console.log(`Failed to get forecast for ${location.nickname}:`, response.status);
-                return null;
-            }
-        } catch (error) {
-            console.error(`Error fetching forecast for ${location.nickname}:`, error);
-            return null;
-        }
-    }
 
-    async predictSevereWeatherEvents(location, forecast) {
-        if (!forecast) return null;
-        
-        // AI analysis of weather patterns
-        const analysis = this.analyzeWeatherPatterns(forecast);
-        
-        // Predict severe weather events based on patterns
-        const predictions = this.generateWeatherPredictions(location, analysis);
-        
-        return {
-            location: location,
-            forecast: forecast,
-            analysis: analysis,
-            predictions: predictions,
-            riskLevel: this.calculateRiskLevel(predictions)
-        };
-    }
 
-    analyzeWeatherPatterns(forecast) {
-        const analysis = {
-            temperatureTrends: [],
-            precipitationPatterns: [],
-            windPatterns: [],
-            pressureChanges: [],
-            humidityTrends: []
-        };
-        
-        // Analyze each day's forecast
-        forecast.list.forEach((day, index) => {
-            const temp = day.main.temp;
-            const humidity = day.main.humidity;
-            const pressure = day.main.pressure;
-            const windSpeed = day.wind.speed;
-            const precipitation = day.pop; // Probability of precipitation
-            
-            analysis.temperatureTrends.push(temp);
-            analysis.precipitationPatterns.push(precipitation);
-            analysis.windPatterns.push(windSpeed);
-            analysis.pressureChanges.push(pressure);
-            analysis.humidityTrends.push(humidity);
-        });
-        
-        return analysis;
-    }
 
-    generateWeatherPredictions(location, analysis) {
-        const predictions = [];
-        
-        // Analyze temperature trends for heat waves
-        const tempTrend = this.analyzeTrend(analysis.temperatureTrends);
-        if (tempTrend.increasing && tempTrend.values.some(t => t > 90)) {
-            predictions.push({
-                type: 'heat_wave',
-                severity: 'moderate',
-                probability: 0.7,
-                description: 'Potential heat wave conditions detected'
-            });
-        }
-        
-        // Analyze precipitation patterns for flooding
-        const precipTrend = this.analyzeTrend(analysis.precipitationPatterns);
-        if (precipTrend.values.some(p => p > 0.8)) {
-            predictions.push({
-                type: 'flooding',
-                severity: 'severe',
-                probability: 0.8,
-                description: 'High precipitation probability indicates flood risk'
-            });
-        }
-        
-        // Analyze wind patterns for storms
-        const windTrend = this.analyzeTrend(analysis.windPatterns);
-        if (windTrend.values.some(w => w > 25)) {
-            predictions.push({
-                type: 'storm',
-                severity: 'moderate',
-                probability: 0.6,
-                description: 'High wind speeds indicate storm potential'
-            });
-        }
-        
-        return predictions;
-    }
 
-    analyzeTrend(values) {
-        const n = values.length;
-        if (n < 2) return { increasing: false, decreasing: false, values };
-        
-        let increasing = 0;
-        let decreasing = 0;
-        
-        for (let i = 1; i < n; i++) {
-            if (values[i] > values[i-1]) increasing++;
-            else if (values[i] < values[i-1]) decreasing++;
-        }
-        
-        return {
-            increasing: increasing > decreasing,
-            decreasing: decreasing > increasing,
-            values: values
-        };
-    }
 
-    calculateRiskLevel(predictions) {
-        if (predictions.length === 0) return 'low';
-        
-        const severityScores = {
-            'severe': 3,
-            'moderate': 2,
-            'minor': 1
-        };
-        
-        let totalScore = 0;
-        predictions.forEach(pred => {
-            totalScore += severityScores[pred.severity] * pred.probability;
-        });
-        
-        if (totalScore >= 6) return 'high';
-        if (totalScore >= 3) return 'moderate';
-        return 'low';
-    }
 
-    updateFutureDisplay(predictions = []) {
-        this.updateFutureLocationsList(predictions);
-        this.updateFutureMapMarkers(predictions);
-        this.updateFutureAlertCounts(predictions);
-        this.updateFutureLocationCount(predictions);
-        
-        // Ensure the future map is properly initialized and visible
-        if (this.futureMap) {
-            setTimeout(() => {
-                this.futureMap.invalidateSize();
-            }, 100);
-        }
-    }
 
-    updateFutureLocationsList(predictions) {
-        const locationsList = document.getElementById('futureLocationsList');
-        const filteredLocations = this.getFilteredLocations();
-        
-        if (filteredLocations.length === 0) {
-            locationsList.innerHTML = `
-                <div class="no-locations">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>No locations added yet</p>
-                    <button class="add-first-location">Add Your First Location</button>
-                </div>
-            `;
-            return;
-        }
-        
-        // Filter locations to only show those with moderate or high risk
-        const locationsWithRisk = filteredLocations.filter(location => {
-            const prediction = predictions.find(p => p.location.id === location.id);
-            const riskLevel = prediction ? prediction.riskLevel : 'low';
-            return riskLevel === 'moderate' || riskLevel === 'high';
-        });
-        
-        if (locationsWithRisk.length === 0) {
-            locationsList.innerHTML = `
-                <div class="no-locations">
-                    <i class="fas fa-shield-check"></i>
-                    <p>No locations with weather risks detected</p>
-                    <small>All monitored locations are currently at low risk for the next 10 days</small>
-                </div>
-            `;
-            return;
-        }
-        
-        const locationsHTML = locationsWithRisk.map(location => {
-            const prediction = predictions.find(p => p.location.id === location.id);
-            return this.createFutureLocationHTML(location, prediction);
-        }).join('');
-        
-        locationsList.innerHTML = locationsHTML;
-    }
 
-    createFutureLocationHTML(location, prediction) {
-        const riskClass = prediction ? `risk-${prediction.riskLevel}` : 'risk-low';
-        const iconClass = this.siteIcons[location.siteType] || 'fa-map-marker-alt';
-        
-        let predictionHTML = '';
-        if (prediction && prediction.predictions.length > 0) {
-            predictionHTML = `
-                <div class="location-predictions">
-                    ${prediction.predictions.map(pred => `
-                        <div class="prediction-item ${pred.severity}">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>${pred.description}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
-        
-        return `
-            <div class="location-item ${riskClass}" data-location-id="${location.id}">
-                <div class="location-header">
-                    <div class="location-name">
-                        <i class="fas ${iconClass}"></i>
-                        ${location.nickname}
-                    </div>
-                    <div class="location-type">${location.siteType}</div>
-                    <div class="location-risk ${riskClass}">
-                        <i class="fas fa-chart-line"></i>
-                        ${prediction ? prediction.riskLevel.toUpperCase() : 'LOW'} RISK
-                    </div>
-                </div>
-                <div class="location-details">
-                    <div class="location-address">${location.address}</div>
-                    ${predictionHTML}
-                </div>
-            </div>
-        `;
-    }
 
-    updateFutureMapMarkers(predictions = []) {
-        if (!this.futureMap) return;
-        
-        // Clear existing markers
-        this.clearFuturePredictions();
-        
-        this.futureMarkers = [];
-        this.futurePolygons = [];
-        
-        // Get all filtered locations
-        const filteredLocations = this.getFilteredLocations();
-        
-        // Filter locations to only show those with moderate or high risk
-        const locationsWithRisk = filteredLocations.filter(location => {
-            const prediction = predictions.find(p => p.location.id === location.id);
-            const riskLevel = prediction ? prediction.riskLevel : 'low';
-            return riskLevel === 'moderate' || riskLevel === 'high';
-        });
-        
-        locationsWithRisk.forEach(location => {
-            // Find prediction for this location
-            const prediction = predictions.find(p => p.location.id === location.id);
-            const riskLevel = prediction ? prediction.riskLevel : 'low';
-            
-            // Create marker with risk-based styling
-            const markerColor = this.getRiskMarkerColor(riskLevel);
-            const marker = L.circleMarker([location.lat, location.lng], {
-                radius: 10,
-                fillColor: markerColor,
-                color: '#fff',
-                weight: 2,
-                opacity: 1,
-                fillOpacity: 0.8
-            }).addTo(this.futureMap);
-            
-            // Add hover effects
-            marker.on('mouseover', function() {
-                this.setRadius(14);
-                this.setStyle({ fillOpacity: 1 });
-            });
-            
-            marker.on('mouseout', function() {
-                this.setRadius(10);
-                this.setStyle({ fillOpacity: 0.8 });
-            });
-            
-            // Add popup with location and prediction details
-            const popupContent = this.createFutureLocationPopup(location, prediction);
-            marker.bindPopup(popupContent);
-            
-            this.futureMarkers.push(marker);
-        });
-    }
 
-    getRiskMarkerColor(riskLevel) {
-        switch (riskLevel) {
-            case 'high': return '#dc2626';
-            case 'moderate': return '#ea580c';
-            case 'low': return '#16a34a';
-            default: return '#6b7280';
-        }
-    }
 
-    createFutureLocationPopup(location, prediction) {
-        const riskLevel = prediction ? prediction.riskLevel : 'low';
-        const riskColor = this.getRiskMarkerColor(riskLevel);
-        
-        let predictionsHTML = '';
-        if (prediction && prediction.predictions.length > 0) {
-            predictionsHTML = `
-                <div class="predictions-list">
-                    ${prediction.predictions.map(pred => `
-                        <div class="prediction-item ${pred.severity}">
-                            <strong>${pred.type.replace('_', ' ').toUpperCase()}</strong><br>
-                            ${pred.description}<br>
-                            <small>Probability: ${Math.round(pred.probability * 100)}%</small>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        } else {
-            predictionsHTML = `
-                <div class="prediction-item minor">
-                    <i class="fas fa-check-circle"></i>
-                    <span>No significant weather risks predicted for the next 10 days</span>
-                </div>
-            `;
-        }
-        
-        return `
-            <div class="popup-content">
-                <h4>${location.nickname}</h4>
-                <p><strong>Site Type:</strong> ${location.siteType}</p>
-                <p><strong>Location:</strong> ${location.address}</p>
-                <p><strong>Risk Level:</strong> <span style="color: ${riskColor}; font-weight: bold;">${riskLevel.toUpperCase()}</span></p>
-                <hr style="margin: 10px 0; border: 1px solid #eee;">
-                <h5 style="margin: 10px 0 5px 0; color: #666;">10-Day Weather Forecast</h5>
-                ${predictionsHTML}
-            </div>
-        `;
-    }
 
-    updateFutureAlertCounts(predictions) {
-        const filteredLocations = this.getFilteredLocations();
-        
-        // Count only locations with moderate or high risk
-        let highRisk = 0;
-        let moderateRisk = 0;
-        
-        filteredLocations.forEach(location => {
-            const prediction = predictions.find(p => p.location.id === location.id);
-            const riskLevel = prediction ? prediction.riskLevel : 'low';
-            
-            switch (riskLevel) {
-                case 'high':
-                    highRisk++;
-                    break;
-                case 'moderate':
-                    moderateRisk++;
-                    break;
-            }
-        });
-        
-        document.getElementById('futureSevereCount').textContent = highRisk;
-        document.getElementById('futureModerateCount').textContent = moderateRisk;
-        document.getElementById('futureMinorCount').textContent = '0'; // No low risk locations shown
-    }
 
-    updateFutureLocationCount(predictions = []) {
-        const filteredLocations = this.getFilteredLocations();
-        
-        // Count only locations with moderate or high risk
-        const locationsWithRisk = filteredLocations.filter(location => {
-            const prediction = predictions.find(p => p.location.id === location.id);
-            const riskLevel = prediction ? prediction.riskLevel : 'low';
-            return riskLevel === 'moderate' || riskLevel === 'high';
-        });
-        
-        document.getElementById('futureLocationCount').textContent = `(${locationsWithRisk.length})`;
-    }
 
-    toggleFutureFilterPanel() {
-        const filterControls = document.getElementById('futureFilterControls');
-        const filterToggle = document.getElementById('futureFilterToggle');
-        
-        filterControls.classList.toggle('collapsed');
-        
-        const icon = filterToggle.querySelector('i');
-        if (filterControls.classList.contains('collapsed')) {
-            icon.className = 'fas fa-chevron-down';
-        } else {
-            icon.className = 'fas fa-chevron-up';
-        }
-    }
 
-    toggleFutureSiteFilter(siteType) {
-        this.siteFilters[siteType] = !this.siteFilters[siteType];
-        this.updateFutureDisplay();
-    }
+
 
     setupAddressAutocomplete() {
         const addressInput = document.getElementById('locationAddress');
@@ -1346,13 +796,7 @@ class WeatherAlertMonitor {
             if (response.ok) {
                 this.locations = await response.json();
                 
-                // Restore future events
-                this.futureEvents = [];
-                this.locations.forEach(location => {
-                    if (location.futureEvent) {
-                        this.futureEvents.push(location.futureEvent);
-                    }
-                });
+
             } else {
                 console.error('Failed to load locations from server');
                 this.locations = [];
@@ -3662,18 +3106,7 @@ class WeatherAlertMonitor {
         const location = this.locations.find(loc => loc.id === locationId);
         if (!location) return;
 
-        const futureEvent = {
-            locationId: locationId,
-            alertType: alertType,
-            scheduledTime: scheduledTime,
-            currentTime: new Date().getTime()
-        };
 
-        this.futureEvents.push(futureEvent);
-        
-        // Immediately update the location's alert status to show future event
-        location.currentAlert = `future-${alertType}`;
-        location.futureEvent = futureEvent;
         
         this.saveLocations();
         this.updateDisplay();
@@ -3691,14 +3124,7 @@ class WeatherAlertMonitor {
         const location = this.locations.find(loc => loc.id === locationId);
         if (!location) return;
 
-        // Remove future prefix and set as current alert
-        location.currentAlert = alertType;
-        delete location.futureEvent;
-        
-        // Remove from future events
-        this.futureEvents = this.futureEvents.filter(event => 
-            !(event.locationId === locationId && event.alertType === alertType)
-        );
+
         
         this.saveLocations();
         this.updateDisplay();
@@ -3707,11 +3133,7 @@ class WeatherAlertMonitor {
     checkForFutureEvents() {
         const now = new Date().getTime();
         
-        this.futureEvents.forEach(event => {
-            if (now >= event.scheduledTime) {
-                this.activateFutureEvent(event.locationId, event.alertType);
-            }
-        });
+
     }
 
     async deleteLocation(locationId) {
@@ -3864,69 +3286,71 @@ class WeatherAlertMonitor {
         });
         
         container.innerHTML = sortedLocations.map(location => `
-            <div class="location-item ${this.alertSeverity[location.currentAlert].class}" 
-                 data-location-id="${location.id}">
-                <div class="location-header collapsible-header">
-                    <div class="location-header-content">
-                        <div class="location-row">
-                            <span class="collapse-toggle" title="Expand/collapse details">
-                                <i class="fas fa-caret-right"></i>
-                            </span>
-                            <span class="location-name">
-                                ${location.nickname}
-                                <span class="location-type-icon" title="${this.getSiteTypeDescription(location.siteType)}">
-                                    <i class="fas ${this.siteIcons[location.siteType] || 'fa-map-marker-alt'}"></i>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="location-row">
-                            <span class="location-alert ${this.alertSeverity[location.currentAlert].class}">
-                                <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
-                                ${this.getAlertText(location.currentAlert)}
-                            </span>
-                        </div>
+            <div class="alert-card ${this.alertSeverity[location.currentAlert].class}" data-location-id="${location.id}">
+                <div class="alert-card-header">
+                    <div class="alert-card-icon">
+                        <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
+                    </div>
+                    <div class="alert-card-title-section">
+                        <div class="alert-card-location-name">${location.nickname}</div>
+                        <div class="alert-card-alert-type">${this.getAlertText(location.currentAlert)}</div>
+                    </div>
+                    <div class="alert-card-actions">
+                        <button class="alert-collapse-toggle" title="Toggle details">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="location-details" style="display: none;">
-                    <div class="location-address">${location.address}</div>
-                    <div class="location-alert-details ${this.alertSeverity[location.currentAlert].class}">
-                        ${this.getAlertDescription(location.currentAlert, location)}
-                    </div>
-                    ${location.contactName ? `
-                        <div class="location-contact">
-                            <i class="fas fa-user"></i> ${location.contactName}
-                            ${location.contactTitle ? `<br><i class='fas fa-id-badge'></i> ${location.contactTitle}` : ''}
-                            ${location.contactPhone ? `<br><i class='fas fa-phone'></i> ${location.contactPhone}` : ''}
+                <div class="alert-card-details" style="display: none;">
+                    <div class="alert-card-description">${this.getAlertDescription(location.currentAlert, location)}</div>
+                    <div class="alert-card-meta">
+                        <div class="alert-card-site-info">
+                            <i class="fas ${this.siteIcons[location.siteType] || 'fa-map-marker-alt'}"></i>
+                            <span>${this.getSiteTypeDescription(location.siteType)}</span>
                         </div>
-                    ` : ''}
-                    <div class="location-actions">
-                        <button class="location-edit-btn" data-location-id="${location.id}" title="Edit Site Info">
+                        <div class="alert-card-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${location.address}</span>
+                        </div>
+                        ${location.contactName ? `
+                        <div class="alert-card-contact">
+                            <i class="fas fa-user"></i>
+                            <span>${location.contactName}${location.contactTitle ? ` - ${location.contactTitle}` : ''}</span>
+                        </div>
+                        ` : ''}
+                        ${location.contactPhone ? `
+                        <div class="alert-card-phone">
+                            <i class="fas fa-phone"></i>
+                            <span>${location.contactPhone}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    <div class="alert-card-edit-section">
+                        <button class="alert-edit-btn" data-location-id="${location.id}" title="Edit location">
                             <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="location-delete-btn" data-location-id="${location.id}" title="Delete Site">
-                            <i class="fas fa-trash"></i>
+                            Edit Location
                         </button>
                     </div>
                 </div>
             </div>
         `).join('');
         
-        // Add collapse/expand listeners
-        document.querySelectorAll('.collapse-toggle').forEach(toggle => {
+        // Add collapse/expand listeners for alert cards
+        document.querySelectorAll('.alert-collapse-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const header = toggle.closest('.collapsible-header');
-                const item = header.parentElement;
-                const details = item.querySelector('.location-details');
+                const card = toggle.closest('.alert-card');
+                const details = card.querySelector('.alert-card-details');
                 const icon = toggle.querySelector('i');
+                
                 if (details.style.display === 'none') {
-                    details.style.display = '';
-                    icon.classList.remove('fa-caret-right');
-                    icon.classList.add('fa-caret-down');
+                    details.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
                 } else {
                     details.style.display = 'none';
-                    icon.classList.remove('fa-caret-down');
-                    icon.classList.add('fa-caret-right');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
                 }
             });
         });
@@ -3944,7 +3368,16 @@ class WeatherAlertMonitor {
             });
         });
         
-        // Add listeners for edit and delete buttons
+        // Add listeners for edit buttons in alert cards
+        document.querySelectorAll('.alert-edit-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const locationId = btn.dataset.locationId;
+                this.openLocationModal(locationId);
+            });
+        });
+        
+        // Add listeners for edit and delete buttons (for other location lists)
         document.querySelectorAll('.location-edit-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -4174,11 +3607,11 @@ class WeatherAlertMonitor {
             console.log(`Counting alert for ${location.nickname}: ${location.currentAlert} -> ${alertClass}`);
             
             // Map all alert classes to the three main categories
-            if (alertClass === 'severe' || alertClass === 'future-severe') {
+            if (alertClass === 'severe') {
                 counts.severe++;
-            } else if (alertClass === 'moderate' || alertClass === 'future-moderate') {
+            } else if (alertClass === 'moderate') {
                 counts.moderate++;
-            } else if (alertClass === 'minor' || alertClass === 'future-minor') {
+            } else if (alertClass === 'minor') {
                 counts.minor++;
             }
         });
@@ -4250,9 +3683,7 @@ class WeatherAlertMonitor {
             'watch': 'fa-eye',
             'advisory': 'fa-info-circle',
             'none': 'fa-check-circle',
-            'future-warning': 'fa-clock-triangle-exclamation',
-            'future-watch': 'fa-clock-eye',
-            'future-advisory': 'fa-clock-info-circle'
+
         };
         return icons[alertType] || 'fa-question-circle';
     }
@@ -4263,9 +3694,7 @@ class WeatherAlertMonitor {
             'watch': 'Weather Watch',
             'advisory': 'Weather Advisory',
             'none': 'No Active Alerts',
-            'future-warning': 'Future Severe Weather Warning',
-            'future-watch': 'Future Weather Watch',
-            'future-advisory': 'Future Weather Advisory'
+
         };
         return texts[alertType] || 'Unknown Alert';
     }
@@ -4286,9 +3715,7 @@ class WeatherAlertMonitor {
                 'watch': `WEATHER WATCH - ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast} Monitor conditions closely.`,
                 'advisory': `WEATHER ADVISORY - ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast}`,
                 'none': `No active weather alerts. Current conditions: ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast}`,
-                'future-warning': `FUTURE SEVERE WEATHER WARNING - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast} Prepare for severe weather conditions.`,
-                'future-watch': `FUTURE WEATHER WATCH - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast} Monitor conditions and prepare for severe weather.`,
-                'future-advisory': `FUTURE WEATHER ADVISORY - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast}`
+
             };
             return descriptions[alertType] || 'Weather alert information unavailable.';
         }
@@ -4299,9 +3726,7 @@ class WeatherAlertMonitor {
             'watch': `SEVERE THUNDERSTORM WATCH - ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}. ${weatherConditions.details} Monitor conditions closely.`,
             'advisory': `${weatherConditions.advisoryType.toUpperCase()} ADVISORY - ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}. ${weatherConditions.details}`,
             'none': `No active weather alerts. Current conditions: ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}.`,
-            'future-warning': `FUTURE SEVERE THUNDERSTORM WARNING - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}. ${weatherConditions.details} Prepare for severe weather conditions.`,
-            'future-watch': `FUTURE SEVERE THUNDERSTORM WATCH - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}. ${weatherConditions.details} Monitor conditions and prepare for severe weather.`,
-            'future-advisory': `FUTURE ${weatherConditions.advisoryType.toUpperCase()} ADVISORY - Expected at ${this.getFutureEventTime(location)}. ${weatherConditions.temp}°F, ${weatherConditions.wind} mph winds, ${weatherConditions.precipitation}. ${weatherConditions.details}`
+            
         };
         return descriptions[alertType] || 'Weather alert information unavailable.';
     }
