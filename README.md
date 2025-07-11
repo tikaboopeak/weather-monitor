@@ -91,6 +91,11 @@ When using the Flask server, all locations are stored in `database.json` and sha
 - **Green Markers**: No active alerts
 - **API Status**: Shows connection status to weather services
 
+#### Alert Styling
+- **NWS Warnings**: Genuine National Weather Service warnings appear in very dark red
+- **Manual Warnings**: Manually advanced alerts use standard red styling
+- **Visual Distinction**: Helps users quickly identify real vs. scheduled weather alerts
+
 ### Real-time Updates
 - Weather data automatically refreshes every 2 minutes
 - Manual refresh available via the sync button

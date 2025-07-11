@@ -77,6 +77,13 @@ class WeatherAlertMonitor {
             'land': true,
             'parking': true
         };
+        // Alert level filters - all enabled by default
+        this.alertLevelFilters = {
+            'warning': true,
+            'watch': true,
+            'advisory': true,
+            'none': true
+        };
         
         this.alertSeverity = {
             'warning': { level: 3, class: 'severe', color: '#dc2626' },
@@ -151,6 +158,21 @@ class WeatherAlertMonitor {
             const checkbox = document.getElementById(`filter-${siteType}`);
             if (checkbox) {
                 checkbox.checked = this.siteFilters[siteType];
+                checkbox.addEventListener('change', () => {
+                    this.siteFilters[siteType] = checkbox.checked;
+                    this.updateDisplay();
+                });
+            }
+        });
+        // Set initial checkbox states for alert levels
+        Object.keys(this.alertLevelFilters).forEach(level => {
+            const checkbox = document.getElementById(`filter-alert-${level}`);
+            if (checkbox) {
+                checkbox.checked = this.alertLevelFilters[level];
+                checkbox.addEventListener('change', () => {
+                    this.alertLevelFilters[level] = checkbox.checked;
+                    this.updateDisplay();
+                });
             }
         });
         
@@ -174,6 +196,11 @@ class WeatherAlertMonitor {
             }
             
             this.closeLocationModal();
+        });
+        
+        // Info modal controls
+        document.getElementById('infoClose').addEventListener('click', () => {
+            this.closeInfoModal();
         });
         
         document.getElementById('cancelBtn').addEventListener('click', () => {
@@ -283,28 +310,29 @@ class WeatherAlertMonitor {
     }
 
     setupTabNavigation() {
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
+        const liveTabBtn = document.getElementById('liveTabBtn');
+        const infoTabBtn = document.getElementById('infoTabBtn');
         
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetTab = button.getAttribute('data-tab');
-                console.log('Switching to tab:', targetTab);
-                
-                // Update active tab button
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Update active tab content
-                tabContents.forEach(content => content.classList.remove('active'));
-                document.getElementById(`${targetTab}Tab`).classList.add('active');
-                
-                // Initialize map for the active tab if needed
-                if (targetTab === 'live') {
-                    console.log('Initializing Live Map...');
-                    this.initializeLiveMap();
-                }
-            });
+        // Live tab button - ensure live tab is always active
+        liveTabBtn.addEventListener('click', () => {
+            console.log('Switching to Live Alerts tab');
+            
+            // Update active tab button
+            liveTabBtn.classList.add('active');
+            infoTabBtn.classList.remove('active');
+            
+            // Ensure live tab content is active
+            const liveTab = document.getElementById('liveTab');
+            liveTab.classList.add('active');
+            
+            // Initialize map for the live tab
+            this.initializeLiveMap();
+        });
+        
+        // Info tab button - open info modal
+        infoTabBtn.addEventListener('click', () => {
+            console.log('Opening Info Modal');
+            this.openInfoModal();
         });
     }
 
@@ -926,6 +954,14 @@ class WeatherAlertMonitor {
 
     closeLegendModal() {
         document.getElementById('legendModal').classList.remove('active');
+    }
+    
+    openInfoModal() {
+        document.getElementById('infoModal').classList.add('active');
+    }
+    
+    closeInfoModal() {
+        document.getElementById('infoModal').classList.remove('active');
     }
 
     async handleLocationSubmit(e) {
@@ -2907,6 +2943,8 @@ class WeatherAlertMonitor {
             location.alertDescription = alertDescription;
             location.weatherConditions = currentConditions;
             location.lastUpdated = new Date().toISOString();
+            // Mark this as an NWS alert (not manually advanced)
+            location.alertSource = 'nws';
             
             console.log(`Final alert status for ${location.nickname}: ${highestSeverity}`);
             console.log(`Alert description: ${alertDescription.substring(0, 100)}...`);
@@ -3124,7 +3162,9 @@ class WeatherAlertMonitor {
         const location = this.locations.find(loc => loc.id === locationId);
         if (!location) return;
 
-
+        // Set the alert and mark it as manually advanced (not from NWS)
+        location.currentAlert = alertType;
+        location.alertSource = 'manual';
         
         this.saveLocations();
         this.updateDisplay();
@@ -3181,9 +3221,11 @@ class WeatherAlertMonitor {
     }
 
     getFilteredLocations() {
+        // Filter by site type and alert level
         return this.locations.filter(location => {
             const siteTypeMatch = this.siteFilters[location.siteType];
-            return siteTypeMatch;
+            const alertLevelMatch = this.alertLevelFilters[location.currentAlert];
+            return siteTypeMatch && alertLevelMatch;
         });
     }
 
@@ -3286,13 +3328,16 @@ class WeatherAlertMonitor {
         });
         
         container.innerHTML = sortedLocations.map(location => `
-            <div class="alert-card ${this.alertSeverity[location.currentAlert].class}" data-location-id="${location.id}">
+            <div class="alert-card ${this.alertSeverity[location.currentAlert].class}${location.currentAlert === 'warning' && location.alertSource === 'nws' ? ' nws-warning' : ''}" data-location-id="${location.id}">
                 <div class="alert-card-header">
                     <div class="alert-card-icon">
                         <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
                     </div>
                     <div class="alert-card-title-section">
-                        <div class="alert-card-location-name">${location.nickname}</div>
+                        <div class="alert-card-location-row">
+                            <span class="alert-card-location-name">${location.nickname}</span>
+                            <span class="alert-card-site-type-icon" title="${this.getSiteTypeDescription(location.siteType)}"><i class="fas ${this.siteIcons[location.siteType] || 'fa-map-marker-alt'}"></i></span>
+                        </div>
                         <div class="alert-card-alert-type">${this.getAlertText(location.currentAlert)}</div>
                     </div>
                     <div class="alert-card-actions">
@@ -3400,28 +3445,33 @@ class WeatherAlertMonitor {
         this.markers.forEach(marker => this.map.removeLayer(marker));
         this.markers = [];
         
-        // Add new markers for filtered locations
-        const filteredLocations = this.getFilteredLocations();
-        
+        // Add new markers for ALL locations (not just filtered ones)
         if (!this.map) {
             console.error('Map not initialized!');
             return;
         }
         
-        filteredLocations.forEach(location => {
+        this.locations.forEach(location => {
             const alertInfo = this.alertSeverity[location.currentAlert];
             console.log(`Creating marker for ${location.nickname}: alert=${location.currentAlert}, color=${alertInfo?.color || 'unknown'}`);
+            
+            // Check if this location's alert level is filtered out
+            const isAlertLevelFiltered = !this.alertLevelFilters[location.currentAlert];
             
             // Create custom icon based on site type and alert severity
             const shouldPulse = location.currentAlert === 'warning' || 
                                location.currentAlert === 'future-warning' || 
                                location.currentAlert === 'watch' || 
                                location.currentAlert === 'future-watch';
-            const pulseClass = shouldPulse ? 'pulse-severe' : '';
+            const pulseClass = shouldPulse && !isAlertLevelFiltered ? 'pulse-severe' : '';
+            
+            // Determine marker color based on filter status
+            const markerColor = isAlertLevelFiltered ? '#d1d5db' : alertInfo.color; // Light grey if filtered
+            const textColor = isAlertLevelFiltered ? '#6b7280' : 'white'; // Dark grey text if filtered
             
             const iconHtml = `
                 <div class="custom-marker ${pulseClass}" style="
-                    background-color: ${alertInfo.color};
+                    background-color: ${markerColor};
                     border: 2px solid white;
                     border-radius: 50%;
                     width: 30px;
@@ -3429,12 +3479,13 @@ class WeatherAlertMonitor {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: white;
+                    color: ${textColor};
                     font-size: 14px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
                     transition: transform 0.2s ease;
                     transform-origin: center;
-                ">
+                    opacity: ${isAlertLevelFiltered ? '0.6' : '1'};
+                " title="${this.getSiteTypeDescription(location.siteType)}${isAlertLevelFiltered ? ' (Filtered out)' : ''}">
                     <i class="fas ${this.siteIcons[location.siteType]}"></i>
                 </div>
             `;
@@ -3481,9 +3532,10 @@ class WeatherAlertMonitor {
                     ${location.contactName ? `<p><i class="fas fa-user"></i> ${location.contactName}</p>` : ''}
                 ${location.contactTitle ? `<p><i class="fas fa-id-badge"></i> ${location.contactTitle}</p>` : ''}
                     ${location.contactPhone ? `<p><i class="fas fa-phone"></i> ${location.contactPhone}</p>` : ''}
-                    <div class="popup-alert ${alertInfo.class}">
+                    <div class="popup-alert ${alertInfo.class}${isAlertLevelFiltered ? ' filtered' : ''}">
                         <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
                         ${this.getAlertText(location.currentAlert)}
+                        ${isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
                     </div>
                     <div class="popup-alert-details">
                         ${this.getAlertDescription(location.currentAlert, location)}

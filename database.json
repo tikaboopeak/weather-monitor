@@ -3,6 +3,7 @@
     {
       "address": "1299 SW 49th Ave, Ocala FL 34474",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -13,7 +14,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5ac38e9c",
-      "lastUpdated": "2025-07-11T11:55:59.368248",
+      "lastUpdated": "2025-07-11T12:36:17.563933",
       "nickname": "Ocala",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -339,6 +340,7 @@
     {
       "address": "4411 N Long Rd, Columbus OH 47203",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -349,7 +351,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_16f22bfe",
-      "lastUpdated": "2025-07-11T11:55:59.368262",
+      "lastUpdated": "2025-07-11T12:36:17.563946",
       "nickname": "Columbus",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -675,6 +677,7 @@
     {
       "address": "3401 David Shor Road, Brownsville TX 78521",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -685,7 +688,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_67dca73d",
-      "lastUpdated": "2025-07-11T11:55:59.368270",
+      "lastUpdated": "2025-07-11T12:36:17.563952",
       "nickname": "Brownsville",
       "siteType": "plant",
       "weatherConditions": {
@@ -730,9 +733,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:49:41+00:00",
-          "updateTime": "2025-07-11T16:45:16+00:00",
-          "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:20:52+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 3.9624
@@ -740,8 +743,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-05:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T12:00:00-05:00",
               "endTime": "2025-07-11T18:00:00-05:00",
               "isDaytime": true,
               "temperature": 91,
@@ -1011,6 +1014,7 @@
     {
       "address": "1221 E Centre Park Blvd, DeSoto, TX 75115",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -1021,7 +1025,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_09080162",
-      "lastUpdated": "2025-07-11T11:55:59.368277",
+      "lastUpdated": "2025-07-11T12:36:17.563957",
       "nickname": "Desoto",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1347,6 +1351,7 @@
     {
       "address": "216 Hartmann Drive, Lebanon TN 37807",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -1357,7 +1362,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a201d156",
-      "lastUpdated": "2025-07-11T11:55:59.368285",
+      "lastUpdated": "2025-07-11T12:36:17.563962",
       "nickname": "Lebanon",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1683,6 +1688,7 @@
     {
       "address": "9 Stuart Road, Chelmsford MA 01824",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -1693,7 +1699,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3bbbf8cd",
-      "lastUpdated": "2025-07-11T11:55:59.368291",
+      "lastUpdated": "2025-07-11T12:36:17.563967",
       "nickname": "Chelmsford",
       "siteType": "parking",
       "weatherConditions": {
@@ -2019,6 +2025,7 @@
     {
       "address": "405 Ballast Dr, Hartsville, SC 29550",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -2029,7 +2036,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9a6470ab",
-      "lastUpdated": "2025-07-11T11:55:59.368297",
+      "lastUpdated": "2025-07-11T12:36:17.563972",
       "nickname": "Hartsville",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2365,13 +2372,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_50cb02b7",
-      "lastUpdated": "2025-07-11T11:55:59.368302",
+      "lastUpdated": "2025-07-11T12:36:17.563977",
       "nickname": "Rio Bravo",
       "siteType": "plant"
     },
     {
       "address": "820-A Radar Road, Greensboro NC 27410",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -2382,7 +2390,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6bba7836",
-      "lastUpdated": "2025-07-11T11:55:59.368304",
+      "lastUpdated": "2025-07-11T12:36:17.563979",
       "nickname": "Greensboro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2708,6 +2716,7 @@
     {
       "address": "41.1084043, -87.8453638",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -2718,7 +2727,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf0883a6",
-      "lastUpdated": "2025-07-11T11:55:59.368311",
+      "lastUpdated": "2025-07-11T12:36:17.563984",
       "nickname": "Manteno",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3044,6 +3053,7 @@
     {
       "address": "375 Spectrum Drive, Knightdale Wake County, NC 27545",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -3054,7 +3064,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f1b005c3",
-      "lastUpdated": "2025-07-11T11:55:59.368319",
+      "lastUpdated": "2025-07-11T12:36:17.563989",
       "nickname": "Raleigh",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3380,6 +3390,7 @@
     {
       "address": "7600 Empire Drive, KY 4102",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -3390,7 +3401,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5cec04f",
-      "lastUpdated": "2025-07-11T11:55:59.368327",
+      "lastUpdated": "2025-07-11T12:36:17.563994",
       "nickname": "Florence",
       "siteType": "plant",
       "weatherConditions": {
@@ -3716,6 +3727,7 @@
     {
       "address": "111 Edwards Drive, TN 38301",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -3726,7 +3738,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_fff230fd",
-      "lastUpdated": "2025-07-11T11:55:59.368334",
+      "lastUpdated": "2025-07-11T12:36:17.563999",
       "nickname": "Jackson",
       "siteType": "plant",
       "weatherConditions": {
@@ -3771,9 +3783,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T13:18:57+00:00",
-          "updateTime": "2025-07-11T11:45:59+00:00",
-          "validTimes": "2025-07-11T05:00:00+00:00/P7DT20H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:06:09+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 121.92
@@ -3781,8 +3793,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T08:00:00-05:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T12:00:00-05:00",
               "endTime": "2025-07-11T18:00:00-05:00",
               "isDaytime": true,
               "temperature": 91,
@@ -3794,8 +3806,8 @@
               },
               "windSpeed": "5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/day/sct/tsra_hi,30?size=medium",
-              "shortForecast": "Mostly Sunny then Chance Showers And Thunderstorms",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30?size=medium",
+              "shortForecast": "Chance Showers And Thunderstorms",
               "detailedForecast": "A chance of showers and thunderstorms between 1pm and 5pm. Mostly sunny. High near 91, with temperatures falling to around 87 in the afternoon. Heat index values as high as 103. Southwest wind around 5 mph. Chance of precipitation is 30%."
             },
             {
@@ -4052,6 +4064,7 @@
     {
       "address": "1 Duro Way, Walton, KY 41094",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -4062,7 +4075,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_df83f208",
-      "lastUpdated": "2025-07-11T11:55:59.368343",
+      "lastUpdated": "2025-07-11T12:36:17.564004",
       "nickname": "Walton",
       "siteType": "plant",
       "weatherConditions": {
@@ -4388,6 +4401,7 @@
     {
       "address": "6650 Echo Ave, Reno, NV 89506",
       "alertDescription": "* WHAT...High temperatures of 95-105 degrees expected with overnight\nlow temperatures in the upper 60s and lower 70s. Widespread Major\nHeatRisk with isolated areas of Extreme HeatRisk.\n\n* WHERE...In California, Surprise Valley California. In Nevada,\nNorthern Washoe County, Western Nevada Basin and Range including\nPyramid Lake, Greater Reno-Carson City-Minden Area, and Mineral\nand Southern Lyon Counties.\n\n* WHEN...From 11 AM Sunday to 11 AM PDT Wednesday.\n\n* IMPACTS...Heat related illnesses increase significantly during\nheat events, particularly for those working or participating in\noutdoor activities.",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -4398,7 +4412,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_c24c96ca",
-      "lastUpdated": "2025-07-11T11:55:59.368351",
+      "lastUpdated": "2025-07-11T12:36:17.564010",
       "nickname": "Reno",
       "siteType": "plant",
       "weatherConditions": {
@@ -4443,9 +4457,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T13:18:57+00:00",
-          "updateTime": "2025-07-11T09:15:47+00:00",
-          "validTimes": "2025-07-11T03:00:00+00:00/P7DT22H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:16:18+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 1513.9416
@@ -4454,7 +4468,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T06:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 94,
@@ -4464,11 +4478,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 1
               },
-              "windSpeed": "0 to 5 mph",
+              "windSpeed": "5 mph",
               "windDirection": "E",
               "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 94. East wind 0 to 5 mph."
+              "detailedForecast": "Sunny, with a high near 94. East wind around 5 mph."
             },
             {
               "number": 2,
@@ -4724,6 +4738,7 @@
     {
       "address": "6450 Five Points Pkwy, Abilene, TX 79606",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -4734,7 +4749,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ddb5cd89",
-      "lastUpdated": "2025-07-11T11:55:59.368359",
+      "lastUpdated": "2025-07-11T12:36:17.564015",
       "nickname": "Abilene",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -5070,13 +5085,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_7b3a1f9a",
-      "lastUpdated": "2025-07-11T11:55:59.368368",
+      "lastUpdated": "2025-07-11T12:36:17.564019",
       "nickname": "Cornwall",
       "siteType": "warehouse"
     },
     {
       "address": "135 South Main Street, Greenville, SC 29601",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -5087,7 +5103,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8735e50a",
-      "lastUpdated": "2025-07-11T11:55:59.368370",
+      "lastUpdated": "2025-07-11T12:36:17.564021",
       "nickname": "Greenville",
       "siteType": "office",
       "weatherConditions": {
@@ -5413,6 +5429,7 @@
     {
       "address": "4001 Gantz RD, Grove City, OH 43123",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -5423,7 +5440,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7922e3d2",
-      "lastUpdated": "2025-07-11T11:55:59.368378",
+      "lastUpdated": "2025-07-11T12:36:17.564027",
       "nickname": "Grove City - Specialty Laminations",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -5759,13 +5776,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_e2c9df4d",
-      "lastUpdated": "2025-07-11T11:55:59.368385",
+      "lastUpdated": "2025-07-11T12:36:17.564032",
       "nickname": "Guadalajara (Zapopan)",
       "siteType": "warehouse"
     },
     {
       "address": "111 East Carolina Avenue, Hartsville, SC 29550",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -5776,7 +5794,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_be38dfd0",
-      "lastUpdated": "2025-07-11T11:55:59.368388",
+      "lastUpdated": "2025-07-11T12:36:17.564035",
       "nickname": "Hartsville - Hilex",
       "siteType": "office",
       "weatherConditions": {
@@ -6102,6 +6120,7 @@
     {
       "address": "348 Polar Street, Hanover, PA 17331",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -6112,7 +6131,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3db98058",
-      "lastUpdated": "2025-07-11T11:55:59.368396",
+      "lastUpdated": "2025-07-11T12:36:17.564042",
       "nickname": "Hanover - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6157,9 +6176,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:33:43+00:00",
-          "updateTime": "2025-07-11T16:18:25+00:00",
-          "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T17:02:40+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 188.0616
@@ -6168,7 +6187,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-11T12:00:00-04:00",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 90,
@@ -6176,13 +6195,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 24
+                "value": 18
               },
               "windSpeed": "3 mph",
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/day/rain_showers,20?size=medium",
               "shortForecast": "Slight Chance Rain Showers",
-              "detailedForecast": "A slight chance of rain showers after 1pm. Mostly sunny, with a high near 90. Southeast wind around 3 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A slight chance of rain showers after 3pm. Mostly sunny, with a high near 90. Southeast wind around 3 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 2,
@@ -6195,13 +6214,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 21
+                "value": 22
               },
               "windSpeed": "0 to 3 mph",
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/night/rain_showers,20/fog?size=medium",
               "shortForecast": "Slight Chance Rain Showers then Areas Of Fog",
-              "detailedForecast": "A slight chance of rain showers before 9pm, then areas of fog. Partly cloudy, with a low around 71. Southeast wind 0 to 3 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A slight chance of rain showers before 10pm, then areas of fog. Partly cloudy, with a low around 71. Southeast wind 0 to 3 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -6438,6 +6457,7 @@
     {
       "address": "8225 Industrial Park Drive, Mt. Vernon, OH 43050",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -6448,7 +6468,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ff1d475a",
-      "lastUpdated": "2025-07-11T11:55:59.368406",
+      "lastUpdated": "2025-07-11T12:36:17.564048",
       "nickname": "Mt. Vernon - Burrows",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6774,6 +6794,7 @@
     {
       "address": "3436 Toringdon Way, Charlotte, NC 28277",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -6784,7 +6805,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_069a2dcc",
-      "lastUpdated": "2025-07-11T11:55:59.368412",
+      "lastUpdated": "2025-07-11T12:36:17.564053",
       "nickname": "Charlotte - Novolex",
       "siteType": "office",
       "weatherConditions": {
@@ -7110,6 +7131,7 @@
     {
       "address": "4555 Langland Road, Farmers Branch, TX 75240",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -7120,7 +7142,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_bf638000",
-      "lastUpdated": "2025-07-11T11:55:59.368423",
+      "lastUpdated": "2025-07-11T12:36:17.564059",
       "nickname": "Farmers Branch",
       "siteType": "plant",
       "weatherConditions": {
@@ -7456,13 +7478,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_36a59344",
-      "lastUpdated": "2025-07-11T11:55:59.368431",
+      "lastUpdated": "2025-07-11T12:36:17.564064",
       "nickname": "Brampton",
       "siteType": "warehouse"
     },
     {
       "address": "2800 Sprouse Road, Richmond, VA 23231",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -7473,7 +7496,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_189bf5aa",
-      "lastUpdated": "2025-07-11T11:55:59.368434",
+      "lastUpdated": "2025-07-11T12:36:17.564067",
       "nickname": "Richmond - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -7799,6 +7822,7 @@
     {
       "address": "17625 East Railroad Street, City of Industry, CA 91748",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -7809,7 +7833,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6ea0bcde",
-      "lastUpdated": "2025-07-11T11:55:59.368443",
+      "lastUpdated": "2025-07-11T12:36:17.564073",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -8135,6 +8159,7 @@
     {
       "address": "4251 South Pulaski Road, Chicago, IL 60632",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -8145,7 +8170,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_35d4f7a0",
-      "lastUpdated": "2025-07-11T11:55:59.368451",
+      "lastUpdated": "2025-07-11T12:36:17.564078",
       "nickname": "Chicago - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8471,6 +8496,7 @@
     {
       "address": "877 South Azusa Avenue, City of Industry, CA 91748",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -8481,7 +8507,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e57be14b",
-      "lastUpdated": "2025-07-11T11:55:59.368459",
+      "lastUpdated": "2025-07-11T12:36:17.564084",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8817,13 +8843,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_868bac9a",
-      "lastUpdated": "2025-07-11T11:55:59.368466",
+      "lastUpdated": "2025-07-11T12:36:17.564089",
       "nickname": "Toronto - Bagcraft",
       "siteType": "plant"
     },
     {
       "address": "3535 Perlman Drive, Stockton, CA 95206",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -8834,7 +8861,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ad6631a3",
-      "lastUpdated": "2025-07-11T11:55:59.368469",
+      "lastUpdated": "2025-07-11T12:36:17.564092",
       "nickname": "Stockton - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -9160,6 +9187,7 @@
     {
       "address": "250 Industrial Drive, North Vernon, IN 47265",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -9170,7 +9198,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b5298ec1",
-      "lastUpdated": "2025-07-11T11:55:59.368479",
+      "lastUpdated": "2025-07-11T12:36:17.564097",
       "nickname": "North Vernon - Hilex",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9215,9 +9243,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:49:41+00:00",
-          "updateTime": "2025-07-11T16:45:44+00:00",
-          "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:16:28+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 213.0552
@@ -9226,7 +9254,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-11T12:00:00-04:00",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -9234,13 +9262,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 7
+                "value": 10
               },
               "windSpeed": "6 mph",
               "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/hot?size=medium",
-              "shortForecast": "Mostly Sunny",
-              "detailedForecast": "Mostly sunny, with a high near 91. South southwest wind around 6 mph."
+              "shortForecast": "Sunny",
+              "detailedForecast": "Sunny, with a high near 91. South southwest wind around 6 mph."
             },
             {
               "number": 2,
@@ -9253,7 +9281,7 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 7
+                "value": 10
               },
               "windSpeed": "5 mph",
               "windDirection": "S",
@@ -9272,13 +9300,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 58
+                "value": 60
               },
-              "windSpeed": "2 to 6 mph",
-              "windDirection": "SSW",
+              "windSpeed": "5 to 9 mph",
+              "windDirection": "SW",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30/tsra_hi,60?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of rain showers between 8am and 11am, then a chance of showers and thunderstorms between 11am and 2pm, then showers and thunderstorms likely between 2pm and 5pm, then showers and thunderstorms likely. Mostly sunny, with a high near 90. South southwest wind 2 to 6 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible."
+              "shortForecast": "Scattered Showers And Thunderstorms",
+              "detailedForecast": "Scattered showers and thunderstorms between 8am and 2pm, then a chance of showers and thunderstorms between 2pm and 5pm, then a chance of showers and thunderstorms. Mostly sunny, with a high near 90. Southwest wind 5 to 9 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 4,
@@ -9291,13 +9319,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 58
+                "value": 60
               },
-              "windSpeed": "5 mph",
+              "windSpeed": "2 to 8 mph",
               "windDirection": "SW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,60/tsra_hi,40?size=medium",
-              "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely before 5am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 72. Southwest wind around 5 mph. Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "shortForecast": "Chance Showers And Thunderstorms",
+              "detailedForecast": "A chance of showers and thunderstorms before 5am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 72. Southwest wind 2 to 8 mph. Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 5,
@@ -9506,13 +9534,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5f9bb60",
-      "lastUpdated": "2025-07-11T11:55:59.368487",
+      "lastUpdated": "2025-07-11T12:36:17.564103",
       "nickname": "Orangeville - Shields",
       "siteType": "plant"
     },
     {
       "address": "216 Hartmann Drive, Lenanon, TN 37807",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -9523,7 +9552,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18375374",
-      "lastUpdated": "2025-07-11T11:55:59.368492",
+      "lastUpdated": "2025-07-11T12:36:17.564106",
       "nickname": "Lebanon - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9568,9 +9597,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 670.8648
@@ -9578,8 +9607,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 87,
@@ -9587,13 +9616,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 46
+                "value": 51
               },
-              "windSpeed": "0 to 5 mph",
-              "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30/tsra_hi,50?size=medium",
+              "windSpeed": "0 mph",
+              "windDirection": "",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms before 2pm, then a chance of showers and thunderstorms. Mostly sunny. High near 87, with temperatures falling to around 84 in the afternoon. West wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny, with a high near 87. West wind around 0 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 2,
@@ -9606,13 +9635,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 31
+                "value": 36
               },
               "windSpeed": "0 mph",
               "windDirection": "",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/fog?size=medium",
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,40/fog?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Patchy Fog",
-              "detailedForecast": "A chance of showers and thunderstorms before 10pm, then patchy fog. Mostly clear, with a low around 65. Southeast wind around 0 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms before 10pm, then patchy fog. Mostly clear, with a low around 65. East wind around 0 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -9849,6 +9878,7 @@
     {
       "address": "461 Boot Road, Downingtown, PA 19335",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -9859,7 +9889,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_da401efe",
-      "lastUpdated": "2025-07-11T11:55:59.368501",
+      "lastUpdated": "2025-07-11T12:36:17.564112",
       "nickname": "Downingtown - Pactiv",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10185,6 +10215,7 @@
     {
       "address": "1009 Rock Avenue, Yakima, WA 98902",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -10195,7 +10226,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_19eda8e9",
-      "lastUpdated": "2025-07-11T11:55:59.368510",
+      "lastUpdated": "2025-07-11T12:36:17.564119",
       "nickname": "Yakima - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -10240,9 +10271,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T13:18:57+00:00",
-          "updateTime": "2025-07-11T11:20:36+00:00",
-          "validTimes": "2025-07-11T05:00:00+00:00/P7DT20H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:15:38+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 317.9064
@@ -10251,7 +10282,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T06:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 94,
@@ -10521,6 +10552,7 @@
     {
       "address": "50 Independence Drive, Devens, MA 01434",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -10531,7 +10563,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f7eeebf7",
-      "lastUpdated": "2025-07-11T11:55:59.368517",
+      "lastUpdated": "2025-07-11T12:36:17.564124",
       "nickname": "Devens - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10857,6 +10889,7 @@
     {
       "address": "535 Down Ave, Elizabeth, NJ 07201",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -10867,7 +10900,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_0c459c6f",
-      "lastUpdated": "2025-07-11T11:55:59.368527",
+      "lastUpdated": "2025-07-11T12:36:17.564131",
       "nickname": "Elizabeth - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11192,7 +11225,8 @@
     },
     {
       "address": "9010 West Little York Road, Houston, TX 77040",
-      "alertDescription": "",
+      "alertDescription": "At 1226 PM CDT, Doppler radar was tracking a strong thunderstorm over\nNew Territory, or near Sugar Land, moving north at 30 mph.\n\nHAZARD...Wind gusts up to 40 mph.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects.\n\nLocations impacted include...\nWestern Pearland, Sugar Land, Missouri City, eastern Rosenberg,\nStafford, Bellaire, West University Place, Katy, Richmond, Hunters\nCreek Village, Bunker Hill Village, Piney Point Village, Midtown\nHouston, Downtown Houston, Greenway / Upper Kirby Area, Spring Branch\nNorth, Greater Heights, Fresno, Mission Bend, and Neartown /\nMontrose.",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -11201,9 +11235,9 @@
         29.8673505,
         -95.558216
       ],
-      "currentAlert": "none",
+      "currentAlert": "advisory",
       "id": "loc_4761449f",
-      "lastUpdated": "2025-07-11T11:55:59.368536",
+      "lastUpdated": "2025-07-11T12:36:17.564138",
       "nickname": "Houston - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11528,7 +11562,8 @@
     },
     {
       "address": "14345 Northwest Freeway, Houston, TX 77040",
-      "alertDescription": "",
+      "alertDescription": "At 1226 PM CDT, Doppler radar was tracking a strong thunderstorm over\nNew Territory, or near Sugar Land, moving north at 30 mph.\n\nHAZARD...Wind gusts up to 40 mph.\n\nSOURCE...Radar indicated.\n\nIMPACT...Gusty winds could knock down tree limbs and blow around\nunsecured objects.\n\nLocations impacted include...\nWestern Pearland, Sugar Land, Missouri City, eastern Rosenberg,\nStafford, Bellaire, West University Place, Katy, Richmond, Hunters\nCreek Village, Bunker Hill Village, Piney Point Village, Midtown\nHouston, Downtown Houston, Greenway / Upper Kirby Area, Spring Branch\nNorth, Greater Heights, Fresno, Mission Bend, and Neartown /\nMontrose.",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -11537,9 +11572,9 @@
         29.862422,
         -95.5317264
       ],
-      "currentAlert": "none",
+      "currentAlert": "advisory",
       "id": "loc_e46c54ff",
-      "lastUpdated": "2025-07-11T11:55:59.368545",
+      "lastUpdated": "2025-07-11T12:36:17.564145",
       "nickname": "Houston - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -11875,13 +11910,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_86d75473",
-      "lastUpdated": "2025-07-11T11:55:59.368553",
+      "lastUpdated": "2025-07-11T12:36:17.564151",
       "nickname": "Brampton - Waddington ",
       "siteType": "plant"
     },
     {
       "address": "4755 Walnut Street, Boulder, CO 80301",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -11892,7 +11928,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e361a43",
-      "lastUpdated": "2025-07-11T11:55:59.368557",
+      "lastUpdated": "2025-07-11T12:36:17.564154",
       "nickname": "Boulder - Eco-Products",
       "siteType": "office",
       "weatherConditions": {
@@ -12218,6 +12254,7 @@
     {
       "address": "606 Old Curtain Road, Milesburg, PA 16823",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -12228,7 +12265,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9debd5c8",
-      "lastUpdated": "2025-07-11T11:55:59.368569",
+      "lastUpdated": "2025-07-11T12:36:17.564161",
       "nickname": "Milesburg - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -12273,9 +12310,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:33:43+00:00",
-          "updateTime": "2025-07-11T16:18:25+00:00",
-          "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T17:02:40+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 282.8544
@@ -12284,7 +12321,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-11T12:00:00-04:00",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 90,
@@ -12292,13 +12329,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 57
+                "value": 47
               },
               "windSpeed": "3 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_sct,60?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_sct,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of rain showers between 2pm and 3pm, then a chance of showers and thunderstorms between 3pm and 5pm, then showers and thunderstorms likely. Partly sunny, with a high near 90. Southwest wind around 3 mph. Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "detailedForecast": "A slight chance of rain showers between 2pm and 3pm, then a chance of showers and thunderstorms between 3pm and 4pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 90. Southwest wind around 3 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 2,
@@ -12311,13 +12348,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 51
+                "value": 44
               },
               "windSpeed": "2 mph",
               "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,50/sct?size=medium",
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,40/sct?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 9pm, then a chance of showers and thunderstorms between 9pm and 11pm. Partly cloudy, with a low around 68. West wind around 2 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm, then a chance of showers and thunderstorms between 7pm and 10pm. Partly cloudy, with a low around 68. West wind around 2 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 3,
@@ -12554,6 +12591,7 @@
     {
       "address": "535 Progress Street, Elizabeth, NJ 07201",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -12564,7 +12602,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ca09ebdb",
-      "lastUpdated": "2025-07-11T11:55:59.368577",
+      "lastUpdated": "2025-07-11T12:36:17.564168",
       "nickname": "Elizabeth - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -12890,6 +12928,7 @@
     {
       "address": "515 Turnbull Canyon Road, City of Industry, CA 91745",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -12900,7 +12939,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a8d2c66e",
-      "lastUpdated": "2025-07-11T11:55:59.368586",
+      "lastUpdated": "2025-07-11T12:36:17.564174",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -13226,6 +13265,7 @@
     {
       "address": "8660 Jacquemin Drive, West Chester, OH 45069",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -13236,7 +13276,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_857852dc",
-      "lastUpdated": "2025-07-11T11:55:59.368594",
+      "lastUpdated": "2025-07-11T12:36:17.564180",
       "nickname": "West Chester - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -13562,6 +13602,7 @@
     {
       "address": "501 Gateway PArkway, Roanoke, TX 76262",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -13572,7 +13613,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_46d48e1a",
-      "lastUpdated": "2025-07-11T11:55:59.368603",
+      "lastUpdated": "2025-07-11T12:36:17.564186",
       "nickname": "Roanoke - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -13898,6 +13939,7 @@
     {
       "address": "45.669322670584336, -122.69403465767003",
       "alertDescription": "* WHAT...Dangerously hot conditions with temperatures between 95 and\n105 degrees possible. Low temperatures between 65 to 70 degrees\nare possible Tuesday night, which would limit overnight relief.\n\n* WHERE...Greater Portland/Vancouver Metro, Western and Central\nColumbia River Gorge, the Corbett area and the Hood River Valley,\nLower Columbia River and Cowlitz River Valleys, and Central\nWillamette Valley.\n\n* WHEN...From Tuesday afternoon through Wednesday evening.\n\n* IMPACTS...Heat related illnesses increase significantly during\nextreme heat events.\n\n* ADDITIONAL DETAILS...There is a 40-80% chance that Tuesday night\nlow temperatures remain above 65 degrees and a 20-40% they don't\ndrop below 70. There is a 10-30% chance for highs to reach 105\nTuesday and Wednesday across the Willamette Valley, highest on\nWednesday.",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -13908,7 +13950,7 @@
       ],
       "currentAlert": "watch",
       "id": "loc_d1f95665",
-      "lastUpdated": "2025-07-11T11:55:59.368610",
+      "lastUpdated": "2025-07-11T12:36:17.564192",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -13953,8 +13995,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:49:41+00:00",
-          "updateTime": "2025-07-11T16:41:40+00:00",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T16:45:41+00:00",
           "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -13964,7 +14006,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T09:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 87,
@@ -13974,11 +14016,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 0
               },
-              "windSpeed": "5 to 12 mph",
+              "windSpeed": "6 to 12 mph",
               "windDirection": "NNW",
-              "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 87. North northwest wind 5 to 12 mph, with gusts as high as 22 mph."
+              "detailedForecast": "Sunny, with a high near 87. North northwest wind 6 to 12 mph, with gusts as high as 22 mph."
             },
             {
               "number": 2,
@@ -14234,6 +14276,7 @@
     {
       "address": "45.66930767599607, -122.69398101349499",
       "alertDescription": "* WHAT...Dangerously hot conditions with temperatures between 95 and\n105 degrees possible. Low temperatures between 65 to 70 degrees\nare possible Tuesday night, which would limit overnight relief.\n\n* WHERE...Greater Portland/Vancouver Metro, Western and Central\nColumbia River Gorge, the Corbett area and the Hood River Valley,\nLower Columbia River and Cowlitz River Valleys, and Central\nWillamette Valley.\n\n* WHEN...From Tuesday afternoon through Wednesday evening.\n\n* IMPACTS...Heat related illnesses increase significantly during\nextreme heat events.\n\n* ADDITIONAL DETAILS...There is a 40-80% chance that Tuesday night\nlow temperatures remain above 65 degrees and a 20-40% they don't\ndrop below 70. There is a 10-30% chance for highs to reach 105\nTuesday and Wednesday across the Willamette Valley, highest on\nWednesday.",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -14244,7 +14287,7 @@
       ],
       "currentAlert": "watch",
       "id": "loc_881b361f",
-      "lastUpdated": "2025-07-11T11:55:59.368618",
+      "lastUpdated": "2025-07-11T12:36:17.564200",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14289,8 +14332,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:49:41+00:00",
-          "updateTime": "2025-07-11T16:41:40+00:00",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T16:45:41+00:00",
           "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -14300,7 +14343,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T09:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 87,
@@ -14310,11 +14353,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 0
               },
-              "windSpeed": "5 to 12 mph",
+              "windSpeed": "6 to 12 mph",
               "windDirection": "NNW",
-              "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 87. North northwest wind 5 to 12 mph, with gusts as high as 22 mph."
+              "detailedForecast": "Sunny, with a high near 87. North northwest wind 6 to 12 mph, with gusts as high as 22 mph."
             },
             {
               "number": 2,
@@ -14580,13 +14623,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_003f3860",
-      "lastUpdated": "2025-07-11T11:55:59.368626",
+      "lastUpdated": "2025-07-11T12:36:17.564206",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "plant"
     },
     {
       "address": "South Hamlin Avenue, Elsdon, West Elsdon, Chicago, Lake Township, Cook County, Illinois, 60629, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -14597,7 +14641,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8de8a0ab",
-      "lastUpdated": "2025-07-11T11:55:59.368631",
+      "lastUpdated": "2025-07-11T12:36:17.564210",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -14923,6 +14967,7 @@
     {
       "address": "41.67077706195092, -87.75772848650503",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -14933,7 +14978,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ee941cbc",
-      "lastUpdated": "2025-07-11T11:55:59.368639",
+      "lastUpdated": "2025-07-11T12:36:17.564216",
       "nickname": "Alsip - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -15259,6 +15304,7 @@
     {
       "address": "1440 LeMay Drive, Carrolton, TX 75007",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -15269,7 +15315,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_0bc3b5a8",
-      "lastUpdated": "2025-07-11T11:55:59.368647",
+      "lastUpdated": "2025-07-11T12:36:17.564223",
       "nickname": "Carrolton - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -15605,7 +15651,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_83527cc5",
-      "lastUpdated": "2025-07-11T11:55:59.368654",
+      "lastUpdated": "2025-07-11T12:36:17.564229",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse"
     },
@@ -15622,13 +15668,14 @@
       ],
       "currentAlert": "none",
       "id": "loc_5b8d284b",
-      "lastUpdated": "2025-07-11T11:55:59.368658",
+      "lastUpdated": "2025-07-11T12:36:17.564233",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant"
     },
     {
       "address": "630 Erlanger Road, Erlanger, KY 41018",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -15639,7 +15686,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_eef655b5",
-      "lastUpdated": "2025-07-11T11:55:59.368662",
+      "lastUpdated": "2025-07-11T12:36:17.564237",
       "nickname": "Erlanger - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -15965,6 +16012,7 @@
     {
       "address": "6 Stuart Road, Chelmsford, MA 01824",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -15975,7 +16023,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d60aacca",
-      "lastUpdated": "2025-07-11T11:55:59.368670",
+      "lastUpdated": "2025-07-11T12:36:17.564244",
       "nickname": "Chelmsford - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16301,6 +16349,7 @@
     {
       "address": "35.05158668357328, -85.19959631534313",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -16311,7 +16360,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39279966",
-      "lastUpdated": "2025-07-11T11:55:59.368678",
+      "lastUpdated": "2025-07-11T12:36:17.564251",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16356,9 +16405,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 206.9592
@@ -16366,8 +16415,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -16375,13 +16424,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 39
+                "value": 44
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,40?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,40?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. Southwest wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Partly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. Southwest wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 2,
@@ -16389,18 +16438,18 @@
               "startTime": "2025-07-11T18:00:00-04:00",
               "endTime": "2025-07-12T06:00:00-04:00",
               "isDaytime": false,
-              "temperature": 71,
+              "temperature": 72,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 27
+                "value": 22
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "S",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/sct?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 71. South wind 0 to 5 mph. Chance of precipitation is 30%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/sct?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 7pm. Partly cloudy, with a low around 72. South wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 3,
@@ -16637,6 +16686,7 @@
     {
       "address": "2155 West Longhorn Drive, Lancaster, TX 75134",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -16647,7 +16697,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_217b97f5",
-      "lastUpdated": "2025-07-11T11:55:59.368687",
+      "lastUpdated": "2025-07-11T12:36:17.564257",
       "nickname": "Lancaster - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -16973,6 +17023,7 @@
     {
       "address": "1125 Samuelson Street, City of Industry, CA 91748",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -16983,7 +17034,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18df5a03",
-      "lastUpdated": "2025-07-11T11:55:59.368697",
+      "lastUpdated": "2025-07-11T12:36:17.564264",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17309,6 +17360,7 @@
     {
       "address": "12116, Corporate Drive, Dallas, Dallas County, Texas, 75228, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -17319,7 +17371,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f3ea1d7c",
-      "lastUpdated": "2025-07-11T11:55:59.368706",
+      "lastUpdated": "2025-07-11T12:36:17.564270",
       "nickname": "Dallas - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -17645,6 +17697,7 @@
     {
       "address": "5930 Quintus Loop, Chattanooga, TN 37421",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -17655,7 +17708,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50a29d53",
-      "lastUpdated": "2025-07-11T11:55:59.368715",
+      "lastUpdated": "2025-07-11T12:36:17.564277",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17700,9 +17753,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 192.9384
@@ -17710,8 +17763,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -17719,13 +17772,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 41
+                "value": 46
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,40?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 87 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 2,
@@ -17733,18 +17786,18 @@
               "startTime": "2025-07-11T18:00:00-04:00",
               "endTime": "2025-07-12T06:00:00-04:00",
               "isDaytime": false,
-              "temperature": 71,
+              "temperature": 72,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 28
+                "value": 20
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/few?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Mostly Clear",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Mostly clear, with a low around 71. Southwest wind 0 to 5 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/sct?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 72. Southwest wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -17981,6 +18034,7 @@
     {
       "address": "5910 Quintus Loop, Chattanooga, TN 37421",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -17991,7 +18045,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b22ce5de",
-      "lastUpdated": "2025-07-11T11:55:59.368724",
+      "lastUpdated": "2025-07-11T12:36:17.564284",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18036,9 +18090,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 192.9384
@@ -18046,8 +18100,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -18055,13 +18109,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 41
+                "value": 46
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,40?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 87 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 2,
@@ -18069,18 +18123,18 @@
               "startTime": "2025-07-11T18:00:00-04:00",
               "endTime": "2025-07-12T06:00:00-04:00",
               "isDaytime": false,
-              "temperature": 71,
+              "temperature": 72,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 28
+                "value": 20
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/few?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Mostly Clear",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Mostly clear, with a low around 71. Southwest wind 0 to 5 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/sct?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 72. Southwest wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -18317,6 +18371,7 @@
     {
       "address": "5912 Quintus Loop, Chattanooga, TN 37421",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -18327,7 +18382,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e52916bd",
-      "lastUpdated": "2025-07-11T11:55:59.368733",
+      "lastUpdated": "2025-07-11T12:36:17.564291",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -18372,9 +18427,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:58+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 192.9384
@@ -18382,8 +18437,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -18391,13 +18446,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 41
+                "value": 46
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,40?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 87 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. West wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 2,
@@ -18405,18 +18460,18 @@
               "startTime": "2025-07-11T18:00:00-04:00",
               "endTime": "2025-07-12T06:00:00-04:00",
               "isDaytime": false,
-              "temperature": 71,
+              "temperature": 72,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 28
+                "value": 20
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/few?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Mostly Clear",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Mostly clear, with a low around 71. Southwest wind 0 to 5 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/sct?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 72. Southwest wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -18653,6 +18708,7 @@
     {
       "address": "3915, Volunteer Drive, Jersey, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37416, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -18663,7 +18719,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_364d2cd9",
-      "lastUpdated": "2025-07-11T11:55:59.368741",
+      "lastUpdated": "2025-07-11T12:36:17.564299",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -18708,9 +18764,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T15:22:23+00:00",
-          "updateTime": "2025-07-11T15:19:13+00:00",
-          "validTimes": "2025-07-11T09:00:00+00:00/P7DT16H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:16:47+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 213.0552
@@ -18718,8 +18774,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T11:00:00-04:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 91,
@@ -18727,11 +18783,11 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 39
+                "value": 44
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SW",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20/tsra_hi,40?size=medium",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,40?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
               "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny. High near 91, with temperatures falling to around 88 in the afternoon. Heat index values as high as 99. Southwest wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
@@ -18741,18 +18797,18 @@
               "startTime": "2025-07-11T18:00:00-04:00",
               "endTime": "2025-07-12T06:00:00-04:00",
               "isDaytime": false,
-              "temperature": 71,
+              "temperature": 72,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 28
+                "value": 23
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "S",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/sct?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 71. South wind 0 to 5 mph. Chance of precipitation is 30%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/few?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms then Mostly Clear",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Mostly clear, with a low around 72. South wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 3,
@@ -18989,6 +19045,7 @@
     {
       "address": "2600, Powell Road, Baxter Springs, Cherokee County, Kansas, 66713, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -18999,7 +19056,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_96ffead8",
-      "lastUpdated": "2025-07-11T11:55:59.368752",
+      "lastUpdated": "2025-07-11T12:36:17.564306",
       "nickname": "Baxter Springs - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19325,6 +19382,7 @@
     {
       "address": "500, Ellis Road North, Jacksonville, Duval County, Florida, 32254, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -19335,7 +19393,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_04c529ea",
-      "lastUpdated": "2025-07-11T11:55:59.368762",
+      "lastUpdated": "2025-07-11T12:36:17.564314",
       "nickname": "Jacksonville - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -19661,6 +19719,7 @@
     {
       "address": "104, South 84th Avenue, Tolleson, Maricopa County, Arizona, 85353, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -19671,7 +19730,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39dc480c",
-      "lastUpdated": "2025-07-11T11:55:59.368771",
+      "lastUpdated": "2025-07-11T12:36:17.564321",
       "nickname": "Tolleson - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -19716,9 +19775,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T13:18:57+00:00",
-          "updateTime": "2025-07-11T11:24:36+00:00",
-          "validTimes": "2025-07-11T05:00:00+00:00/P7DT23H",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T16:53:01+00:00",
+          "validTimes": "2025-07-11T10:00:00+00:00/P7DT18H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 312.1152
@@ -19727,7 +19786,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T06:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 110,
@@ -19738,10 +19797,10 @@
                 "value": 0
               },
               "windSpeed": "5 to 15 mph",
-              "windDirection": "SW",
+              "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/hot?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 110. Southwest wind 5 to 15 mph, with gusts as high as 20 mph."
+              "detailedForecast": "Sunny, with a high near 110. South southwest wind 5 to 15 mph, with gusts as high as 20 mph."
             },
             {
               "number": 2,
@@ -19997,6 +20056,7 @@
     {
       "address": "105, South 84th Avenue, Tolleson, Maricopa County, Arizona, 85353, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -20007,7 +20067,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d30603c5",
-      "lastUpdated": "2025-07-11T11:55:59.368783",
+      "lastUpdated": "2025-07-11T12:36:17.564328",
       "nickname": "Tolleson - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20052,9 +20112,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T13:18:57+00:00",
-          "updateTime": "2025-07-11T11:24:36+00:00",
-          "validTimes": "2025-07-11T05:00:00+00:00/P7DT23H",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T16:53:01+00:00",
+          "validTimes": "2025-07-11T10:00:00+00:00/P7DT18H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 312.1152
@@ -20063,7 +20123,7 @@
             {
               "number": 1,
               "name": "Today",
-              "startTime": "2025-07-11T06:00:00-07:00",
+              "startTime": "2025-07-11T10:00:00-07:00",
               "endTime": "2025-07-11T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 110,
@@ -20074,10 +20134,10 @@
                 "value": 0
               },
               "windSpeed": "5 to 15 mph",
-              "windDirection": "SW",
+              "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/hot?size=medium",
               "shortForecast": "Sunny",
-              "detailedForecast": "Sunny, with a high near 110. Southwest wind 5 to 15 mph, with gusts as high as 20 mph."
+              "detailedForecast": "Sunny, with a high near 110. South southwest wind 5 to 15 mph, with gusts as high as 20 mph."
             },
             {
               "number": 2,
@@ -20333,6 +20393,7 @@
     {
       "address": "9500, West 55th Street, McCook, Lyons Township, Cook County, Illinois, 60525, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -20343,7 +20404,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d21b6f10",
-      "lastUpdated": "2025-07-11T11:55:59.368792",
+      "lastUpdated": "2025-07-11T12:36:17.564335",
       "nickname": "McCook - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -20669,6 +20730,7 @@
     {
       "address": "6000 W 73rd St, Bedford Park, IL 60638",
       "alertDescription": "",
+      "alertSource": "nws",
       "city": "Bedford Park",
       "contactEmail": "",
       "contactName": "",
@@ -20680,7 +20742,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e1e3d46",
-      "lastUpdated": "2025-07-11T11:55:59.368801",
+      "lastUpdated": "2025-07-11T12:36:17.564342",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "warehouse",
       "state": "IL",
@@ -21009,6 +21071,7 @@
     {
       "address": "7200, South Mason Avenue, Bedford Park, Stickney Township, Cook County, Illinois, 60638, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -21019,7 +21082,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f20e21aa",
-      "lastUpdated": "2025-07-11T11:55:59.368810",
+      "lastUpdated": "2025-07-11T12:36:17.564349",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "plant",
       "weatherConditions": {
@@ -21345,6 +21408,7 @@
     {
       "address": "50 East River Center Boulevard, Covington, GA 41011",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -21355,7 +21419,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_356c4f89",
-      "lastUpdated": "2025-07-11T11:55:59.368819",
+      "lastUpdated": "2025-07-11T12:36:17.564356",
       "nickname": "Covington - Waddington",
       "siteType": "office",
       "weatherConditions": {
@@ -21681,6 +21745,7 @@
     {
       "address": "1075 South Airport Road, Shawano, WI 54166",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -21691,7 +21756,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_622f91b3",
-      "lastUpdated": "2025-07-11T11:55:59.368831",
+      "lastUpdated": "2025-07-11T12:36:17.564364",
       "nickname": "Shawano - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -21736,9 +21801,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T14:04:51+00:00",
-          "updateTime": "2025-07-11T13:57:22+00:00",
-          "validTimes": "2025-07-11T07:00:00+00:00/P8D",
+          "generatedAt": "2025-07-11T17:06:27+00:00",
+          "updateTime": "2025-07-11T16:52:15+00:00",
+          "validTimes": "2025-07-11T10:00:00+00:00/P7DT21H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 242.9256
@@ -21746,8 +21811,8 @@
           "periods": [
             {
               "number": 1,
-              "name": "Today",
-              "startTime": "2025-07-11T09:00:00-05:00",
+              "name": "This Afternoon",
+              "startTime": "2025-07-11T12:00:00-05:00",
               "endTime": "2025-07-11T18:00:00-05:00",
               "isDaytime": true,
               "temperature": 80,
@@ -21757,11 +21822,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 27
               },
-              "windSpeed": "2 to 7 mph",
+              "windSpeed": "6 mph",
               "windDirection": "ESE",
-              "icon": "https://api.weather.gov/icons/land/day/bkn/rain_showers,30?size=medium",
-              "shortForecast": "Mostly Cloudy then Chance Rain Showers",
-              "detailedForecast": "A chance of rain showers after 1pm. Mostly cloudy. High near 80, with temperatures falling to around 77 in the afternoon. Heat index values as high as 78. East southeast wind 2 to 7 mph. Chance of precipitation is 30%."
+              "icon": "https://api.weather.gov/icons/land/day/rain_showers,30?size=medium",
+              "shortForecast": "Chance Rain Showers",
+              "detailedForecast": "A chance of rain showers after 1pm. Partly sunny, with a high near 80. Heat index values as high as 82. East southeast wind around 6 mph. Chance of precipitation is 30%."
             },
             {
               "number": 2,
@@ -21776,11 +21841,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 64
               },
-              "windSpeed": "2 to 6 mph",
-              "windDirection": "E",
+              "windSpeed": "3 mph",
+              "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/night/tsra,50/tsra,60?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "A chance of rain showers before 7pm, then showers and thunderstorms likely. Cloudy, with a low around 66. East wind 2 to 6 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of rain showers before 7pm, then showers and thunderstorms likely. Cloudy, with a low around 66. South wind around 3 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
               "number": 3,
@@ -21795,11 +21860,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 70
               },
-              "windSpeed": "2 to 10 mph",
-              "windDirection": "W",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,70?size=medium",
+              "windSpeed": "3 to 13 mph",
+              "windDirection": "WSW",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_sct,70?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely before 1pm, then a chance of showers and thunderstorms. Partly sunny. High near 82, with temperatures falling to around 78 in the afternoon. Heat index values as high as 79. West wind 2 to 10 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible."
+              "detailedForecast": "Showers and thunderstorms likely before 1pm, then a chance of showers and thunderstorms. Partly sunny. High near 82, with temperatures falling to around 78 in the afternoon. Heat index values as high as 79. West southwest wind 3 to 13 mph, with gusts as high as 21 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 4,
@@ -21814,11 +21879,11 @@
                 "unitCode": "wmoUnit:percent",
                 "value": 51
               },
-              "windSpeed": "5 to 9 mph",
+              "windSpeed": "5 to 10 mph",
               "windDirection": "W",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,50/few?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Mostly Clear",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly clear, with a low around 59. West wind 5 to 9 mph. Chance of precipitation is 50%."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly clear, with a low around 59. West wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 50%."
             },
             {
               "number": 5,
@@ -22017,6 +22082,7 @@
     {
       "address": "12320 4th Street, Rancho Cucamonga, CA 91730",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -22027,7 +22093,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_027ff0a2",
-      "lastUpdated": "2025-07-11T11:55:59.368840",
+      "lastUpdated": "2025-07-11T12:36:17.564371",
       "nickname": "Rancho Cucamonga",
       "siteType": "plant",
       "weatherConditions": {
@@ -22353,6 +22419,7 @@
     {
       "address": "2321, High Hill Road, Pureland Industrial Complex, Prospect, Bridgeport, Logan Township, Gloucester County, New Jersey, 08085, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -22363,7 +22430,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5c8c2787",
-      "lastUpdated": "2025-07-11T11:55:59.368849",
+      "lastUpdated": "2025-07-11T12:36:17.564379",
       "nickname": "Logan Township - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -22689,6 +22756,7 @@
     {
       "address": "4255, Thunderbird Lane, Fairfield, West Chester Township, Butler County, Ohio, 45014, United States",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -22699,7 +22767,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_02bbb600",
-      "lastUpdated": "2025-07-11T11:55:59.368857",
+      "lastUpdated": "2025-07-11T12:36:17.564387",
       "nickname": "Fairfield - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23025,6 +23093,7 @@
     {
       "address": "8096 East Highway 78, Villa Rica, GA 30413",
       "alertDescription": "",
+      "alertSource": "nws",
       "contactEmail": "",
       "contactName": "",
       "contactPhone": "",
@@ -23035,7 +23104,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3a91284e",
-      "lastUpdated": "2025-07-11T11:55:59.368867",
+      "lastUpdated": "2025-07-11T12:36:17.564395",
       "nickname": "Villa Rica - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23080,9 +23149,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-11T16:49:41+00:00",
-          "updateTime": "2025-07-11T16:36:24+00:00",
-          "validTimes": "2025-07-11T10:00:00+00:00/P7DT15H",
+          "generatedAt": "2025-07-11T17:22:59+00:00",
+          "updateTime": "2025-07-11T17:16:13+00:00",
+          "validTimes": "2025-07-11T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 345.0336
@@ -23091,7 +23160,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-11T12:00:00-04:00",
+              "startTime": "2025-07-11T13:00:00-04:00",
               "endTime": "2025-07-11T18:00:00-04:00",
               "isDaytime": true,
               "temperature": 89,
@@ -23104,8 +23173,8 @@
               "windSpeed": "5 mph",
               "windDirection": "W",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,50?size=medium",
-              "shortForecast": "Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms before 1pm, then a chance of showers and thunderstorms between 1pm and 2pm, then a chance of showers and thunderstorms. Mostly sunny, with a high near 89. West wind around 5 mph. Chance of precipitation is 50%."
+              "shortForecast": "Chance Showers And Thunderstorms",
+              "detailedForecast": "A chance of showers and thunderstorms before 2pm, then a chance of showers and thunderstorms. Mostly sunny, with a high near 89. West wind around 5 mph. Chance of precipitation is 50%."
             },
             {
               "number": 2,
@@ -23361,6 +23430,7 @@
     {
       "address": "9 Stuart Road, Chelmsford, MA 01824",
       "alertDescription": "",
+      "alertSource": "nws",
       "city": "Chelmsford",
       "contactEmail": "",
       "contactName": "",
@@ -23372,7 +23442,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a2c2073b",
-      "lastUpdated": "2025-07-11T11:55:59.368877",
+      "lastUpdated": "2025-07-11T12:36:17.564402",
       "nickname": "Chelmsford - Waddington",
       "siteType": "warehouse",
       "state": "MA",
@@ -23712,7 +23782,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf8aa2a1",
-      "lastUpdated": "2025-07-11T11:55:59.368886",
+      "lastUpdated": "2025-07-11T12:36:17.564410",
       "nickname": "Brampton - Waddington",
       "siteType": "plant",
       "state": "ON",
@@ -23720,5 +23790,5 @@
       "zipcode": "L6R 4E6"
     }
   ],
-  "lastUpdated": "2025-07-11T11:55:59.368888"
+  "lastUpdated": "2025-07-11T12:36:17.564412"
 }
