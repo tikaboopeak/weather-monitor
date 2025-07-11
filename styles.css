@@ -163,8 +163,33 @@ body {
     flex: 1;
 }
 
+.tab-controls {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+}
+
+.tab-divider {
+    width: 1px;
+    height: 20px;
+    background: #d1d5db;
+    margin: 0 8px;
+}
+
+.filter-btn {
+    margin-right: 0;
+    position: relative;
+}
+
+.filter-btn.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+}
+
 .info-btn {
-    margin-left: auto;
+    margin-left: 0;
 }
 
 /* Tab Content */
@@ -308,6 +333,44 @@ body {
 
 .alert-count.minor {
     background: #ca8a04;
+}
+
+/* Filter Dropdown */
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 280px;
+    height: auto;
+    overflow: visible;
+}
+
+.filter-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* When dropdown opens above the button */
+.filter-dropdown[style*="bottom: 100%"] {
+    transform: translateY(10px);
+}
+
+.filter-dropdown[style*="bottom: 100%"].active {
+    transform: translateY(0);
+}
+
+.filter-dropdown-content {
+    padding: 16px;
 }
 
 /* Filter Section */
@@ -1690,7 +1753,7 @@ body {
 
 /* Info Tab Styles */
 .info-content {
-    padding: 30px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
     overflow-y: auto;
@@ -1702,19 +1765,19 @@ body {
 .info-section {
     background: white;
     border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
+    padding: 18px;
+    margin-bottom: 18px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border: 1px solid #e5e7eb;
 }
 
 .info-section h2 {
     color: #374151;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .info-section h2 i {
@@ -1724,14 +1787,14 @@ body {
 .alert-color-info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
 }
 
 .color-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 15px;
+    gap: 15px;
+    padding: 12px;
     border-radius: 8px;
     background: #f9fafb;
     border: 1px solid #e5e7eb;
@@ -1767,24 +1830,25 @@ body {
 
 .color-details h4 {
     color: #374151;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-bottom: 6px;
     font-weight: 600;
 }
 
 .color-details p {
     color: #6b7280;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
+    font-size: 0.9rem;
 }
 
 .filter-info h4,
 .update-info h4,
 .map-info h4 {
     color: #374151;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    margin-top: 20px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    margin-top: 15px;
     font-weight: 600;
 }
 
@@ -1798,8 +1862,9 @@ body {
 .update-info p,
 .map-info p {
     color: #6b7280;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
 }
 
 /* Legend NWS Warning Color */
