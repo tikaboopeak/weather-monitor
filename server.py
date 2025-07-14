@@ -141,7 +141,7 @@ def get_database_info():
 
 if __name__ == '__main__':
     print("Starting Weather Alert Monitor Server...")
-    print("Server will be available at: http://localhost:8201")
+    print("Server will be available at: http://localhost:8000")
     print("API endpoints:")
     print("  GET  /api/locations - Get all locations")
     print("  POST /api/locations - Add new location")
@@ -149,4 +149,4 @@ if __name__ == '__main__':
     print("  DELETE /api/locations/<id> - Delete location")
     print("  PUT  /api/locations/bulk - Update multiple locations")
     print("  GET  /api/database - Get database info")
-    app.run(host='0.0.0.0', port=8201, debug=True) 
+    app.run(host='0.0.0.0', port=8000, debug=True, use_reloader=False) 

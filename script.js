@@ -37,7 +37,7 @@ class WeatherAlertMonitor {
         this.GEOCODING_API = 'https://maps.googleapis.com/maps/api/geocode/json';
         this.GOOGLE_API_KEY = 'AIzaSyCLc97NiXejbt5gnpMOOECCB-cOFBE2RAE';
         // Use the current hostname for the server API to work from remote computers
-        this.SERVER_API = `http://${window.location.hostname}:8201/api`;
+        this.SERVER_API = `http://${window.location.hostname}:8000/api`;
         this.updateInterval = null;
         this.lastUpdateTime = null;
         
@@ -91,7 +91,7 @@ class WeatherAlertMonitor {
             'advisory': { level: 1, class: 'minor', color: '#ca8a04' },
             'none': { level: 0, class: 'none', color: '#16a34a' }
         };
-        
+
         this.siteIcons = {
             'warehouse': 'fa-warehouse',
             'plant': 'fa-industry',
@@ -102,10 +102,95 @@ class WeatherAlertMonitor {
             'land': 'fa-map-marker-alt',
             'parking': 'fa-parking'
         };
-        
+
+        this.alertEventIcons = {
+            'Tornado Warning': 'fa-tornado',
+            'Tornado Watch': 'fa-tornado',
+            'Severe Thunderstorm Warning': 'fa-bolt',
+            'Severe Thunderstorm Watch': 'fa-bolt',
+            'Thunderstorm Warning': 'fa-cloud-bolt',
+            'Thunderstorm Watch': 'fa-cloud-bolt',
+            'Flash Flood Warning': 'fa-water',
+            'Flood Warning': 'fa-water',
+            'Flood Watch': 'fa-water',
+            'Flood Advisory': 'fa-water',
+            'Extreme Wind Warning': 'fa-wind',
+            'High Wind Warning': 'fa-wind',
+            'High Wind Watch': 'fa-wind',
+            'Wind Advisory': 'fa-wind',
+            'Winter Storm Warning': 'fa-snowflake',
+            'Winter Storm Watch': 'fa-snowflake',
+            'Blizzard Warning': 'fa-snowflake',
+            'Ice Storm Warning': 'fa-icicles',
+            'Snow Squall Warning': 'fa-snowflake',
+            'Winter Weather Advisory': 'fa-snowflake',
+            'Heat Advisory': 'fa-temperature-high',
+            'Excessive Heat Warning': 'fa-temperature-high',
+            'Excessive Heat Watch': 'fa-temperature-high',
+            'Freeze Warning': 'fa-temperature-low',
+            'Freeze Watch': 'fa-temperature-low',
+            'Frost Advisory': 'fa-temperature-low',
+            'Red Flag Warning': 'fa-fire',
+            'Fire Weather Watch': 'fa-fire',
+            'Dense Fog Advisory': 'fa-smog',
+            'Dust Storm Warning': 'fa-smog',
+            'Air Quality Alert': 'fa-smog',
+            'Hurricane Warning': 'fa-hurricane',
+            'Hurricane Watch': 'fa-hurricane',
+            'Tropical Storm Warning': 'fa-hurricane',
+            'Tropical Storm Watch': 'fa-hurricane',
+            'Storm Surge Warning': 'fa-water',
+            'Storm Surge Watch': 'fa-water',
+            'Coastal Flood Warning': 'fa-water',
+            'Coastal Flood Advisory': 'fa-water',
+            'Avalanche Warning': 'fa-mountain',
+            'Avalanche Watch': 'fa-mountain',
+            'Lake Effect Snow Warning': 'fa-water',
+            'Lake Effect Snow Watch': 'fa-water',
+            'Rip Current Statement': 'fa-water',
+            'Special Marine Warning': 'fa-anchor',
+            'Marine Weather Statement': 'fa-anchor',
+            'Severe Weather Statement': 'fa-triangle-exclamation',
+            'Special Weather Statement': 'fa-triangle-exclamation',
+            'Child Abduction Emergency': 'fa-child',
+            'Civil Danger Warning': 'fa-person-military-pointing',
+            'Civil Emergency Message': 'fa-person-military-pointing',
+            'Shelter In Place Warning': 'fa-house-lock',
+            'Hazardous Materials Warning': 'fa-skull-crossbones',
+            // fallback for any other event types
+            'default': 'fa-triangle-exclamation'
+        };
+
         this.initializeApp().catch(error => {
             console.error('Failed to initialize app:', error);
         });
+    }
+
+    // Determine the country code for a location (us, ca, mx, etc.)
+    getLocationCountry(location) {
+        // If the location has an explicit country property, use it
+        if (location.country) {
+            return location.country.toLowerCase();
+        }
+        // Fallback: infer from state/province or address
+        const usStates = [
+            'al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'va', 'wa', 'wv', 'wi', 'wy'
+        ];
+        const canadianProvinces = [
+            'ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt'
+        ];
+        let state = location.state ? location.state.toLowerCase() : '';
+        if (!state && location.address) {
+            // Try to extract state from address string
+            const match = location.address.match(/,\s*([A-Za-z]{2})\s*\d{5}/);
+            if (match) {
+                state = match[1].toLowerCase();
+            }
+        }
+        if (usStates.includes(state)) return 'us';
+        if (canadianProvinces.includes(state)) return 'ca';
+        // Default fallback
+        return 'us';
     }
 
     async initializeApp() {
@@ -135,8 +220,6 @@ class WeatherAlertMonitor {
         console.log('Updating display...');
         this.updateDisplay();
         this.updateLastUpdated();
-        
-
         
         // Start real-time weather updates
         console.log('Starting real-time updates...');
@@ -327,18 +410,18 @@ class WeatherAlertMonitor {
         // Live tab button - ensure live tab is always active
         liveTabBtn.addEventListener('click', () => {
             console.log('Switching to Live Alerts tab');
-            
-            // Update active tab button
+                
+                // Update active tab button
             liveTabBtn.classList.add('active');
             infoTabBtn.classList.remove('active');
-            
+                
             // Ensure live tab content is active
             const liveTab = document.getElementById('liveTab');
             liveTab.classList.add('active');
-            
+                
             // Initialize map for the live tab
-            this.initializeLiveMap();
-        });
+                    this.initializeLiveMap();
+            });
         
         // Info tab button - open info modal
         infoTabBtn.addEventListener('click', () => {
@@ -371,29 +454,6 @@ class WeatherAlertMonitor {
         }
         this.updateDisplay();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     setupAddressAutocomplete() {
         const addressInput = document.getElementById('locationAddress');
@@ -766,18 +826,41 @@ class WeatherAlertMonitor {
             return;
         }
         
+        console.log('Map container found:', mapContainer);
+        console.log('Map container dimensions:', mapContainer.offsetWidth, 'x', mapContainer.offsetHeight);
+        
         try {
             console.log('Creating map...');
             this.map = L.map('map', {
                 zoomControl: false // Disable default zoom controls
             }).setView([39.8283, -98.5795], 4);
+            
+            // Apply the default zoom (continental US view) after map creation
+            setTimeout(() => {
+                this.setDefaultZoom();
+            }, 100);
             console.log('Map created successfully');
+            console.log('Map object:', this.map);
+            console.log('Map container after creation:', document.getElementById('map'));
             
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
+                attribution: ' OpenStreetMap contributors'
             }).addTo(this.map);
             
             console.log('Tile layer added');
+            
+            // Force map to resize after a short delay to ensure proper rendering
+            setTimeout(() => {
+                if (this.map) {
+                    this.map.invalidateSize();
+                    console.log('Map invalidated size');
+                    
+                    // Add a test marker to verify map is working
+                    const testMarker = L.marker([39.8283, -98.5795]).addTo(this.map);
+                    testMarker.bindPopup('Test marker - map is working!');
+                    console.log('Test marker added to verify map functionality');
+                }
+            }, 100);
             
             // Add weather overlay
             this.addWeatherOverlay();
@@ -881,14 +964,15 @@ class WeatherAlertMonitor {
         }
     }
 
-
-
     async loadLocations() {
+        console.log('=== loadLocations called ===');
         try {
             // Fetch locations from server
             const response = await fetch(`${this.SERVER_API}/locations`);
             if (response.ok) {
                 this.locations = await response.json();
+                console.log(`Loaded ${this.locations.length} locations from server`);
+                console.log('First location:', this.locations[0]);
                 
 
             } else {
@@ -1839,11 +1923,9 @@ class WeatherAlertMonitor {
                         const lat = parseFloat(result.lat);
                         const lon = parseFloat(result.lon);
                         
-                        if (isNaN(lat) || isNaN(lon)) {
-                            throw new Error('Invalid coordinate values');
+                        if (!isNaN(lat) && !isNaN(lon)) {
+                            return [lat, lon];
                         }
-                        
-                        return [lat, lon];
                     }
                 }
             }
@@ -1934,6 +2016,7 @@ class WeatherAlertMonitor {
                     for (const result of data) {
                         if (result.address && result.address.country) {
                             const country = result.address.country.toLowerCase();
+                            console.log('Country found:', country);
                             if (country === 'canada') {
                                 console.log('Found Canadian result:', result.display_name);
                                 const lat = parseFloat(result.lat);
@@ -2140,7 +2223,7 @@ class WeatherAlertMonitor {
         // European postal code patterns (basic)
         const europeanPostalCodes = [
             /\b\d{5}\b/, // Germany, France, Italy, Spain
-            /\b\d{4}\s?[A-Z]{2}\b/i // Netherlands
+            /\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b/i // Netherlands
         ];
         
         for (const pattern of europeanPostalCodes) {
@@ -2454,65 +2537,56 @@ class WeatherAlertMonitor {
     getStateFromAddress(address) {
         const addressLower = address.toLowerCase();
         
-        // US state abbreviations and names
-        const stateMap = {
-            'alabama': 'AL', 'alaska': 'AK', 'arizona': 'AZ', 'arkansas': 'AR', 'california': 'CA',
-            'colorado': 'CO', 'connecticut': 'CT', 'delaware': 'DE', 'florida': 'FL', 'georgia': 'GA',
-            'hawaii': 'HI', 'idaho': 'ID', 'illinois': 'IL', 'indiana': 'IN', 'iowa': 'IA',
-            'kansas': 'KS', 'kentucky': 'KY', 'louisiana': 'LA', 'maine': 'ME', 'maryland': 'MD',
-            'massachusetts': 'MA', 'michigan': 'MI', 'minnesota': 'MN', 'mississippi': 'MS', 'missouri': 'MO',
-            'montana': 'MT', 'nebraska': 'NE', 'nevada': 'NV', 'new hampshire': 'NH', 'new jersey': 'NJ',
-            'new mexico': 'NM', 'new york': 'NY', 'north carolina': 'NC', 'north dakota': 'ND', 'ohio': 'OH',
-            'oklahoma': 'OK', 'oregon': 'OR', 'pennsylvania': 'PA', 'rhode island': 'RI', 'south carolina': 'SC',
-            'south dakota': 'SD', 'tennessee': 'TN', 'texas': 'TX', 'utah': 'UT', 'vermont': 'VT',
-            'virginia': 'VA', 'washington': 'WA', 'west virginia': 'WV', 'wisconsin': 'WI', 'wyoming': 'WY'
-        };
+        // US state abbreviations to avoid false positives
+        const usStateAbbreviations = [
+            'al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'va', 'wa', 'wv', 'wi', 'wy'
+        ];
         
-        // Check for state abbreviations first
-        for (const [stateName, stateAbbr] of Object.entries(stateMap)) {
-            if (addressLower.includes(stateName) || addressLower.includes(stateAbbr.toLowerCase())) {
-                return stateAbbr;
+        // US state full names
+        const usStateNames = [
+            'alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'indiana', 'iowa', 'kansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska', 'nevada', 'new hampshire', 'new jersey', 'new mexico', 'new york', 'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'
+        ];
+        
+        // Canadian provinces and territories (full names and abbreviations)
+        const canadianProvinces = [
+            'alberta', 'ab', 'british columbia', 'bc', 'manitoba', 'mb', 'new brunswick', 'nb',
+            'newfoundland and labrador', 'nl', 'nova scotia', 'ns', 'ontario', 'on', 'prince edward island', 'pe',
+            'quebec', 'qc', 'saskatchewan', 'sk', 'northwest territories', 'nt', 'nunavut', 'nu', 'yukon', 'yt'
+        ];
+        
+        // Check for US state abbreviations with word boundaries
+        const hasUSStateAbbreviation = usStateAbbreviations.some(state => {
+            const regex = new RegExp(`\\b${state}\\b`, 'i');
+            return regex.test(address);
+        });
+        
+        // Check for US state full names
+        const hasUSStateName = usStateNames.some(state => 
+            addressLower.includes(state)
+        );
+        
+        // Check for Canadian provinces
+        const hasCanadianProvince = canadianProvinces.some(province => {
+            if (province.length === 2) {
+                // For two-letter abbreviations, check for word boundaries to avoid US state conflicts
+                const regex = new RegExp(`\\b${province}\\b`, 'i');
+                return regex.test(address);
+            } else {
+                // For full names, use simple inclusion
+                return addressLower.includes(province);
             }
+        });
+        
+        // Return the first matching state or province
+        if (hasUSStateAbbreviation) {
+            return usStateAbbreviations.find(state => addressLower.includes(state));
+        } else if (hasUSStateName) {
+            return usStateNames.find(state => addressLower.includes(state));
+        } else if (hasCanadianProvince) {
+            return canadianProvinces.find(province => addressLower.includes(province));
         }
         
         return null;
-    }
-    
-    // Get the country code for a location based on its coordinates or address
-    getLocationCountry(location) {
-        // First try to determine from address
-        if (location.address) {
-            if (this.isCanadianAddress(location.address)) {
-                return 'ca';
-            } else if (this.isMexicanAddress(location.address)) {
-                return 'mx';
-            } else if (this.isUSAddress(location.address)) {
-                return 'us';
-            }
-        }
-        
-        // Fallback: determine from coordinates
-        if (location.coordinates && location.coordinates.length === 2) {
-            const [lat, lon] = location.coordinates;
-            
-            // Rough geographic boundaries
-            // Canada: roughly 41.7°N to 83.3°N, 52.6°W to 141.0°W
-            if (lat >= 41.7 && lat <= 83.3 && lon >= -141.0 && lon <= -52.6) {
-                // Check if it's in the continental US
-                if (lat >= 24.4 && lat <= 49.4 && lon >= -125.0 && lon <= -66.9) {
-                    return 'us';
-                }
-                return 'ca';
-            }
-            
-            // Mexico: roughly 14.5°N to 32.7°N, 118.4°W to 86.7°W
-            if (lat >= 14.5 && lat <= 32.7 && lon >= -118.4 && lon <= -86.7) {
-                return 'mx';
-            }
-        }
-        
-        // Default to US
-        return 'us';
     }
 
     // Enhanced method to detect address country/region for better geocoding
@@ -2673,8 +2747,7 @@ class WeatherAlertMonitor {
         // European postal code patterns (basic)
         const europeanPostalCodes = [
             /\b\d{5}\b/, // Germany, France, Italy, Spain
-            /\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b/i, // UK
-            /\b\d{4}\s?[A-Z]{2}\b/i // Netherlands
+            /\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b/i // Netherlands
         ];
         
         const hasEuropeanCountry = europeanCountries.some(country => 
@@ -2730,8 +2803,12 @@ class WeatherAlertMonitor {
         try {
             const [lat, lng] = location.coordinates;
             
+            // Round coordinates to 2 decimal places to avoid precision issues
+            const roundedLat = Math.round(lat * 100) / 100;
+            const roundedLng = Math.round(lng * 100) / 100;
+            
             // Get the weather station for this location
-            const pointsResponse = await fetch(`${this.NWS_BASE_URL}/points/${lat},${lng}`, {
+            const pointsResponse = await fetch(`${this.NWS_BASE_URL}/points/${roundedLat},${roundedLng}`, {
                 redirect: 'follow'
             });
             
@@ -2831,6 +2908,17 @@ class WeatherAlertMonitor {
             }
             
             // Determine the highest severity alert for this location
+let relevantAlerts = [];
+if (alertsData && alertsData.features && alertsData.features.length > 0) {
+    console.log(`Found ${alertsData.features.length} alerts for ${location.nickname}:`, alertsData.features.map(a => a.properties.event));
+    console.log('Full alerts data:', alertsData.features.map(a => a.properties.event));
+    // Find alerts that affect this location
+    relevantAlerts = alertsData.features.filter(alert => {
+        // ... (existing filtering logic)
+        return true;
+    });
+}
+
             let highestSeverity = 'none';
             let alertDescription = '';
             
@@ -3004,6 +3092,33 @@ class WeatherAlertMonitor {
                 }
             }
             
+            // --- Custom Weather Event Type Extraction and Prioritization ---
+            // Extract all event types from relevant alerts
+            let eventType = null;
+            if (relevantAlerts && relevantAlerts.length > 0) {
+                // Priority: tornado > thunderstorm > flood > others
+                const eventPriority = [
+                    'Tornado Warning', 'Tornado Watch',
+                    'Severe Thunderstorm Warning', 'Severe Thunderstorm Watch',
+                    'Flash Flood Warning', 'Flood Warning', 'Flood Watch', 'Flood Advisory',
+                    'Extreme Wind Warning', 'Severe Weather Statement', 'Special Weather Statement'
+                ];
+                // Find the first event type matching priority
+                for (const p of eventPriority) {
+                    const match = relevantAlerts.find(a => a.properties.event && a.properties.event.includes(p));
+                    if (match) {
+                        eventType = match.properties.event;
+                        break;
+                    }
+                }
+                // If none matched, use the top alert's event type
+                if (!eventType && relevantAlerts[0] && relevantAlerts[0].properties.event) {
+                    eventType = relevantAlerts[0].properties.event;
+                }
+            }
+            location.alertEventType = eventType || null;
+            // --- End Custom Event Extraction ---
+
             // Update location with real data
             location.currentAlert = highestSeverity;
             location.alertDescription = alertDescription;
@@ -3101,8 +3216,8 @@ class WeatherAlertMonitor {
             console.log('Google API Response:', data);
             
             if (data.status === 'REQUEST_DENIED') {
-                console.log('❌ Google Maps API Error:', data.error_message);
-                console.log('\n🔧 To fix this issue:');
+                console.log(' Google Maps API Error:', data.error_message);
+                console.log('\n To fix this issue:');
                 console.log('1. Go to https://console.cloud.google.com/');
                 console.log('2. Select your project');
                 console.log('3. Go to "APIs & Services" > "Library"');
@@ -3113,10 +3228,10 @@ class WeatherAlertMonitor {
             }
             
             if (data.status === 'OK') {
-                console.log('✅ Google Maps API is working correctly');
+                console.log(' Google Maps API is working correctly');
             }
         } catch (error) {
-            console.log('❌ Google Maps API test failed:', error);
+            console.log(' Google Maps API test failed:', error);
         }
         
         console.log('\n=== Testing Full Geocoding Function ===');
@@ -3132,9 +3247,9 @@ class WeatherAlertMonitor {
             try {
                 console.log(`Testing geocoding for: ${address}`);
                 const result = await this.geocodeAddress(address);
-                console.log(`✓ Geocoding successful for "${address}":`, result);
+                console.log(` Geocoding successful for "${address}":`, result);
             } catch (error) {
-                console.error(`✗ Geocoding failed for "${address}":`, error.message);
+                console.error(` Geocoding failed for "${address}":`, error.message);
             }
         }
         
@@ -3393,9 +3508,44 @@ class WeatherAlertMonitor {
 
     updateDisplay() {
         this.updateLocationsList();
-        this.updateMapMarkers();
+        this.updateMarkers();
         this.updateAlertCounts();
         this.updateLocationCount();
+    }
+
+    // Add missing method to update the total location count in the UI
+    updateLocationCount() {
+        const count = this.locations.length;
+        const el = document.getElementById('locationCount');
+        if (el) {
+            el.textContent = count;
+        }
+    }
+
+    // Add missing method to update alert counts in the UI
+    updateAlertCounts() {
+        // Count locations by alert type
+        const counts = { warning: 0, watch: 0, advisory: 0, none: 0 };
+        this.locations.forEach(loc => {
+            if (counts.hasOwnProperty(loc.currentAlert)) {
+                counts[loc.currentAlert]++;
+            } else {
+                counts['none']++;
+            }
+        });
+        // Update the UI elements if present
+        if (document.getElementById('count-warning')) {
+            document.getElementById('count-warning').textContent = counts.warning;
+        }
+        if (document.getElementById('count-watch')) {
+            document.getElementById('count-watch').textContent = counts.watch;
+        }
+        if (document.getElementById('count-advisory')) {
+            document.getElementById('count-advisory').textContent = counts.advisory;
+        }
+        if (document.getElementById('count-none')) {
+            document.getElementById('count-none').textContent = counts.none;
+        }
     }
 
     updateLocationsList() {
@@ -3433,16 +3583,16 @@ class WeatherAlertMonitor {
         container.innerHTML = sortedLocations.map(location => `
             <div class="alert-card ${this.alertSeverity[location.currentAlert].class}${location.currentAlert === 'warning' && location.alertSource === 'nws' ? ' nws-warning' : ''}" data-location-id="${location.id}">
                 <div class="alert-card-header">
-                    <div class="alert-card-icon">
-                        <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
-                    </div>
+                    <div class="alert-card-icon" title="${location.alertEventType || this.getAlertText(location.currentAlert, location)}">
+                            <i class="fas ${this.getEventIcon(location)}"></i>
+                        </div>
                     <div class="alert-card-title-section">
                         <div class="alert-card-location-row">
                             <span class="alert-card-location-name">${location.nickname}</span>
                             <span class="alert-card-site-type-icon" title="${this.getSiteTypeDescription(location.siteType)}"><i class="fas ${this.siteIcons[location.siteType] || 'fa-map-marker-alt'}"></i></span>
-                        </div>
-                        <div class="alert-card-alert-type">${this.getAlertText(location.currentAlert)}</div>
                     </div>
+                        <div class="alert-card-alert-type">${this.getAlertText(location.currentAlert, location)}</div>
+                </div>
                     <div class="alert-card-actions">
                         <button class="alert-collapse-toggle" title="Toggle details">
                             <i class="fas fa-chevron-down"></i>
@@ -3450,7 +3600,10 @@ class WeatherAlertMonitor {
                     </div>
                 </div>
                 <div class="alert-card-details" style="display: none;">
-                    <div class="alert-card-description">${this.getAlertDescription(location.currentAlert, location)}</div>
+                    <div class="alert-card-description">
+                        ${location.alertEventType ? `<strong>${location.alertEventType}</strong><br>` : ''}
+                        ${this.getAlertDescription(location.currentAlert, location)}
+                    </div>
                     <div class="alert-card-meta">
                         <div class="alert-card-site-info">
                             <i class="fas ${this.siteIcons[location.siteType] || 'fa-map-marker-alt'}"></i>
@@ -3459,13 +3612,13 @@ class WeatherAlertMonitor {
                         <div class="alert-card-address">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>${location.address}</span>
-                        </div>
-                        ${location.contactName ? `
+                    </div>
+                    ${location.contactName ? `
                         <div class="alert-card-contact">
                             <i class="fas fa-user"></i>
                             <span>${location.contactName}${location.contactTitle ? ` - ${location.contactTitle}` : ''}</span>
                         </div>
-                        ` : ''}
+                    ` : ''}
                         ${location.contactPhone ? `
                         <div class="alert-card-phone">
                             <i class="fas fa-phone"></i>
@@ -3555,37 +3708,71 @@ class WeatherAlertMonitor {
 
     updateMapMarkers() {
         // Clear existing markers
+        console.log(`Clearing ${this.markers.length} existing markers`);
         this.markers.forEach(marker => this.map.removeLayer(marker));
         this.markers = [];
+        // ... rest of updateMapMarkers code ...
+    }
+
+    selectLocationInPane(locationId) {
+        const card = document.querySelector(`.alert-card[data-location-id='${locationId}']`);
+        if (card) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.classList.add('highlight');
+            setTimeout(() => card.classList.remove('highlight'), 2000);
+        }
+    }
+
+    // Add new markers for ALL locations (not just filtered ones)
+    updateMarkers() {
+        console.log('=== updateMarkers called ===');
+        console.log('Map initialized:', !!this.map);
+        console.log('Number of locations:', this.locations.length);
         
-        // Add new markers for ALL locations (not just filtered ones)
         if (!this.map) {
             console.error('Map not initialized!');
             return;
         }
         
+        // Clear existing markers
+        this.markers.forEach(marker => this.map.removeLayer(marker));
+        this.markers = [];
+        
         this.locations.forEach(location => {
             const alertInfo = this.alertSeverity[location.currentAlert];
-            console.log(`Creating marker for ${location.nickname}: alert=${location.currentAlert}, color=${alertInfo?.color || 'unknown'}`);
-            
-            // Check if this location's alert level is filtered out
+            const isNoneAlert = location.currentAlert === 'none';
+            const isNoneGhosted = isNoneAlert && !this.alertLevelFilters['none'];
             const isAlertLevelFiltered = !this.alertLevelFilters[location.currentAlert];
-            
-            // Create custom icon based on site type and alert severity
             const shouldPulse = location.currentAlert === 'warning' || 
                                location.currentAlert === 'future-warning' || 
                                location.currentAlert === 'watch' || 
                                location.currentAlert === 'future-watch';
-            const pulseClass = shouldPulse && !isAlertLevelFiltered ? 'pulse-severe' : '';
-            
-            // Determine marker color based on filter status
-            const markerColor = isAlertLevelFiltered ? '#d1d5db' : alertInfo.color; // Light grey if filtered
-            const textColor = isAlertLevelFiltered ? '#6b7280' : 'white'; // Dark grey text if filtered
-            
+            const pulseClass = shouldPulse && !isAlertLevelFiltered && !isNoneGhosted ? 'pulse-severe' : '';
+            let markerColor = alertInfo.color;
+            let textColor = 'white';
+            let markerOpacity = '1';
+            let markerFilter = 'none';
+            let markerShadow = '0 2px 8px rgba(0,0,0,0.3)';
+            let filteredClass = '';
+            if (isNoneGhosted) {
+                markerColor = '#9ca3af'; // medium grey
+                textColor = '#ffffff';
+                markerOpacity = '0.5';
+                markerFilter = 'none';
+                markerShadow = '0 1px 3px rgba(0,0,0,0.2)';
+                filteredClass = ' filtered';
+            } else if (isAlertLevelFiltered) {
+                markerColor = '#d1d5db'; // light grey
+                textColor = '#6b7280';
+                markerOpacity = '0.4';
+                markerFilter = 'blur(0.5px) grayscale(0.3)';
+                markerShadow = '0 1px 3px rgba(0,0,0,0.1)';
+                filteredClass = ' filtered';
+            }
             const iconHtml = `
-                <div class="custom-marker ${pulseClass}" style="
+                <div class="custom-marker ${pulseClass}${filteredClass}" style="
                     background-color: ${markerColor};
-                    border: 2px solid white;
+                    border: 2px solid ${isNoneGhosted ? '#e5e7eb' : isAlertLevelFiltered ? '#e5e7eb' : 'white'};
                     border-radius: 50%;
                     width: 30px;
                     height: 30px;
@@ -3594,11 +3781,12 @@ class WeatherAlertMonitor {
                     justify-content: center;
                     color: ${textColor};
                     font-size: 14px;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-                    transition: transform 0.2s ease;
+                    box-shadow: ${markerShadow};
+                    transition: transform 0.2s ease, opacity 0.3s ease, filter 0.3s ease;
                     transform-origin: center;
-                    opacity: ${isAlertLevelFiltered ? '0.6' : '1'};
-                " title="${this.getSiteTypeDescription(location.siteType)}${isAlertLevelFiltered ? ' (Filtered out)' : ''}">
+                    opacity: ${markerOpacity};
+                    filter: ${markerFilter};
+                " title="${this.getSiteTypeDescription(location.siteType)}${isNoneGhosted ? ' (Filtered out - No active alerts)' : isAlertLevelFiltered ? ' (Filtered out)' : ''}">
                     <i class="fas ${this.siteIcons[location.siteType]}"></i>
                 </div>
             `;
@@ -3611,6 +3799,8 @@ class WeatherAlertMonitor {
                     iconAnchor: [15, 15]
                 })
             }).addTo(this.map);
+            
+            console.log(`Marker added for ${location.nickname} at [${location.coordinates[0]}, ${location.coordinates[1]}]`);
             
             // Add hover effects
             marker.on('mouseover', function() {
@@ -3645,12 +3835,13 @@ class WeatherAlertMonitor {
                     ${location.contactName ? `<p><i class="fas fa-user"></i> ${location.contactName}</p>` : ''}
                 ${location.contactTitle ? `<p><i class="fas fa-id-badge"></i> ${location.contactTitle}</p>` : ''}
                     ${location.contactPhone ? `<p><i class="fas fa-phone"></i> ${location.contactPhone}</p>` : ''}
-                    <div class="popup-alert ${alertInfo.class}${isAlertLevelFiltered ? ' filtered' : ''}">
-                        <i class="fas ${this.getAlertIcon(location.currentAlert)}"></i>
-                        ${this.getAlertText(location.currentAlert)}
-                        ${isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
+                    <div class="popup-alert ${alertInfo.class}${isNoneGhosted || isAlertLevelFiltered ? ' filtered' : ''}">
+                        <i class="fas ${this.getEventIcon(location)}"></i>
+                        ${this.getAlertText(location.currentAlert, location)}
+                        ${isNoneGhosted || isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
                     </div>
                     <div class="popup-alert-details">
+                        ${location.alertEventType ? `<strong>${location.alertEventType}</strong><br>` : ''}
                         ${this.getAlertDescription(location.currentAlert, location)}
                     </div>
                 </div>
@@ -3763,109 +3954,63 @@ class WeatherAlertMonitor {
         return { color: '#666666', class: 'none' };
     }
 
-    updateAlertCounts() {
-        const counts = { severe: 0, moderate: 0, minor: 0 };
-        const filteredLocations = this.getFilteredLocations();
-        
-        filteredLocations.forEach(location => {
-            const alertClass = this.alertSeverity[location.currentAlert].class;
-            console.log(`Counting alert for ${location.nickname}: ${location.currentAlert} -> ${alertClass}`);
-            
-            // Map all alert classes to the three main categories
-            if (alertClass === 'severe') {
-                counts.severe++;
-            } else if (alertClass === 'moderate') {
-                counts.moderate++;
-            } else if (alertClass === 'minor') {
-                counts.minor++;
-            }
-        });
-        
-        console.log(`Alert counts: severe=${counts.severe}, moderate=${counts.moderate}, minor=${counts.minor}`);
-        
-        document.getElementById('severeCount').textContent = counts.severe;
-        document.getElementById('moderateCount').textContent = counts.moderate;
-        document.getElementById('minorCount').textContent = counts.minor;
-    }
-
-    updateLocationCount() {
-        const totalLocations = this.locations.length;
-        const locationCountElement = document.getElementById('locationCount');
-        if (locationCountElement) {
-            locationCountElement.textContent = `(${totalLocations})`;
-        }
-    }
-
-    focusOnLocation(locationId) {
-        const location = this.locations.find(loc => loc.id === locationId);
-        if (location) {
-            // Animate the map to the location with smooth zoom
-            this.map.flyTo(location.coordinates, 12, {
-                duration: 1.5, // Animation duration in seconds
-                easeLinearity: 0.25 // Smoothness of the animation
-            });
-            
-            // Find and open the marker popup after animation
-            setTimeout(() => {
-                const marker = this.markers.find(m => {
-                    const markerLatLng = m.getLatLng();
-                    return markerLatLng.lat === location.coordinates[0] && 
-                           markerLatLng.lng === location.coordinates[1];
-                });
-                
-                if (marker) {
-                    marker.openPopup();
-                }
-            }, 1500); // Wait for animation to complete
-        }
-    }
-
-    selectLocationInPane(locationId) {
-        // Remove previous selection
-        document.querySelectorAll('.alert-card.selected').forEach(item => {
-            item.classList.remove('selected');
-        });
-        
-        // Find and select the location item in the alerts pane
-        const locationItem = document.querySelector(`.alert-card[data-location-id="${locationId}"]`);
-        if (locationItem) {
-            locationItem.classList.add('selected');
-            
-            // Scroll the location into view
-            locationItem.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
-            
-            // Add a brief highlight effect
-            locationItem.style.transition = 'background-color 0.3s ease';
-            locationItem.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
-            
-            // Remove highlight after 2 seconds
-            setTimeout(() => {
-                locationItem.style.backgroundColor = '';
-            }, 2000);
-        }
-    }
-
     getAlertIcon(alertType) {
         const icons = {
             'warning': 'fa-triangle-exclamation',
             'watch': 'fa-eye',
             'advisory': 'fa-info-circle',
             'none': 'fa-check-circle',
-
         };
         return icons[alertType] || 'fa-question-circle';
     }
 
-    getAlertText(alertType) {
+    getEventIcon(location) {
+        // Use the specific event type from the location if available
+        if (location.alertEventType) {
+            const eventType = location.alertEventType.toLowerCase();
+            
+            // Map specific event types to icons
+            if (eventType.includes('tornado')) {
+                return 'fa-tornado';
+            } else if (eventType.includes('thunderstorm') || eventType.includes('storm')) {
+                return 'fa-bolt';
+            } else if (eventType.includes('flood')) {
+                return 'fa-water';
+            } else if (eventType.includes('wind')) {
+                return 'fa-wind';
+            } else if (eventType.includes('snow') || eventType.includes('winter')) {
+                return 'fa-snowflake';
+            } else if (eventType.includes('heat')) {
+                return 'fa-temperature-high';
+            } else if (eventType.includes('fire')) {
+                return 'fa-fire';
+            } else if (eventType.includes('fog')) {
+                return 'fa-smog';
+            } else if (eventType.includes('hurricane') || eventType.includes('tropical')) {
+                return 'fa-hurricane';
+            } else if (eventType.includes('avalanche')) {
+                return 'fa-mountain';
+            } else if (eventType.includes('marine')) {
+                return 'fa-anchor';
+            }
+        }
+        
+        // Fallback to generic alert icon based on severity
+        return this.getAlertIcon(location.currentAlert);
+    }
+
+    getAlertText(alertType, location = null) {
+        // If we have a specific event type from the location, use it
+        if (location && location.alertEventType) {
+            return location.alertEventType;
+        }
+        
+        // Fallback to generic text based on alert type
         const texts = {
             'warning': 'Severe Weather Warning',
             'watch': 'Weather Watch',
             'advisory': 'Weather Advisory',
             'none': 'No Active Alerts',
-
         };
         return texts[alertType] || 'Unknown Alert';
     }
@@ -3874,6 +4019,16 @@ class WeatherAlertMonitor {
         // Use real alert description if available
         if (location.alertDescription && alertType !== 'none') {
             return location.alertDescription;
+        }
+        
+        // If we have a specific event type, make the description more specific
+        if (location.alertEventType && alertType !== 'none') {
+            const eventType = location.alertEventType;
+            const weatherConditions = this.getLocationWeatherConditions(location);
+            
+            if (weatherConditions.shortForecast) {
+                return `${eventType} - ${weatherConditions.shortForecast}. ${weatherConditions.detailedForecast}`;
+            }
         }
         
         // Get real weather conditions
@@ -4057,6 +4212,11 @@ class WeatherAlertMonitor {
         console.log('=== Starting refreshAlerts ===');
         console.log(`Refreshing alerts for ${this.locations.length} locations`);
         
+        if (this.locations.length === 0) {
+            console.log('No locations to refresh alerts for');
+            return;
+        }
+        
         // Check for future events that should be activated
         this.checkForFutureEvents();
         
@@ -4168,19 +4328,43 @@ class WeatherAlertMonitor {
     async fetchCanadianWeatherData(location) {
         console.log(`Fetching Canadian weather data for ${location.nickname}`);
         
-        // For now, use US API as fallback since Canadian APIs are not fully implemented
+        // For Canadian locations, we'll skip weather data fetching for now
+        // since the US API doesn't support Canadian coordinates
         // In the future, this could use Environment Canada's API
-        console.log(`Using US API fallback for Canadian location: ${location.nickname}`);
-        await this.fetchUSWeatherData(location);
+        console.log(`Skipping weather data for Canadian location: ${location.nickname} (not supported by US API)`);
+        
+        // Set default values for Canadian locations
+        location.currentAlert = 'none';
+        location.currentAlertDescription = 'Weather data not available for Canadian locations';
+        location.shortForecast = 'Weather data not available';
+        location.detailedForecast = 'Canadian weather data is not currently supported. This location will be monitored for future weather API integration.';
+        location.temperature = null;
+        location.humidity = null;
+        location.windSpeed = null;
+        location.lastWeatherUpdate = new Date().toISOString();
+        
+        return location;
     }
 
     async fetchMexicanWeatherData(location) {
         console.log(`Fetching Mexican weather data for ${location.nickname}`);
         
-        // For now, use US API as fallback since Mexican APIs are not fully implemented
+        // For Mexican locations, we'll skip weather data fetching for now
+        // since the US API doesn't support Mexican coordinates
         // In the future, this could use CONAGUA's API
-        console.log(`Using US API fallback for Mexican location: ${location.nickname}`);
-        await this.fetchUSWeatherData(location);
+        console.log(`Skipping weather data for Mexican location: ${location.nickname} (not supported by US API)`);
+        
+        // Set default values for Mexican locations
+        location.currentAlert = 'none';
+        location.currentAlertDescription = 'Weather data not available for Mexican locations';
+        location.shortForecast = 'Weather data not available';
+        location.detailedForecast = 'Mexican weather data is not currently supported. This location will be monitored for future weather API integration.';
+        location.temperature = null;
+        location.humidity = null;
+        location.windSpeed = null;
+        location.lastWeatherUpdate = new Date().toISOString();
+        
+        return location;
     }
     
     // Helper method to parse address into components
