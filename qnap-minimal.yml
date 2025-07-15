@@ -1,0 +1,7 @@
+services:
+  weather-monitor:
+    image: python:3.11-slim
+    container_name: weather-alert-monitor
+    ports:
+      - "8000:8000"
+    command: pip install Flask && python -c "from flask import Flask; app = Flask(__name__); @app.route('/'); def home(): return 'Weather Monitor Running'; app.run(host='0.0.0.0', port=8000)" 

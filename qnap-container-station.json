@@ -1,0 +1,29 @@
+{
+  "name": "weather-alert-monitor",
+  "image": "weather-alert-monitor:latest",
+  "ports": [
+    {
+      "host": "8000",
+      "container": "8000",
+      "protocol": "tcp"
+    }
+  ],
+  "volumes": [
+    {
+      "host": "/share/Container/weather-monitor/data/database.json",
+      "container": "/app/database.json",
+      "mode": "rw"
+    },
+    {
+      "host": "/share/Container/weather-monitor/backups",
+      "container": "/app/backups",
+      "mode": "rw"
+    }
+  ],
+  "environment": [
+    "FLASK_ENV=production",
+    "PYTHONUNBUFFERED=1"
+  ],
+  "restart_policy": "unless-stopped",
+  "network_mode": "bridge"
+}

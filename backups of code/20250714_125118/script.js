@@ -854,6 +854,11 @@ class WeatherAlertMonitor {
                 if (this.map) {
                     this.map.invalidateSize();
                     console.log('Map invalidated size');
+                    
+                    // Add a test marker to verify map is working
+                    const testMarker = L.marker([39.8283, -98.5795]).addTo(this.map);
+                    testMarker.bindPopup('Test marker - map is working!');
+                    console.log('Test marker added to verify map functionality');
                 }
             }, 100);
             

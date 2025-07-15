@@ -1,0 +1,133 @@
+version: '3'
+services:
+  weather-monitor:
+    image: python:3.11-slim
+    container_name: weather-alert-monitor
+    ports:
+      - "8000:8000"
+    volumes:
+      - /Public/weather-monitor/database.json:/app/database.json
+      - /Public/weather-monitor/Images:/app/Images
+      - /Public/weather-monitor/backups:/app/backups
+    working_dir: /app
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    command: >
+      sh -c "
+      pip install Flask flask_cors &&
+      echo '#!/usr/bin/env python3' > server.py &&
+      echo 'from flask import Flask, request, jsonify, send_from_directory' >> server.py &&
+      echo 'from flask_cors import CORS' >> server.py &&
+      echo 'import json' >> server.py &&
+      echo 'import os' >> server.py &&
+      echo 'from datetime import datetime' >> server.py &&
+      echo 'import uuid' >> server.py &&
+      echo '' >> server.py &&
+      echo 'app = Flask(__name__)' >> server.py &&
+      echo 'CORS(app)' >> server.py &&
+      echo '' >> server.py &&
+      echo 'DATABASE_FILE = \"database.json\"' >> server.py &&
+      echo '' >> server.py &&
+      echo 'def load_database():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        with open(DATABASE_FILE, \"r\") as f:' >> server.py &&
+      echo '            return json.load(f)' >> server.py &&
+      echo '    except FileNotFoundError:' >> server.py &&
+      echo '        return {\"locations\": [], \"lastUpdated\": None}' >> server.py &&
+      echo '' >> server.py &&
+      echo 'def save_database(data):' >> server.py &&
+      echo '    data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '    with open(DATABASE_FILE, \"w\") as f:' >> server.py &&
+      echo '        json.dump(data, f, indent=2)' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/\")' >> server.py &&
+      echo 'def index():' >> server.py &&
+      echo '    return send_from_directory(\".\", \"index.html\")' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/<path:filename>\")' >> server.py &&
+      echo 'def serve_static(filename):' >> server.py &&
+      echo '    return send_from_directory(\".\", filename)' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations\", methods=[\"GET\"])' >> server.py &&
+      echo 'def get_locations():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        return jsonify(data[\"locations\"])' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations\", methods=[\"POST\"])' >> server.py &&
+      echo 'def add_location():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        location_data = request.json' >> server.py &&
+      echo '        location_data[\"id\"] = f\"loc_{uuid.uuid4().hex[:8]}\"' >> server.py &&
+      echo '        location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '        data[\"locations\"].append(location_data)' >> server.py &&
+      echo '        save_database(data)' >> server.py &&
+      echo '        return jsonify(location_data), 201' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/<location_id>\", methods=[\"PUT\"])' >> server.py &&
+      echo 'def update_location(location_id):' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        location_data = request.json' >> server.py &&
+      echo '        for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '            if location[\"id\"] == location_id:' >> server.py &&
+      echo '                location_data[\"id\"] = location_id' >> server.py &&
+      echo '                location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '                data[\"locations\"][i] = location_data' >> server.py &&
+      echo '                save_database(data)' >> server.py &&
+      echo '                return jsonify(location_data)' >> server.py &&
+      echo '        return jsonify({\"error\": \"Location not found\"}), 404' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/<location_id>\", methods=[\"DELETE\"])' >> server.py &&
+      echo 'def delete_location(location_id):' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '            if location[\"id\"] == location_id:' >> server.py &&
+      echo '                deleted_location = data[\"locations\"].pop(i)' >> server.py &&
+      echo '                save_database(data)' >> server.py &&
+      echo '                return jsonify(deleted_location)' >> server.py &&
+      echo '        return jsonify({\"error\": \"Location not found\"}), 404' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/bulk\", methods=[\"PUT\"])' >> server.py &&
+      echo 'def update_locations_bulk():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        locations_data = request.json' >> server.py &&
+      echo '        for location_data in locations_data:' >> server.py &&
+      echo '            for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '                if location[\"id\"] == location_data[\"id\"]:' >> server.py &&
+      echo '                    location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '                    data[\"locations\"][i] = location_data' >> server.py &&
+      echo '                    break' >> server.py &&
+      echo '        save_database(data)' >> server.py &&
+      echo '        return jsonify({\"message\": \"Locations updated successfully\"})' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/database\", methods=[\"GET\"])' >> server.py &&
+      echo 'def get_database_info():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        return jsonify({' >> server.py &&
+      echo '            \"totalLocations\": len(data[\"locations\"]),' >> server.py &&
+      echo '            \"lastUpdated\": data[\"lastUpdated\"]' >> server.py &&
+      echo '        })' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo 'if __name__ == \"__main__\":' >> server.py &&
+      echo '    print(\"Starting Weather Alert Monitor Server...\")' >> server.py &&
+      echo '    print(\"Server will be available at: http://localhost:8000\")' >> server.py &&
+      echo '    app.run(host=\"0.0.0.0\", port=8000, debug=True, use_reloader=False)' >> server.py &&
+      python server.py" 

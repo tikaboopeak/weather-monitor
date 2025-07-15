@@ -1,0 +1,194 @@
+version: '3'
+services:
+  weather-monitor:
+    image: python:3.11-slim
+    container_name: weather-alert-monitor
+    ports:
+      - "8000:8000"
+    volumes:
+      - /Public/weather-monitor/database.json:/app/database.json
+      - /Public/weather-monitor/Images:/app/Images
+      - /Public/weather-monitor/backups:/app/backups
+    working_dir: /app
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    command: >
+      sh -c "
+      pip install Flask flask_cors &&
+      echo '#!/usr/bin/env python3' > server.py &&
+      echo 'from flask import Flask, request, jsonify, send_from_directory' >> server.py &&
+      echo 'from flask_cors import CORS' >> server.py &&
+      echo 'import json' >> server.py &&
+      echo 'import os' >> server.py &&
+      echo 'from datetime import datetime' >> server.py &&
+      echo 'import uuid' >> server.py &&
+      echo '' >> server.py &&
+      echo 'app = Flask(__name__)' >> server.py &&
+      echo 'CORS(app)' >> server.py &&
+      echo '' >> server.py &&
+      echo 'DATABASE_FILE = \"database.json\"' >> server.py &&
+      echo '' >> server.py &&
+      echo 'def load_database():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        with open(DATABASE_FILE, \"r\") as f:' >> server.py &&
+      echo '            return json.load(f)' >> server.py &&
+      echo '    except FileNotFoundError:' >> server.py &&
+      echo '        return {\"locations\": [], \"lastUpdated\": None}' >> server.py &&
+      echo '' >> server.py &&
+      echo 'def save_database(data):' >> server.py &&
+      echo '    data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '    with open(DATABASE_FILE, \"w\") as f:' >> server.py &&
+      echo '        json.dump(data, f, indent=2)' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/\")' >> server.py &&
+      echo 'def index():' >> server.py &&
+      echo '    return send_from_directory(\".\", \"index.html\")' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/<path:filename>\")' >> server.py &&
+      echo 'def serve_static(filename):' >> server.py &&
+      echo '    return send_from_directory(\".\", filename)' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations\", methods=[\"GET\"])' >> server.py &&
+      echo 'def get_locations():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        return jsonify(data[\"locations\"])' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations\", methods=[\"POST\"])' >> server.py &&
+      echo 'def add_location():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        location_data = request.json' >> server.py &&
+      echo '        location_data[\"id\"] = f\"loc_{uuid.uuid4().hex[:8]}\"' >> server.py &&
+      echo '        location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '        data[\"locations\"].append(location_data)' >> server.py &&
+      echo '        save_database(data)' >> server.py &&
+      echo '        return jsonify(location_data), 201' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/<location_id>\", methods=[\"PUT\"])' >> server.py &&
+      echo 'def update_location(location_id):' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        location_data = request.json' >> server.py &&
+      echo '        for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '            if location[\"id\"] == location_id:' >> server.py &&
+      echo '                location_data[\"id\"] = location_id' >> server.py &&
+      echo '                location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '                data[\"locations\"][i] = location_data' >> server.py &&
+      echo '                save_database(data)' >> server.py &&
+      echo '                return jsonify(location_data)' >> server.py &&
+      echo '        return jsonify({\"error\": \"Location not found\"}), 404' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/<location_id>\", methods=[\"DELETE\"])' >> server.py &&
+      echo 'def delete_location(location_id):' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '            if location[\"id\"] == location_id:' >> server.py &&
+      echo '                deleted_location = data[\"locations\"].pop(i)' >> server.py &&
+      echo '                save_database(data)' >> server.py &&
+      echo '                return jsonify(deleted_location)' >> server.py &&
+      echo '        return jsonify({\"error\": \"Location not found\"}), 404' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/locations/bulk\", methods=[\"PUT\"])' >> server.py &&
+      echo 'def update_locations_bulk():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        locations_data = request.json' >> server.py &&
+      echo '        for location_data in locations_data:' >> server.py &&
+      echo '            for i, location in enumerate(data[\"locations\"]):' >> server.py &&
+      echo '                if location[\"id\"] == location_data[\"id\"]:' >> server.py &&
+      echo '                    location_data[\"lastUpdated\"] = datetime.now().isoformat()' >> server.py &&
+      echo '                    data[\"locations\"][i] = location_data' >> server.py &&
+      echo '                    break' >> server.py &&
+      echo '        save_database(data)' >> server.py &&
+      echo '        return jsonify({\"message\": \"Locations updated successfully\"})' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/database\", methods=[\"GET\"])' >> server.py &&
+      echo 'def get_database_info():' >> server.py &&
+      echo '    try:' >> server.py &&
+      echo '        data = load_database()' >> server.py &&
+      echo '        return jsonify({' >> server.py &&
+      echo '            \"totalLocations\": len(data[\"locations\"]),' >> server.py &&
+      echo '            \"lastUpdated\": data[\"lastUpdated\"]' >> server.py &&
+      echo '        })' >> server.py &&
+      echo '    except Exception as e:' >> server.py &&
+      echo '        return jsonify({\"error\": str(e)}), 500' >> server.py &&
+      echo '' >> server.py &&
+      echo 'if __name__ == \"__main__\":' >> server.py &&
+      echo '    print(\"Starting Weather Alert Monitor Server...\")' >> server.py &&
+      echo '    print(\"Server will be available at: http://localhost:8000\")' >> server.py &&
+      echo '    app.run(host=\"0.0.0.0\", port=8000, debug=True, use_reloader=False)' >> server.py &&
+      echo '<!DOCTYPE html>' > index.html &&
+      echo '<html lang=\"en\">' >> index.html &&
+      echo '<head>' >> index.html &&
+      echo '    <meta charset=\"UTF-8\">' >> index.html &&
+      echo '    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">' >> index.html &&
+      echo '    <title>Weather Alert Monitor</title>' >> index.html &&
+      echo '    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.css\" />' >> index.html &&
+      echo '    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css\">' >> index.html &&
+      echo '    <link rel=\"stylesheet\" href=\"styles.css\">' >> index.html &&
+      echo '</head>' >> index.html &&
+      echo '<body>' >> index.html &&
+      echo '    <div class=\"container\">' >> index.html &&
+      echo '        <header class=\"header\">' >> index.html &&
+      echo '            <h1 class=\"app-title\">' >> index.html &&
+      echo '                <i class=\"fas fa-cloud-showers-heavy\"></i>' >> index.html &&
+      echo '                Weather Alert Monitor' >> index.html &&
+      echo '            </h1>' >> index.html &&
+      echo '            <div class=\"header-controls\">' >> index.html &&
+      echo '                <button class=\"add-location-btn\" id=\"addLocationBtn\">' >> index.html &&
+      echo '                    <i class=\"fas fa-plus\"></i>' >> index.html &&
+      echo '                    Add Location' >> index.html &&
+      echo '                </button>' >> index.html &&
+      echo '            </div>' >> index.html &&
+      echo '        </header>' >> index.html &&
+      echo '        <main class=\"main-content\">' >> index.html &&
+      echo '            <div class=\"locations-panel\" id=\"locationsPanel\">' >> index.html &&
+      echo '                <div class=\"panel-header\">' >> index.html &&
+      echo '                    <h2>Monitored Locations <span id=\"locationCount\" class=\"location-count\">(0)</span></h2>' >> index.html &&
+      echo '                </div>' >> index.html &&
+      echo '                <div class=\"locations-list\" id=\"locationsList\">' >> index.html &&
+      echo '                    <div class=\"no-locations\">' >> index.html &&
+      echo '                        <i class=\"fas fa-map-marker-alt\"></i>' >> index.html &&
+      echo '                        <p>No locations added yet</p>' >> index.html &&
+      echo '                        <button class=\"add-first-location\">Add Your First Location</button>' >> index.html &&
+      echo '                    </div>' >> index.html &&
+      echo '                </div>' >> index.html &&
+      echo '            </div>' >> index.html &&
+      echo '            <div class=\"map-panel\" id=\"mapPanel\">' >> index.html &&
+      echo '                <div id=\"map\" class=\"weather-map\"></div>' >> index.html &&
+      echo '            </div>' >> index.html &&
+      echo '        </main>' >> index.html &&
+      echo '    </div>' >> index.html &&
+      echo '    <script src=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js\"></script>' >> index.html &&
+      echo '    <script src=\"script.js\"></script>' >> index.html &&
+      echo '</body>' >> index.html &&
+      echo '</html>' >> index.html &&
+      echo 'body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; }' > styles.css &&
+      echo '.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }' >> styles.css &&
+      echo '.app-title { margin: 0; font-size: 1.8rem; }' >> styles.css &&
+      echo '.add-location-btn { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; background-color: #4CAF50; color: white; }' >> styles.css &&
+      echo '.main-content { display: flex; height: calc(100vh - 80px); }' >> styles.css &&
+      echo '.locations-panel { width: 300px; background: white; border-right: 1px solid #ddd; padding: 1rem; }' >> styles.css &&
+      echo '.map-panel { flex: 1; }' >> styles.css &&
+      echo '#map { width: 100%; height: 100%; }' >> styles.css &&
+      echo '.no-locations { text-align: center; color: #999; padding: 2rem; }' >> styles.css &&
+      echo 'console.log(\"Weather Alert Monitor loaded\");' > script.js &&
+      echo '// Basic map initialization' >> script.js &&
+      echo 'document.addEventListener(\"DOMContentLoaded\", function() {' >> script.js &&
+      echo '    console.log(\"DOM loaded\");' >> script.js &&
+      echo '    // Initialize map here' >> script.js &&
+      echo '});' >> script.js &&
+      python server.py" 

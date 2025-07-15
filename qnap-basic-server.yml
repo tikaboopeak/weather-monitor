@@ -1,0 +1,35 @@
+version: '3'
+services:
+  weather-monitor:
+    image: python:3.11-slim
+    container_name: weather-alert-monitor
+    ports:
+      - "8000:8000"
+    volumes:
+      - /Public/weather-monitor/database.json:/app/database.json
+    working_dir: /app
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    command: >
+      sh -c "
+      pip install Flask flask_cors &&
+      echo 'from flask import Flask, jsonify' > server.py &&
+      echo 'from flask_cors import CORS' >> server.py &&
+      echo 'import json' >> server.py &&
+      echo '' >> server.py &&
+      echo 'app = Flask(__name__)' >> server.py &&
+      echo 'CORS(app)' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/\")' >> server.py &&
+      echo 'def index():' >> server.py &&
+      echo '    return \"Weather Alert Monitor Server is running!\"' >> server.py &&
+      echo '' >> server.py &&
+      echo '@app.route(\"/api/test\")' >> server.py &&
+      echo 'def test():' >> server.py &&
+      echo '    return jsonify({\"message\": \"API is working!\"})' >> server.py &&
+      echo '' >> server.py &&
+      echo 'if __name__ == \"__main__\":' >> server.py &&
+      echo '    print(\"Starting basic server...\")' >> server.py &&
+      echo '    app.run(host=\"0.0.0.0\", port=8000, debug=True)' >> server.py &&
+      python server.py" 
