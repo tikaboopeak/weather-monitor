@@ -72,4 +72,18 @@ yarn-error.log*
 *.tmp
 *.temp
 temp/
-tmp/ 
+tmp/
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+*.cert
+fullchain.pem
+privkey.pem
+private.key
+
+# Archive files
+*.tar
+*.tar.gz
+*.zip 

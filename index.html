@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Alert Monitor</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
     <div class="container">
@@ -151,11 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-divider"></div>
-                    <button class="tab-btn info-btn" id="infoTabBtn" title="Information & Help">
-                        <i class="fas fa-info-circle"></i>
-                        Info
-                    </button>
+
                 </div>
             </div>
 
@@ -308,107 +304,269 @@
         <div class="modal-overlay" id="legendModal">
             <div class="modal legend-modal">
                 <div class="modal-header">
-                    <h3>Weather Alert Legend</h3>
+                    <h3><i class="fas fa-map-marked-alt"></i> Complete Weather Alert Legend</h3>
                     <button class="modal-close" id="legendClose">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-content">
                     <div class="legend-content">
+                        <!-- Alert Severity Colors -->
                         <div class="legend-section">
-                            <h4>Alert Severity</h4>
-                            <div class="legend-item">
-                                <div class="legend-color nws-warning"></div>
-                                <span>NWS Warning (Very Dark Red)</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color severe"></div>
-                                <span>Manual Warning (Standard Red)</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color moderate"></div>
-                                <span>Moderate (Watch) - Orange</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color minor"></div>
-                                <span>Minor (Advisory) - Yellow</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color none"></div>
-                                <span>No Alert - Green</span>
+                            <h4><i class="fas fa-palette"></i> Alert Severity Colors</h4>
+                            <div class="legend-grid">
+                                <div class="legend-item detailed">
+                                    <div class="legend-color nws-warning"></div>
+                                    <div class="legend-text">
+                                        <strong>NWS Warning</strong>
+                                        <span>Official National Weather Service warnings - immediate danger</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <div class="legend-color severe"></div>
+                                    <div class="legend-text">
+                                        <strong>Manual Warning</strong>
+                                        <span>Scheduled or manually set warnings - high priority</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <div class="legend-color moderate"></div>
+                                    <div class="legend-text">
+                                        <strong>Watch</strong>
+                                        <span>Conditions favorable for severe weather - monitor closely</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <div class="legend-color minor"></div>
+                                    <div class="legend-text">
+                                        <strong>Advisory</strong>
+                                        <span>Less severe conditions - exercise caution</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <div class="legend-color none"></div>
+                                    <div class="legend-text">
+                                        <strong>No Alert</strong>
+                                        <span>No active weather alerts - normal conditions</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Site Type Icons -->
                         <div class="legend-section">
-                            <h4>Site Types</h4>
-                            <div class="legend-item">
-                                <i class="fas fa-warehouse legend-icon"></i>
-                                <span>Warehouse</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-industry legend-icon"></i>
-                                <span>Plant</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-truck legend-icon"></i>
-                                <span>3PL Warehouse</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-building legend-icon"></i>
-                                <span>Office</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-boxes legend-icon"></i>
-                                <span>Supplier</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-cogs legend-icon"></i>
-                                <span>Machine Shop</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-map-marker-alt legend-icon"></i>
-                                <span>Land</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-parking legend-icon"></i>
-                                <span>Parking</span>
+                            <h4><i class="fas fa-building"></i> Site Type Icons</h4>
+                            <div class="legend-grid">
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-warehouse legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Warehouse</strong>
+                                        <span>Storage and distribution facilities</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-industry legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Plant</strong>
+                                        <span>Manufacturing and production facilities</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-truck legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>3PL Warehouse</strong>
+                                        <span>Third-party logistics and fulfillment centers</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-building legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Office</strong>
+                                        <span>Administrative and corporate offices</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-boxes legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Supplier</strong>
+                                        <span>Vendor and supplier locations</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-cogs legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Machine Shop</strong>
+                                        <span>Manufacturing and machining facilities</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-map-marker-alt legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Land</strong>
+                                        <span>Vacant land and development sites</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-parking legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Parking</strong>
+                                        <span>Parking facilities and lots</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Weather Event Icons -->
                         <div class="legend-section">
-                            <h4>Alert Icons</h4>
-                            <div class="legend-item">
-                                <i class="fas fa-triangle-exclamation legend-icon"></i>
-                                <span>Warning</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-eye legend-icon"></i>
-                                <span>Watch</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-info-circle legend-icon"></i>
-                                <span>Advisory</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-check-circle legend-icon"></i>
-                                <span>No Alert</span>
+                            <h4><i class="fas fa-cloud-showers-heavy"></i> Weather Event Icons</h4>
+                            <div class="legend-grid">
+                                <div class="legend-item detailed">
+                                    <i class="fa-solid fa-tornado legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Tornado</strong>
+                                        <span>Tornado warnings and watches</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-bolt legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Thunderstorm</strong>
+                                        <span>Severe thunderstorm warnings and watches</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-water legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Flood</strong>
+                                        <span>Flash flood, flood warnings and advisories</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-wind legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Wind</strong>
+                                        <span>High wind warnings, watches and advisories</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-snowflake legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Winter Weather</strong>
+                                        <span>Winter storms, blizzards, snow squalls</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-temperature-high legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Heat</strong>
+                                        <span>Heat advisories, excessive heat warnings</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-fire legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Fire</strong>
+                                        <span>Red flag warnings and fire weather watches</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fa-solid fa-hurricane legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Hurricane/Tropical Storm</strong>
+                                        <span>Hurricane and tropical storm warnings</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-triangle-exclamation legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Other Events</strong>
+                                        <span>Special weather statements and other alerts</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Map Features -->
                         <div class="legend-section">
-                            <h4>Map Features</h4>
-                            <div class="legend-item">
-                                <i class="fas fa-info-circle legend-icon"></i>
-                                <span>Markers show site type icons with alert severity colors</span>
+                            <h4><i class="fas fa-map"></i> Map Features & Controls</h4>
+                            <div class="legend-grid">
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-map-marker-alt legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Location Markers</strong>
+                                        <span>Click to view details, weather info, and contact data</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-ghost legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Ghost Markers</strong>
+                                        <span>Filtered locations - visible but greyed out</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-sync-alt legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Refresh Button</strong>
+                                        <span>Manually update weather data immediately</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-home legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Default View</strong>
+                                        <span>Reset map to continental US overview</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-filter legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Filters</strong>
+                                        <span>Toggle site types and alert levels on/off</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-chevron-down legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Expand Details</strong>
+                                        <span>Click to show/hide location information</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="legend-item">
-                                <i class="fas fa-sync-alt legend-icon"></i>
-                                <span>Refresh alerts manually</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-chevron-down legend-icon"></i>
-                                <span>Expand/collapse alert details</span>
-                            </div>
-                            <div class="legend-item">
-                                <i class="fas fa-edit legend-icon"></i>
-                                <span>Edit location information</span>
+                        </div>
+
+                        <!-- Data Sources -->
+                        <div class="legend-section">
+                            <h4><i class="fas fa-database"></i> Data Sources & Updates</h4>
+                            <div class="legend-grid">
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-satellite legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>National Weather Service</strong>
+                                        <span>Official US weather alerts and forecasts</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-clock legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Auto Refresh</strong>
+                                        <span>Weather data updates every 2 minutes</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-map-marked-alt legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Alert Polygons</strong>
+                                        <span>Colored areas show active weather alert zones</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item detailed">
+                                    <i class="fas fa-pulse legend-icon"></i>
+                                    <div class="legend-text">
+                                        <strong>Pulsing Animation</strong>
+                                        <span>Severe warnings pulse to draw attention</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -416,97 +574,7 @@
             </div>
         </div>
 
-        <!-- Info Modal -->
-        <div class="modal-overlay" id="infoModal">
-            <div class="modal info-modal">
-                <div class="modal-header">
-                    <h3><i class="fas fa-info-circle"></i> Information & Help</h3>
-                    <button class="modal-close" id="infoClose">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="modal-content">
-                    <div class="info-content">
-                        <div class="info-section">
-                            <h2><i class="fas fa-palette"></i> Alert Colors</h2>
-                            <div class="alert-color-info">
-                                <div class="color-item">
-                                    <div class="color-sample nws-warning"></div>
-                                    <div class="color-details">
-                                        <h4>NWS Warnings</h4>
-                                        <p>Official weather warnings from National Weather Service</p>
-                                    </div>
-                                </div>
-                                <div class="color-item">
-                                    <div class="color-sample severe"></div>
-                                    <div class="color-details">
-                                        <h4>Manual Warnings</h4>
-                                        <p>Scheduled or manually advanced alerts</p>
-                                    </div>
-                                </div>
-                                <div class="color-item">
-                                    <div class="color-sample moderate"></div>
-                                    <div class="color-details">
-                                        <h4>Watches</h4>
-                                        <p>Conditions favorable for severe weather</p>
-                                    </div>
-                                </div>
-                                <div class="color-item">
-                                    <div class="color-sample minor"></div>
-                                    <div class="color-details">
-                                        <h4>Advisories</h4>
-                                        <p>Less severe weather conditions</p>
-                                    </div>
-                                </div>
-                                <div class="color-item">
-                                    <div class="color-sample none"></div>
-                                    <div class="color-details">
-                                        <h4>No Alerts</h4>
-                                        <p>No active weather alerts</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-section">
-                            <h2><i class="fas fa-filter"></i> Filters</h2>
-                            <div class="filter-info">
-                                <h4>Site Types</h4>
-                                <p>Filter by warehouse, plant, office, etc. Disabled filters show as grey markers.</p>
-                                
-                                <h4>Alert Levels</h4>
-                                <p>Filter by warning, watch, advisory, none. Filtered alerts appear grey but remain visible.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="info-section">
-                            <h2><i class="fas fa-clock"></i> Updates</h2>
-                            <div class="update-info">
-                                <h4>Auto Refresh</h4>
-                                <p>Weather data updates every 2 minutes from NWS API.</p>
-                                
-                                <h4>Manual Refresh</h4>
-                                <p>Click sync button to refresh immediately.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="info-section">
-                            <h2><i class="fas fa-map-marked-alt"></i> Features</h2>
-                            <div class="map-info">
-                                <h4>Markers</h4>
-                                <p>Click markers for location details and weather info.</p>
-                                
-                                <h4>Alert Zones</h4>
-                                <p>Colored polygons show weather alert areas when available.</p>
-                                
-                                <h4>Animations</h4>
-                                <p>Severe warnings and watches pulse to draw attention.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Footer -->
         <footer class="footer">

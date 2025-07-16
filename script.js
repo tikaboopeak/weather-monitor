@@ -104,8 +104,8 @@ class WeatherAlertMonitor {
         };
 
         this.alertEventIcons = {
-            'Tornado Warning': 'fa-tornado',
-            'Tornado Watch': 'fa-tornado',
+            'Tornado Warning': 'tornado-icon-swirl',
+            'Tornado Watch': 'tornado-icon-swirl',
             'Severe Thunderstorm Warning': 'fa-bolt',
             'Severe Thunderstorm Watch': 'fa-bolt',
             'Thunderstorm Warning': 'fa-cloud-bolt',
@@ -135,10 +135,10 @@ class WeatherAlertMonitor {
             'Dense Fog Advisory': 'fa-smog',
             'Dust Storm Warning': 'fa-smog',
             'Air Quality Alert': 'fa-smog',
-            'Hurricane Warning': 'fa-hurricane',
-            'Hurricane Watch': 'fa-hurricane',
-            'Tropical Storm Warning': 'fa-hurricane',
-            'Tropical Storm Watch': 'fa-hurricane',
+            'Hurricane Warning': 'hurricane-icon',
+            'Hurricane Watch': 'hurricane-icon',
+            'Tropical Storm Warning': 'hurricane-icon',
+            'Tropical Storm Watch': 'hurricane-icon',
             'Storm Surge Warning': 'fa-water',
             'Storm Surge Watch': 'fa-water',
             'Coastal Flood Warning': 'fa-water',
@@ -278,10 +278,7 @@ class WeatherAlertMonitor {
         document.getElementById('legendBtn').addEventListener('click', () => this.openLegendModal());
         document.getElementById('defaultZoomBtn').addEventListener('click', () => this.setDefaultZoom());
         
-        // Info modal controls
-        document.getElementById('infoClose').addEventListener('click', () => {
-            this.closeInfoModal();
-        });
+
         
         document.getElementById('cancelBtn').addEventListener('click', () => {
             // For new location additions, show confirmation before closing
@@ -405,28 +402,20 @@ class WeatherAlertMonitor {
 
     setupTabNavigation() {
         const liveTabBtn = document.getElementById('liveTabBtn');
-        const infoTabBtn = document.getElementById('infoTabBtn');
         
         // Live tab button - ensure live tab is always active
         liveTabBtn.addEventListener('click', () => {
             console.log('Switching to Live Alerts tab');
                 
-                // Update active tab button
+            // Update active tab button
             liveTabBtn.classList.add('active');
-            infoTabBtn.classList.remove('active');
                 
             // Ensure live tab content is active
             const liveTab = document.getElementById('liveTab');
             liveTab.classList.add('active');
                 
             // Initialize map for the live tab
-                    this.initializeLiveMap();
-            });
-        
-        // Info tab button - open info modal
-        infoTabBtn.addEventListener('click', () => {
-            console.log('Opening Info Modal');
-            this.openInfoModal();
+            this.initializeLiveMap();
         });
     }
 
@@ -854,6 +843,11 @@ class WeatherAlertMonitor {
                 if (this.map) {
                     this.map.invalidateSize();
                     console.log('Map invalidated size');
+                    
+                    // Add a test marker to verify map is working
+                    const testMarker = L.marker([39.8283, -98.5795]).addTo(this.map);
+                    testMarker.bindPopup('Test marker - map is working!');
+                    console.log('Test marker added to verify map functionality');
                 }
             }, 100);
             
@@ -1094,20 +1088,16 @@ class WeatherAlertMonitor {
     }
 
     openLegendModal() {
-        document.getElementById('legendModal').classList.add('active');
+        console.log('Opening Legend Modal');
+        const modal = document.getElementById('legendModal');
+        modal.classList.add('active');
     }
 
     closeLegendModal() {
         document.getElementById('legendModal').classList.remove('active');
     }
     
-    openInfoModal() {
-        document.getElementById('infoModal').classList.add('active');
-    }
-    
-    closeInfoModal() {
-        document.getElementById('infoModal').classList.remove('active');
-    }
+
 
     async handleLocationSubmit(e) {
         e.preventDefault();
@@ -3528,19 +3518,23 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
                 counts['none']++;
             }
         });
-        // Update the UI elements if present
-        if (document.getElementById('count-warning')) {
-            document.getElementById('count-warning').textContent = counts.warning;
+        
+        // Update the UI elements with correct IDs
+        const severeElement = document.getElementById('severeCount');
+        const moderateElement = document.getElementById('moderateCount');
+        const minorElement = document.getElementById('minorCount');
+        
+        if (severeElement) {
+            severeElement.textContent = counts.warning;
         }
-        if (document.getElementById('count-watch')) {
-            document.getElementById('count-watch').textContent = counts.watch;
+        if (moderateElement) {
+            moderateElement.textContent = counts.watch;
         }
-        if (document.getElementById('count-advisory')) {
-            document.getElementById('count-advisory').textContent = counts.advisory;
+        if (minorElement) {
+            minorElement.textContent = counts.advisory;
         }
-        if (document.getElementById('count-none')) {
-            document.getElementById('count-none').textContent = counts.none;
-        }
+        
+        console.log('Alert counts updated:', counts);
     }
 
     updateLocationsList() {
@@ -3579,7 +3573,7 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
             <div class="alert-card ${this.alertSeverity[location.currentAlert].class}${location.currentAlert === 'warning' && location.alertSource === 'nws' ? ' nws-warning' : ''}" data-location-id="${location.id}">
                 <div class="alert-card-header">
                     <div class="alert-card-icon" title="${location.alertEventType || this.getAlertText(location.currentAlert, location)}">
-                            <i class="fas ${this.getEventIcon(location)}"></i>
+                            ${this.getEventIconHtml(location)}
                         </div>
                     <div class="alert-card-title-section">
                         <div class="alert-card-location-row">
@@ -3831,7 +3825,7 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
                 ${location.contactTitle ? `<p><i class="fas fa-id-badge"></i> ${location.contactTitle}</p>` : ''}
                     ${location.contactPhone ? `<p><i class="fas fa-phone"></i> ${location.contactPhone}</p>` : ''}
                     <div class="popup-alert ${alertInfo.class}${isNoneGhosted || isAlertLevelFiltered ? ' filtered' : ''}">
-                        <i class="fas ${this.getEventIcon(location)}"></i>
+                        ${this.getEventIconHtml(location)}
                         ${this.getAlertText(location.currentAlert, location)}
                         ${isNoneGhosted || isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
                     </div>
@@ -3966,7 +3960,7 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
             
             // Map specific event types to icons
             if (eventType.includes('tornado')) {
-                return 'fa-tornado';
+                return 'fa-solid fa-tornado'; // Use FontAwesome tornado icon
             } else if (eventType.includes('thunderstorm') || eventType.includes('storm')) {
                 return 'fa-bolt';
             } else if (eventType.includes('flood')) {
@@ -3982,7 +3976,7 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
             } else if (eventType.includes('fog')) {
                 return 'fa-smog';
             } else if (eventType.includes('hurricane') || eventType.includes('tropical')) {
-                return 'fa-hurricane';
+                return 'fa-solid fa-hurricane'; // Use FontAwesome hurricane icon
             } else if (eventType.includes('avalanche')) {
                 return 'fa-mountain';
             } else if (eventType.includes('marine')) {
@@ -3992,6 +3986,18 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
         
         // Fallback to generic alert icon based on severity
         return this.getAlertIcon(location.currentAlert);
+    }
+
+    getEventIconHtml(location) {
+        const iconClass = this.getEventIcon(location);
+        
+        // Handle FontAwesome icons with fa-solid prefix
+        if (iconClass.startsWith('fa-solid ')) {
+            return `<i class="${iconClass}"></i>`;
+        } else {
+            // All other icons are FontAwesome icons with fas prefix
+            return `<i class="fas ${iconClass}"></i>`;
+        }
     }
 
     getAlertText(alertType, location = null) {
