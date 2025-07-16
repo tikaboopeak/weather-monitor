@@ -4,9 +4,10 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies including curl for health checks
 RUN apt-get update && apt-get install -y \
     gcc \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy all application files
@@ -27,11 +28,11 @@ RUN useradd -m -u 1000 weatheruser && \
 USER weatheruser
 
 # Expose port
-EXPOSE 443
+EXPOSE 8000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8000/api/database || exit 1
 
-# Run the application
-CMD ["gunicorn", "--certfile=fullchain.pem", "--keyfile=privkey.pem", "-b", "0.0.0.0:443", "server:app"] 
+# Run the application without SSL
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "--workers", "2", "--timeout", "120", "server:app"] 
