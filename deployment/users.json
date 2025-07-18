@@ -1,0 +1,6 @@
+{
+  "users": [
+    {"username": "admin", "password": "713bfda78870bf9d1b261f565286f85e97ee614efe5f0faf7c34e7ca4f65baca", "role": "admin"},
+    {"username": "viewer", "password": "357379bc625074220b4f8a644dea0844c669836e4431094cd3ed42a77c638dee", "role": "viewer"}
+  ]
+} 

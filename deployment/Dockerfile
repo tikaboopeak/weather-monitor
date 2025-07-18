@@ -18,8 +18,8 @@ COPY . .
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 
-# Expose port
-EXPOSE 443
+# Expose both ports
+EXPOSE 80 443
 
-# Start the application with Gunicorn and SSL
-CMD ["gunicorn", "--certfile=ssl/cert.pem", "--keyfile=ssl/key.pem", "--bind", "0.0.0.0:443", "server:app"] 
+# Start the application using the startup script
+CMD ["./start.sh"] 

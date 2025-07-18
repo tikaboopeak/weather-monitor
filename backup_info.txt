@@ -1,0 +1,8 @@
+Backup created successfully at Wed Jul 16 17:21:13 CDT 2025
+Weather Alert Monitor - Complete Application Backup
+Features included:
+- FontAwesome 6.7.0 with correct tornado/hurricane icons
+- Comprehensive legend with detailed breakdown
+- Fixed alert counters in locations panel
+- Removed info button and modal
+- Ghost icon for filtered items

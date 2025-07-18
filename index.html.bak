@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Alert Monitor</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,30 +26,6 @@
                 </button>
             </div>
         </header>
-
-        <!-- Login Modal Overlay -->
-        <div class="modal-overlay" id="loginModal" style="display: none;">
-            <div class="modal login-modal">
-                <div class="login-form-container">
-                    <h2 class="login-title">Sign In</h2>
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <label for="loginUsername">Username</label>
-                            <input type="text" id="loginUsername" required autocomplete="username">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Password</label>
-                            <input type="password" id="loginPassword" required autocomplete="current-password">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn-primary login-btn">Login</button>
-                        </div>
-                        <div class="login-error" id="loginError" style="display:none;"></div>
-                    </form>
-                    <img src="https://cdn11.bigcommerce.com/s-f94ow24cv1/images/stencil/250x100/logo_1717520078__26341.original.png" alt="Novolex" class="login-logo" style="margin-top: 18px; margin-bottom: 0;">
-                </div>
-            </div>
-        </div>
 
         <!-- Main Content -->
         <main class="main-content">
@@ -175,7 +151,11 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="tab-divider"></div>
+                    <button class="tab-btn info-btn" id="infoTabBtn" title="Information & Help">
+                        <i class="fas fa-info-circle"></i>
+                        Info
+                    </button>
                 </div>
             </div>
 
@@ -324,76 +304,7 @@
             </div>
         </div>
 
-        <!-- Legend Modal -->
-        <div class="modal-overlay" id="legendModal">
-            <div class="modal legend-modal">
-                <div class="modal-header">
-                    <h3><i class="fas fa-info-circle"></i> Legend & App Guide</h3>
-                    <button class="modal-close" id="legendClose" title="Close">&times;</button>
-                </div>
-                <div class="modal-content">
-                    <div class="legend-content">
-                        <section class="legend-section">
-                            <h4>Alert Icons</h4>
-                            <div class="legend-icons-row">
-                                <span title="Hurricane"><i class="fas fa-hurricane legend-icon"></i> <b>Hurricane</b> – Major tropical cyclone</span>
-                                <span title="Tornado"><i class="fas fa-tornado legend-icon"></i> <b>Tornado</b> – Tornado or tornado warning</span>
-                                <span title="Thunderstorm"><i class="fas fa-bolt legend-icon"></i> <b>Severe Thunderstorm</b> – Severe or strong thunderstorm</span>
-                                <span title="Flood"><i class="fas fa-water legend-icon"></i> <b>Flood</b> – Flood, flash flood, or high water</span>
-                                <span title="Snow/Winter"><i class="fas fa-snowflake legend-icon"></i> <b>Winter</b> – Snow, ice, blizzard, or winter weather</span>
-                                <span title="Heat"><i class="fas fa-temperature-high legend-icon"></i> <b>Heat</b> – Excessive heat, heat advisory, or extreme temperature</span>
-                                <span title="Fire"><i class="fas fa-fire legend-icon"></i> <b>Fire</b> – Wildfire or fire weather</span>
-                                <span title="Fog/Smoke"><i class="fas fa-smog legend-icon"></i> <b>Fog/Smoke</b> – Dense fog or smoke hazard</span>
-                                <span title="Wind"><i class="fas fa-wind legend-icon"></i> <b>Wind</b> – High wind, dust, or blowing sand</span>
-                                <span title="Other"><i class="fas fa-triangle-exclamation legend-icon"></i> <b>Other</b> – General/unspecified hazard</span>
-                            </div>
-                        </section>
-                        <section class="legend-section">
-                            <h4>Site Type Icons</h4>
-                            <div class="legend-icons-row">
-                                <span title="Warehouse"><i class="fas fa-warehouse legend-icon"></i> <b>Warehouse</b></span>
-                                <span title="Plant"><i class="fas fa-industry legend-icon"></i> <b>Plant</b></span>
-                                <span title="3PL Warehouse"><i class="fas fa-truck legend-icon"></i> <b>3PL Warehouse</b></span>
-                                <span title="Office"><i class="fas fa-building legend-icon"></i> <b>Office</b></span>
-                                <span title="Supplier"><i class="fas fa-boxes legend-icon"></i> <b>Supplier</b></span>
-                                <span title="Machine Shop"><i class="fas fa-cogs legend-icon"></i> <b>Machine Shop</b></span>
-                                <span title="Land"><i class="fas fa-map-marker-alt legend-icon"></i> <b>Land</b></span>
-                                <span title="Parking"><i class="fas fa-parking legend-icon"></i> <b>Parking</b></span>
-                            </div>
-                        </section>
-                        <section class="legend-section">
-                            <h4>Alert Severity Colors</h4>
-                            <div class="legend-colors-row">
-                                <div class="legend-color-item"><span class="legend-color legend-severe"></span><b>Severe</b> – Red: Warnings, most urgent threats</div>
-                                <div class="legend-color-item"><span class="legend-color legend-moderate"></span><b>Moderate</b> – Orange: Watches, possible threats</div>
-                                <div class="legend-color-item"><span class="legend-color legend-minor"></span><b>Minor</b> – Yellow: Advisories, less urgent</div>
-                                <div class="legend-color-item"><span class="legend-color legend-none"></span><b>No Alert</b> – Green: No active alerts</div>
-                            </div>
-                        </section>
-                        <section class="legend-section">
-                            <h4>Map Markers</h4>
-                            <div class="legend-markers-row">
-                                <span><i class="fas fa-map-marker-alt marker-severe"></i> <b>Severe Alert Marker</b></span>
-                                <span><i class="fas fa-map-marker-alt marker-moderate"></i> <b>Moderate Alert Marker</b></span>
-                                <span><i class="fas fa-map-marker-alt marker-minor"></i> <b>Minor Alert Marker</b></span>
-                                <span><i class="fas fa-map-marker-alt marker-none"></i> <b>No Alert Marker</b></span>
-                            </div>
-                            <div style="margin-top: 8px; font-size: 0.98em; color: #6b7280;">
-                                <b><i class="fas fa-ghost legend-ghosted" style="margin-right:4px;"></i><span class="legend-ghosted">Ghosted Markers:</span></b> Markers/icons appear faded (ghosted) when filtered out by site type or alert level.
-                            </div>
-                        </section>
-                        <section class="legend-section">
-                            <h4>App Functionality & Filters</h4>
-                            <ul class="legend-function-list">
-                                <li><b>Add locations</b> to monitor weather alerts for your sites.</li>
-                                <li><b>View alerts</b> by severity and type, with color-coded markers and icons.</li>
-                                <li><b>Click markers</b> for detailed site and alert info.</li>
-                                <li><b>Filter by site type</b>: Use checkboxes to show/hide locations by type (e.g., Plant, Warehouse).</li>
-                                <li><b>Filter by alert level</b>: Show/hide locations by alert severity (Severe, Moderate, Minor, or None).</li>
-                                <li>Filtered-out markers and icons become <b><i class='fas fa-ghost legend-ghosted'></i> <span class="legend-ghosted">ghosted</span></b> (faded) on the map and in the alert panel for easy distinction.</li>
-                                <li><b>Legend</b> always available for quick reference.</li>
-                            </ul>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,20 +408,15 @@
                 <div class="footer-left">
                     <img src="https://cdn11.bigcommerce.com/s-f94ow24cv1/images/stencil/250x100/logo_1717520078__26341.original.png" alt="Novolex" class="footer-logo">
                 </div>
-                <div class="footer-right-group">
-                    <div class="footer-right">
-                        <div class="footer-status">
-                            <div class="api-status" id="apiStatus">
-                                <i class="fas fa-circle"></i>
-                                <span>Connecting...</span>
-                            </div>
-                            <div class="last-updated" id="lastUpdated">
-                                Last updated: Never
-                            </div>
+                <div class="footer-right">
+                    <div class="footer-status">
+                        <div class="api-status" id="apiStatus">
+                            <i class="fas fa-circle"></i>
+                            <span>Connecting...</span>
                         </div>
-                    </div>
-                    <div class="footer-logout">
-                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                        <div class="last-updated" id="lastUpdated">
+                            Last updated: Never
+                        </div>
                     </div>
                 </div>
             </div>
@@ -519,5 +425,76 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
+  <!-- Legend Modal -->
+  <div id="legendModal" class="modal legend-modal">
+    <div class="modal-header">
+      <h3><i class="fas fa-info-circle"></i> Legend & App Guide</h3>
+      <button class="modal-close" id="closeLegendModalBtn" title="Close">&times;</button>
+    </div>
+    <div class="modal-content legend-content">
+      <section class="legend-section">
+        <h4>Alert Icons</h4>
+        <div class="legend-icons-row">
+          <span title="Hurricane"><i class="fas fa-hurricane legend-icon"></i> <b>Hurricane</b> – Major tropical cyclone</span>
+          <span title="Tornado"><i class="fas fa-tornado legend-icon"></i> <b>Tornado</b> – Tornado or tornado warning</span>
+          <span title="Thunderstorm"><i class="fas fa-bolt legend-icon"></i> <b>Severe Thunderstorm</b> – Severe or strong thunderstorm</span>
+          <span title="Flood"><i class="fas fa-water legend-icon"></i> <b>Flood</b> – Flood, flash flood, or high water</span>
+          <span title="Snow/Winter"><i class="fas fa-snowflake legend-icon"></i> <b>Winter</b> – Snow, ice, blizzard, or winter weather</span>
+          <span title="Heat"><i class="fas fa-temperature-high legend-icon"></i> <b>Heat</b> – Excessive heat, heat advisory, or extreme temperature</span>
+          <span title="Fire"><i class="fas fa-fire legend-icon"></i> <b>Fire</b> – Wildfire or fire weather</span>
+          <span title="Fog/Smoke"><i class="fas fa-smog legend-icon"></i> <b>Fog/Smoke</b> – Dense fog or smoke hazard</span>
+          <span title="Wind"><i class="fas fa-wind legend-icon"></i> <b>Wind</b> – High wind, dust, or blowing sand</span>
+          <span title="Other"><i class="fas fa-triangle-exclamation legend-icon"></i> <b>Other</b> – General/unspecified hazard</span>
+        </div>
+      </section>
+      <section class="legend-section">
+        <h4>Site Type Icons</h4>
+        <div class="legend-icons-row">
+          <span title="Warehouse"><i class="fas fa-warehouse legend-icon"></i> <b>Warehouse</b></span>
+          <span title="Plant"><i class="fas fa-industry legend-icon"></i> <b>Plant</b></span>
+          <span title="3PL Warehouse"><i class="fas fa-truck legend-icon"></i> <b>3PL Warehouse</b></span>
+          <span title="Office"><i class="fas fa-building legend-icon"></i> <b>Office</b></span>
+          <span title="Supplier"><i class="fas fa-boxes legend-icon"></i> <b>Supplier</b></span>
+          <span title="Machine Shop"><i class="fas fa-cogs legend-icon"></i> <b>Machine Shop</b></span>
+          <span title="Land"><i class="fas fa-map-marker-alt legend-icon"></i> <b>Land</b></span>
+          <span title="Parking"><i class="fas fa-parking legend-icon"></i> <b>Parking</b></span>
+        </div>
+      </section>
+      <section class="legend-section">
+        <h4>Alert Severity Colors</h4>
+        <div class="legend-colors-row">
+          <span class="legend-color legend-severe"></span> <b>Severe</b> – Red: Warnings, most urgent threats
+          <span class="legend-color legend-moderate"></span> <b>Moderate</b> – Orange: Watches, possible threats
+          <span class="legend-color legend-minor"></span> <b>Minor</b> – Yellow: Advisories, less urgent
+          <span class="legend-color legend-none"></span> <b>No Alert</b> – Green: No active alerts
+        </div>
+      </section>
+      <section class="legend-section">
+        <h4>Map Markers</h4>
+        <div class="legend-markers-row">
+          <span><i class="fas fa-map-marker-alt marker-severe"></i> <b>Severe Alert Marker</b></span>
+          <span><i class="fas fa-map-marker-alt marker-moderate"></i> <b>Moderate Alert Marker</b></span>
+          <span><i class="fas fa-map-marker-alt marker-minor"></i> <b>Minor Alert Marker</b></span>
+          <span><i class="fas fa-map-marker-alt marker-none"></i> <b>No Alert Marker</b></span>
+        </div>
+        <div style="margin-top: 8px; font-size: 0.98em; color: #6b7280;">
+          <b><i class="fas fa-ghost" style="margin-right:4px;"></i>Ghosted Markers:</b> Markers/icons appear faded (ghosted) when filtered out by site type or alert level.
+        </div>
+      </section>
+      <section class="legend-section">
+        <h4>App Functionality & Filters</h4>
+        <ul class="legend-function-list">
+          <li><b>Add locations</b> to monitor weather alerts for your sites.</li>
+          <li><b>View alerts</b> by severity and type, with color-coded markers and icons.</li>
+          <li><b>Click markers</b> for detailed site and alert info.</li>
+          <li><b>Filter by site type</b>: Use checkboxes to show/hide locations by type (e.g., Plant, Warehouse).</li>
+          <li><b>Filter by alert level</b>: Show/hide locations by alert severity (Severe, Moderate, Minor, or None).</li>
+          <li>Filtered-out markers and icons become <b><i class='fas fa-ghost'></i> ghosted</b> (faded) on the map and in the alert panel for easy distinction.</li>
+          <li><b>Legend</b> always available for quick reference.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
 </body>
 </html> 

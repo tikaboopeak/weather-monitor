@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  weather-monitor-ssl:
+    build:
+      context: .
+      dockerfile: Dockerfile.ssl
+    container_name: weather-alert-monitor-ssl
+    ports:
+      - "443:443"
+    volumes:
+      # Persist database file
+      - ./database.json:/app/database.json
+      # Optional: Mount backups directory for persistence
+      - ./backups:/app/backups
+      # Mount SSL cert and key as read-only
+      - ./fullchain.pem:/app/fullchain.pem:ro
+      - ./privkey.pem:/app/privkey.pem:ro
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-k", "https://localhost:443/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - weather-ssl-network
+
+networks:
+  weather-ssl-network:
+    driver: bridge 

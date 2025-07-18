@@ -1,8 +1,0 @@
-version: '3'
-services:
-  weather:
-    image: python:3.11-slim
-    ports:
-      - "8000:8000"
-    command: >
-      sh -c "pip install Flask && echo 'from flask import Flask' > server.py && echo 'app = Flask(__name__)' >> server.py && echo '@app.route(\"/\")' >> server.py && echo 'def home():' >> server.py && echo '    return \"Weather Monitor Running\"' >> server.py && echo 'app.run(host=\"0.0.0.0\", port=8000)' >> server.py && python server.py" 

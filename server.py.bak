@@ -1,21 +1,8 @@
-services:
-  weather-monitor:
-    image: python:3.11-slim
-    container_name: weather-alert-monitor
-    ports:
-      - "8000:8000"
-    volumes:
-      # Mount only the data persistence
-      - /Public/weather-monitor/data/database.json:/app/database.json
-      - /Public/weather-monitor/backups:/app/backups
-    working_dir: /app
-    environment:
-      - FLASK_ENV=production
-      - PYTHONUNBUFFERED=1
-    restart: unless-stopped
-    command: >
-      sh -c "pip install --no-cache-dir Flask flask_cors && echo 'Creating server.py...' && cat > server.py << 'EOF'
 #!/usr/bin/env python3
+"""
+Simple Flask server for Weather Alert Monitor database operations
+"""
+
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import json
@@ -24,32 +11,41 @@ from datetime import datetime
 import uuid
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # Enable CORS for all routes
 
 DATABASE_FILE = 'database.json'
 
 def load_database():
+    """Load the database from JSON file"""
     try:
         with open(DATABASE_FILE, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        return {'locations': [], 'lastUpdated': None}
+        # Return default database structure if file doesn't exist
+        return {
+            "locations": [],
+            "lastUpdated": None
+        }
 
 def save_database(data):
+    """Save the database to JSON file"""
     data['lastUpdated'] = datetime.now().isoformat()
     with open(DATABASE_FILE, 'w') as f:
         json.dump(data, f, indent=2)
 
 @app.route('/')
 def index():
+    """Serve the main HTML file"""
     return send_from_directory('.', 'index.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
+    """Serve static files (CSS, JS, etc.)"""
     return send_from_directory('.', filename)
 
 @app.route('/api/locations', methods=['GET'])
 def get_locations():
+    """Get all locations"""
     try:
         data = load_database()
         return jsonify(data['locations'])
@@ -58,22 +54,30 @@ def get_locations():
 
 @app.route('/api/locations', methods=['POST'])
 def add_location():
+    """Add a new location"""
     try:
         data = load_database()
         location_data = request.json
-        location_data['id'] = f'loc_{uuid.uuid4().hex[:8]}'
+        
+        # Generate unique ID
+        location_data['id'] = f"loc_{uuid.uuid4().hex[:8]}"
         location_data['lastUpdated'] = datetime.now().isoformat()
+        
         data['locations'].append(location_data)
         save_database(data)
+        
         return jsonify(location_data), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/locations/<location_id>', methods=['PUT'])
 def update_location(location_id):
+    """Update an existing location"""
     try:
         data = load_database()
         location_data = request.json
+        
+        # Find and update the location
         for i, location in enumerate(data['locations']):
             if location['id'] == location_id:
                 location_data['id'] = location_id
@@ -81,34 +85,43 @@ def update_location(location_id):
                 data['locations'][i] = location_data
                 save_database(data)
                 return jsonify(location_data)
+        
         return jsonify({'error': 'Location not found'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/locations/<location_id>', methods=['DELETE'])
 def delete_location(location_id):
+    """Delete a location"""
     try:
         data = load_database()
+        
+        # Find and remove the location
         for i, location in enumerate(data['locations']):
             if location['id'] == location_id:
                 deleted_location = data['locations'].pop(i)
                 save_database(data)
                 return jsonify(deleted_location)
+        
         return jsonify({'error': 'Location not found'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/locations/bulk', methods=['PUT'])
 def update_locations_bulk():
+    """Update multiple locations at once (for weather data updates)"""
     try:
         data = load_database()
         locations_data = request.json
+        
+        # Update each location
         for location_data in locations_data:
             for i, location in enumerate(data['locations']):
                 if location['id'] == location_data['id']:
                     location_data['lastUpdated'] = datetime.now().isoformat()
                     data['locations'][i] = location_data
                     break
+        
         save_database(data)
         return jsonify({'message': 'Locations updated successfully'})
     except Exception as e:
@@ -116,6 +129,7 @@ def update_locations_bulk():
 
 @app.route('/api/database', methods=['GET'])
 def get_database_info():
+    """Get database information"""
     try:
         data = load_database()
         return jsonify({
@@ -126,48 +140,13 @@ def get_database_info():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    print('Starting Weather Alert Monitor Server...')
-    print('Server will be available at: http://localhost:8000')
-    app.run(host='0.0.0.0', port=8000, debug=True, use_reloader=False)
-EOF
-      && echo 'Creating index.html...' && cat > index.html << 'EOF'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Alert Monitor</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="app">
-        <h1>Weather Alert Monitor</h1>
-        <p>Server is running successfully!</p>
-        <p>Your weather monitoring application is now deployed on QNAP.</p>
-    </div>
-</body>
-</html>
-EOF
-      && echo 'Creating styles.css...' && cat > styles.css << 'EOF'
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
-}
-
-#app {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-}
-EOF
-      && echo 'Starting server...' && python server.py" 
+    print("Starting Weather Alert Monitor Server...")
+    print("Server will be available at: http://localhost:8000")
+    print("API endpoints:")
+    print("  GET  /api/locations - Get all locations")
+    print("  POST /api/locations - Add new location")
+    print("  PUT  /api/locations/<id> - Update location")
+    print("  DELETE /api/locations/<id> - Delete location")
+    print("  PUT  /api/locations/bulk - Update multiple locations")
+    print("  GET  /api/database - Get database info")
+    app.run(host='0.0.0.0', port=8000, debug=True, use_reloader=False) 

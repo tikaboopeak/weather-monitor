@@ -15,7 +15,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5ac38e9c",
-      "lastUpdated": "2025-07-17T19:56:39.943250",
+      "lastUpdated": "2025-07-17T19:16:40.142817",
       "nickname": "Ocala",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -353,7 +353,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_16f22bfe",
-      "lastUpdated": "2025-07-17T19:56:39.943295",
+      "lastUpdated": "2025-07-17T19:16:40.142881",
       "nickname": "Columbus",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -691,7 +691,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_67dca73d",
-      "lastUpdated": "2025-07-17T19:56:39.943302",
+      "lastUpdated": "2025-07-17T19:16:40.142892",
       "nickname": "Brownsville",
       "siteType": "plant",
       "weatherConditions": {
@@ -736,8 +736,8 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:51:49+00:00",
-          "updateTime": "2025-07-18T00:45:16+00:00",
+          "generatedAt": "2025-07-18T00:03:49+00:00",
+          "updateTime": "2025-07-18T00:00:20+00:00",
           "validTimes": "2025-07-17T18:00:00+00:00/P7DT7H",
           "elevation": {
             "unitCode": "wmoUnit:m",
@@ -1029,7 +1029,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_09080162",
-      "lastUpdated": "2025-07-17T19:56:39.943308",
+      "lastUpdated": "2025-07-17T19:16:40.142901",
       "nickname": "Desoto",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1367,7 +1367,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a201d156",
-      "lastUpdated": "2025-07-17T19:56:39.943314",
+      "lastUpdated": "2025-07-17T19:16:40.142911",
       "nickname": "Lebanon",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -1412,9 +1412,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:19:49+00:00",
-          "updateTime": "2025-07-18T00:03:24+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT10H",
+          "generatedAt": "2025-07-17T17:41:46+00:00",
+          "updateTime": "2025-07-17T17:30:43+00:00",
+          "validTimes": "2025-07-17T11:00:00+00:00/P7DT17H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 167.0304
@@ -1422,44 +1422,63 @@
           "periods": [
             {
               "number": 1,
-              "name": "Tonight",
-              "startTime": "2025-07-17T19:00:00-05:00",
-              "endTime": "2025-07-18T06:00:00-05:00",
-              "isDaytime": false,
-              "temperature": 74,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T12:00:00-05:00",
+              "endTime": "2025-07-17T18:00:00-05:00",
+              "isDaytime": true,
+              "temperature": 93,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 60
+                "value": 32
               },
-              "windSpeed": "0 mph",
-              "windDirection": "",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,60/tsra_hi,20?size=medium",
-              "shortForecast": "Showers And Thunderstorms Likely then Chance Showers And Thunderstorms",
-              "detailedForecast": "Showers and thunderstorms likely before 8pm, then a chance of showers and thunderstorms between 8pm and 1am. Partly cloudy, with a low around 74. Heat index values as high as 102. South wind around 0 mph. Chance of precipitation is 60%. New rainfall amounts less than a tenth of an inch possible."
+              "windSpeed": "5 mph",
+              "windDirection": "SSW",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30?size=medium",
+              "shortForecast": "Chance Showers And Thunderstorms",
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly sunny, with a high near 93. Heat index values as high as 106. South southwest wind around 5 mph. Chance of precipitation is 30%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
               "number": 2,
+              "name": "Tonight",
+              "startTime": "2025-07-17T18:00:00-05:00",
+              "endTime": "2025-07-18T06:00:00-05:00",
+              "isDaytime": false,
+              "temperature": 73,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 44
+              },
+              "windSpeed": "0 to 5 mph",
+              "windDirection": "S",
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,40/tsra_hi,20?size=medium",
+              "shortForecast": "Chance Showers And Thunderstorms",
+              "detailedForecast": "A chance of showers and thunderstorms before 1am. Partly cloudy, with a low around 73. Heat index values as high as 99. South wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
+            },
+            {
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-05:00",
               "endTime": "2025-07-18T18:00:00-05:00",
               "isDaytime": true,
-              "temperature": 91,
+              "temperature": 90,
               "temperatureUnit": "F",
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 51
+                "value": 54
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30/tsra_hi,50?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 10am. Partly sunny. High near 91, with temperatures falling to around 87 in the afternoon. Heat index values as high as 106. South southwest wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 90. Heat index values as high as 103. South southwest wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-05:00",
               "endTime": "2025-07-19T06:00:00-05:00",
@@ -1469,16 +1488,16 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 58
+                "value": 45
               },
               "windSpeed": "0 to 5 mph",
               "windDirection": "S",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_sct,60/bkn?size=medium",
-              "shortForecast": "Showers And Thunderstorms Likely then Mostly Cloudy",
-              "detailedForecast": "Showers and thunderstorms likely before midnight. Mostly cloudy, with a low around 73. South wind 0 to 5 mph. Chance of precipitation is 60%. New rainfall amounts between a quarter and half of an inch possible."
+              "icon": "https://api.weather.gov/icons/land/night/tsra_hi,50/bkn?size=medium",
+              "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
+              "detailedForecast": "A chance of showers and thunderstorms before 11pm. Mostly cloudy, with a low around 73. South wind 0 to 5 mph. Chance of precipitation is 50%."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-05:00",
               "endTime": "2025-07-19T18:00:00-05:00",
@@ -1493,11 +1512,11 @@
               "windSpeed": "5 to 10 mph",
               "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30/tsra_hi,60?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms then Showers And Thunderstorms Likely",
-              "detailedForecast": "A chance of showers and thunderstorms between 7am and 10am, then showers and thunderstorms likely between 10am and 4pm, then showers and thunderstorms likely. Partly sunny, with a high near 90. Heat index values as high as 105. South southwest wind 5 to 10 mph. Chance of precipitation is 60%."
+              "shortForecast": "Showers And Thunderstorms Likely",
+              "detailedForecast": "A slight chance of showers and thunderstorms before 7am, then a chance of showers and thunderstorms between 7am and 10am, then showers and thunderstorms likely between 10am and 4pm, then showers and thunderstorms likely. Partly sunny, with a high near 90. South southwest wind 5 to 10 mph. Chance of precipitation is 60%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-05:00",
               "endTime": "2025-07-20T06:00:00-05:00",
@@ -1516,7 +1535,7 @@
               "detailedForecast": "Showers and thunderstorms likely before 7pm, then a slight chance of showers and thunderstorms between 7pm and 1am. Partly cloudy, with a low around 73. Southwest wind around 5 mph. Chance of precipitation is 60%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-05:00",
               "endTime": "2025-07-20T18:00:00-05:00",
@@ -1535,7 +1554,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 7am. Mostly sunny, with a high near 93. West southwest wind around 5 mph. Chance of precipitation is 50%."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-05:00",
               "endTime": "2025-07-21T06:00:00-05:00",
@@ -1554,7 +1573,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 1am. Mostly cloudy, with a low around 73. Southwest wind 0 to 5 mph. Chance of precipitation is 50%."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-05:00",
               "endTime": "2025-07-21T18:00:00-05:00",
@@ -1573,7 +1592,7 @@
               "detailedForecast": "Showers and thunderstorms likely after 7am. Partly sunny, with a high near 93. West southwest wind 0 to 5 mph. Chance of precipitation is 60%."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-05:00",
               "endTime": "2025-07-22T06:00:00-05:00",
@@ -1589,10 +1608,10 @@
               "windDirection": "SSW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,60/sct?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely then Partly Cloudy",
-              "detailedForecast": "Showers and thunderstorms likely before 7pm. Partly cloudy, with a low around 72. South southwest wind 0 to 5 mph. Chance of precipitation is 60%."
+              "detailedForecast": "Showers and thunderstorms likely before 7pm. Partly cloudy, with a low around 72. Chance of precipitation is 60%."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-05:00",
               "endTime": "2025-07-22T18:00:00-05:00",
@@ -1611,7 +1630,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 7am. Mostly sunny, with a high near 95. Chance of precipitation is 40%."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-05:00",
               "endTime": "2025-07-23T06:00:00-05:00",
@@ -1630,7 +1649,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 7pm. Partly cloudy, with a low around 74. Chance of precipitation is 40%."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-05:00",
               "endTime": "2025-07-23T18:00:00-05:00",
@@ -1649,7 +1668,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 1pm. Mostly sunny, with a high near 94. Chance of precipitation is 30%."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-05:00",
               "endTime": "2025-07-24T06:00:00-05:00",
@@ -1665,26 +1684,7 @@
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/sct?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Partly cloudy, with a low around 74. Chance of precipitation is 30%."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-05:00",
-              "endTime": "2025-07-24T18:00:00-05:00",
-              "isDaytime": true,
-              "temperature": 95,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 24
-              },
-              "windSpeed": "0 to 5 mph",
-              "windDirection": "SSW",
-              "icon": "https://api.weather.gov/icons/land/day/few/tsra_hi,20?size=medium",
-              "shortForecast": "Sunny then Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms after 1pm. Sunny, with a high near 95."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Partly cloudy, with a low around 74."
             }
           ]
         }
@@ -1705,7 +1705,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3bbbf8cd",
-      "lastUpdated": "2025-07-17T19:56:39.943320",
+      "lastUpdated": "2025-07-17T19:16:40.142921",
       "nickname": "Chelmsford",
       "siteType": "parking",
       "weatherConditions": {
@@ -2043,7 +2043,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_9a6470ab",
-      "lastUpdated": "2025-07-17T19:56:39.943328",
+      "lastUpdated": "2025-07-17T19:16:40.142930",
       "nickname": "Hartsville",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2379,7 +2379,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50cb02b7",
-      "lastUpdated": "2025-07-17T19:56:39.943335",
+      "lastUpdated": "2025-07-17T19:16:40.142938",
       "nickname": "Rio Bravo",
       "siteType": "plant"
     },
@@ -2398,7 +2398,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6bba7836",
-      "lastUpdated": "2025-07-17T19:56:39.943337",
+      "lastUpdated": "2025-07-17T19:16:40.142942",
       "nickname": "Greensboro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -2736,7 +2736,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_cf0883a6",
-      "lastUpdated": "2025-07-17T19:56:39.943344",
+      "lastUpdated": "2025-07-17T19:16:40.142951",
       "nickname": "Manteno",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3074,7 +3074,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_f1b005c3",
-      "lastUpdated": "2025-07-17T19:56:39.943351",
+      "lastUpdated": "2025-07-17T19:16:40.142961",
       "nickname": "Raleigh",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -3412,7 +3412,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_f5cec04f",
-      "lastUpdated": "2025-07-17T19:56:39.943359",
+      "lastUpdated": "2025-07-17T19:16:40.142971",
       "nickname": "Florence",
       "siteType": "plant",
       "weatherConditions": {
@@ -3750,7 +3750,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_fff230fd",
-      "lastUpdated": "2025-07-17T19:56:39.943366",
+      "lastUpdated": "2025-07-17T19:16:40.142982",
       "nickname": "Jackson",
       "siteType": "plant",
       "weatherConditions": {
@@ -4075,7 +4075,7 @@
     },
     {
       "address": "1 Duro Way, Walton, KY 41094",
-      "alertDescription": "* WHAT...Flooding caused by excessive rainfall remains possible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Repeated thunderstorm activity over any particular area will\nsubstantially increase the flooding threat. Storms will\nproduce torrential rainfall at times given the amount of\nmoisture available. This, along with already saturated soils\nin some spots will also increase the threat of flooding.",
+      "alertDescription": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight EDT tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Efficient rainfall rates, repeated rounds of storms, along\nwith antecedent wet soil conditions may result in flash\nflooding.",
       "alertEventType": "Flood Watch",
       "alertSource": "nws",
       "contactEmail": "",
@@ -4088,7 +4088,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_df83f208",
-      "lastUpdated": "2025-07-17T19:56:39.943374",
+      "lastUpdated": "2025-07-17T19:16:40.142994",
       "nickname": "Walton",
       "siteType": "plant",
       "weatherConditions": {
@@ -4426,7 +4426,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_c24c96ca",
-      "lastUpdated": "2025-07-17T19:56:39.943381",
+      "lastUpdated": "2025-07-17T19:16:40.143004",
       "nickname": "Reno",
       "siteType": "plant",
       "weatherConditions": {
@@ -4764,7 +4764,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ddb5cd89",
-      "lastUpdated": "2025-07-17T19:56:39.943388",
+      "lastUpdated": "2025-07-17T19:16:40.143014",
       "nickname": "Abilene",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -5100,7 +5100,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7b3a1f9a",
-      "lastUpdated": "2025-07-17T19:56:39.943395",
+      "lastUpdated": "2025-07-17T19:16:40.143023",
       "nickname": "Cornwall",
       "siteType": "warehouse"
     },
@@ -5119,7 +5119,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_8735e50a",
-      "lastUpdated": "2025-07-17T19:56:39.943398",
+      "lastUpdated": "2025-07-17T19:16:40.143027",
       "nickname": "Greenville",
       "siteType": "office",
       "weatherConditions": {
@@ -5164,9 +5164,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:19:49+00:00",
-          "updateTime": "2025-07-18T00:04:18+00:00",
-          "validTimes": "2025-07-17T17:00:00+00:00/P7DT8H",
+          "generatedAt": "2025-07-17T19:37:46+00:00",
+          "updateTime": "2025-07-17T17:27:40+00:00",
+          "validTimes": "2025-07-17T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 294.132
@@ -5174,8 +5174,27 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T15:00:00-04:00",
+              "endTime": "2025-07-17T18:00:00-04:00",
+              "isDaytime": true,
+              "temperature": 93,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 35
+              },
+              "windSpeed": "9 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_sct,40?size=medium",
+              "shortForecast": "Chance Showers And Thunderstorms",
+              "detailedForecast": "A chance of showers and thunderstorms before 4pm, then a chance of showers and thunderstorms between 4pm and 5pm, then a slight chance of showers and thunderstorms. Partly sunny, with a high near 93. Southwest wind around 9 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
-              "startTime": "2025-07-17T20:00:00-04:00",
+              "startTime": "2025-07-17T18:00:00-04:00",
               "endTime": "2025-07-18T06:00:00-04:00",
               "isDaytime": false,
               "temperature": 74,
@@ -5183,16 +5202,16 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 12
+                "value": 14
               },
-              "windSpeed": "6 mph",
+              "windSpeed": "3 to 8 mph",
               "windDirection": "SW",
               "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
               "shortForecast": "Partly Cloudy",
-              "detailedForecast": "Partly cloudy, with a low around 74. Southwest wind around 6 mph. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "Partly cloudy, with a low around 74. Southwest wind 3 to 8 mph. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-04:00",
               "endTime": "2025-07-18T18:00:00-04:00",
@@ -5211,7 +5230,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 2pm. Mostly sunny, with a high near 95. Heat index values as high as 102. Southwest wind 3 to 10 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-04:00",
               "endTime": "2025-07-19T06:00:00-04:00",
@@ -5230,7 +5249,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before midnight. Partly cloudy, with a low around 74. West southwest wind 3 to 9 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-04:00",
               "endTime": "2025-07-19T18:00:00-04:00",
@@ -5246,10 +5265,10 @@
               "windDirection": "WSW",
               "icon": "https://api.weather.gov/icons/land/day/hot/tsra_hi,30?size=medium",
               "shortForecast": "Sunny then Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 2pm. Sunny, with a high near 96. Heat index values as high as 103. West southwest wind 3 to 13 mph, with gusts as high as 21 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms after 2pm. Sunny, with a high near 96. West southwest wind 3 to 13 mph, with gusts as high as 21 mph. Chance of precipitation is 30%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-04:00",
               "endTime": "2025-07-20T06:00:00-04:00",
@@ -5265,10 +5284,10 @@
               "windDirection": "WSW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/sct?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 75. West southwest wind 6 to 12 mph, with gusts as high as 20 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 75. Chance of precipitation is 30%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-04:00",
               "endTime": "2025-07-20T18:00:00-04:00",
@@ -5287,7 +5306,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 3pm. Mostly sunny, with a high near 96. Chance of precipitation is 30%."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-04:00",
               "endTime": "2025-07-21T06:00:00-04:00",
@@ -5306,7 +5325,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 10pm. Mostly cloudy, with a low around 75. Chance of precipitation is 30%."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-04:00",
               "endTime": "2025-07-21T18:00:00-04:00",
@@ -5325,7 +5344,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 2pm. Mostly sunny, with a high near 96. Chance of precipitation is 50%."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-04:00",
               "endTime": "2025-07-22T06:00:00-04:00",
@@ -5344,7 +5363,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 73. Chance of precipitation is 50%."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-04:00",
               "endTime": "2025-07-22T18:00:00-04:00",
@@ -5363,7 +5382,7 @@
               "detailedForecast": "A slight chance of rain showers before 11am, then a chance of showers and thunderstorms between 2pm and 5pm, then showers and thunderstorms likely. Partly sunny, with a high near 90. Chance of precipitation is 60%."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-04:00",
               "endTime": "2025-07-23T06:00:00-04:00",
@@ -5382,7 +5401,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 73. Chance of precipitation is 50%."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-04:00",
               "endTime": "2025-07-23T18:00:00-04:00",
@@ -5401,7 +5420,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 2pm. Mostly sunny, with a high near 92. Chance of precipitation is 40%."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-04:00",
               "endTime": "2025-07-24T06:00:00-04:00",
@@ -5417,26 +5436,7 @@
               "windDirection": "NE",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,40/tsra_hi,20?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms before 3am. Partly cloudy, with a low around 72. Chance of precipitation is 40%."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-04:00",
-              "endTime": "2025-07-24T18:00:00-04:00",
-              "isDaytime": true,
-              "temperature": 95,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 32
-              },
-              "windSpeed": "2 to 6 mph",
-              "windDirection": "ENE",
-              "icon": "https://api.weather.gov/icons/land/day/hot/tsra_hi,30?size=medium",
-              "shortForecast": "Mostly Sunny then Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 3pm. Mostly sunny, with a high near 95."
+              "detailedForecast": "A chance of showers and thunderstorms before 3am. Partly cloudy, with a low around 72."
             }
           ]
         }
@@ -5457,7 +5457,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_7922e3d2",
-      "lastUpdated": "2025-07-17T19:56:39.943405",
+      "lastUpdated": "2025-07-17T19:16:40.143037",
       "nickname": "Grove City - Specialty Laminations",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -5793,7 +5793,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e2c9df4d",
-      "lastUpdated": "2025-07-17T19:56:39.943412",
+      "lastUpdated": "2025-07-17T19:16:40.143047",
       "nickname": "Guadalajara (Zapopan)",
       "siteType": "warehouse"
     },
@@ -5812,7 +5812,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_be38dfd0",
-      "lastUpdated": "2025-07-17T19:56:39.943415",
+      "lastUpdated": "2025-07-17T19:16:40.143052",
       "nickname": "Hartsville - Hilex",
       "siteType": "office",
       "weatherConditions": {
@@ -6150,7 +6150,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3db98058",
-      "lastUpdated": "2025-07-17T19:56:39.943423",
+      "lastUpdated": "2025-07-17T19:16:40.143063",
       "nickname": "Hanover - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6488,7 +6488,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ff1d475a",
-      "lastUpdated": "2025-07-17T19:56:39.943430",
+      "lastUpdated": "2025-07-17T19:16:40.143074",
       "nickname": "Mt. Vernon - Burrows",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -6826,7 +6826,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_069a2dcc",
-      "lastUpdated": "2025-07-17T19:56:39.943438",
+      "lastUpdated": "2025-07-17T19:16:40.143085",
       "nickname": "Charlotte - Novolex",
       "siteType": "office",
       "weatherConditions": {
@@ -6871,9 +6871,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:19:49+00:00",
-          "updateTime": "2025-07-18T00:04:18+00:00",
-          "validTimes": "2025-07-17T17:00:00+00:00/P7DT8H",
+          "generatedAt": "2025-07-17T17:33:47+00:00",
+          "updateTime": "2025-07-17T17:27:40+00:00",
+          "validTimes": "2025-07-17T11:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 178.9176
@@ -6881,8 +6881,27 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T13:00:00-04:00",
+              "endTime": "2025-07-17T18:00:00-04:00",
+              "isDaytime": true,
+              "temperature": 95,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 31
+              },
+              "windSpeed": "10 mph",
+              "windDirection": "SW",
+              "icon": "https://api.weather.gov/icons/land/day/tsra_sct,30?size=medium",
+              "shortForecast": "Slight Chance Showers And Thunderstorms",
+              "detailedForecast": "A slight chance of showers and thunderstorms between 3pm and 4pm, then a chance of showers and thunderstorms between 4pm and 5pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 95. Heat index values as high as 103. Southwest wind around 10 mph. Chance of precipitation is 30%."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
-              "startTime": "2025-07-17T20:00:00-04:00",
+              "startTime": "2025-07-17T18:00:00-04:00",
               "endTime": "2025-07-18T06:00:00-04:00",
               "isDaytime": false,
               "temperature": 76,
@@ -6890,16 +6909,16 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 10
+                "value": 11
               },
-              "windSpeed": "7 mph",
+              "windSpeed": "3 to 7 mph",
               "windDirection": "SSW",
-              "icon": "https://api.weather.gov/icons/land/night/bkn?size=medium",
-              "shortForecast": "Mostly Cloudy",
-              "detailedForecast": "Mostly cloudy, with a low around 76. South southwest wind around 7 mph."
+              "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+              "shortForecast": "Partly Cloudy",
+              "detailedForecast": "Partly cloudy, with a low around 76. Heat index values as high as 100. South southwest wind 3 to 7 mph."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-04:00",
               "endTime": "2025-07-18T18:00:00-04:00",
@@ -6918,7 +6937,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 2pm. Mostly sunny, with a high near 96. Heat index values as high as 106. Southwest wind around 8 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-04:00",
               "endTime": "2025-07-19T06:00:00-04:00",
@@ -6937,7 +6956,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before midnight. Partly cloudy, with a low around 76. Heat index values as high as 104. West southwest wind 3 to 7 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-04:00",
               "endTime": "2025-07-19T18:00:00-04:00",
@@ -6953,10 +6972,10 @@
               "windDirection": "WSW",
               "icon": "https://api.weather.gov/icons/land/day/hot/tsra_hi,30?size=medium",
               "shortForecast": "Sunny then Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 2pm. Sunny, with a high near 97. Heat index values as high as 108. West southwest wind 3 to 10 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms after 2pm. Sunny, with a high near 97. West southwest wind 3 to 10 mph. Chance of precipitation is 30%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-04:00",
               "endTime": "2025-07-20T06:00:00-04:00",
@@ -6972,10 +6991,10 @@
               "windDirection": "WSW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/sct?size=medium",
               "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
-              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 75. West southwest wind 3 to 9 mph. Chance of precipitation is 20%."
+              "detailedForecast": "A slight chance of showers and thunderstorms before 8pm. Partly cloudy, with a low around 75. Chance of precipitation is 20%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-04:00",
               "endTime": "2025-07-20T18:00:00-04:00",
@@ -6991,10 +7010,10 @@
               "windDirection": "W",
               "icon": "https://api.weather.gov/icons/land/day/hot/tsra_hi,20?size=medium",
               "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms after 4pm. Mostly sunny, with a high near 97. Chance of precipitation is 20%."
+              "detailedForecast": "A slight chance of showers and thunderstorms after 4pm. Mostly sunny, with a high near 97."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-04:00",
               "endTime": "2025-07-21T06:00:00-04:00",
@@ -7013,7 +7032,7 @@
               "detailedForecast": "A slight chance of showers and thunderstorms before 1am. Mostly cloudy, with a low around 76."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-04:00",
               "endTime": "2025-07-21T18:00:00-04:00",
@@ -7032,7 +7051,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 2pm. Mostly sunny, with a high near 95. Chance of precipitation is 50%."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-04:00",
               "endTime": "2025-07-22T06:00:00-04:00",
@@ -7051,7 +7070,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 73. Chance of precipitation is 40%."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-04:00",
               "endTime": "2025-07-22T18:00:00-04:00",
@@ -7070,7 +7089,7 @@
               "detailedForecast": "A slight chance of rain showers before 7am, then a chance of showers and thunderstorms. Partly sunny, with a high near 90. Chance of precipitation is 50%."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-04:00",
               "endTime": "2025-07-23T06:00:00-04:00",
@@ -7089,7 +7108,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 8pm, then a chance of showers and thunderstorms between 8pm and 1am, then a slight chance of showers and thunderstorms between 1am and 5am. Partly cloudy, with a low around 71. Chance of precipitation is 40%."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-04:00",
               "endTime": "2025-07-23T18:00:00-04:00",
@@ -7108,7 +7127,7 @@
               "detailedForecast": "A chance of showers and thunderstorms after 3pm. Mostly sunny, with a high near 92. Chance of precipitation is 30%."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-04:00",
               "endTime": "2025-07-24T06:00:00-04:00",
@@ -7124,26 +7143,7 @@
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/tsra_hi,20?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms before 2am. Partly cloudy, with a low around 71. Chance of precipitation is 30%."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-04:00",
-              "endTime": "2025-07-24T18:00:00-04:00",
-              "isDaytime": true,
-              "temperature": 95,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 24
-              },
-              "windSpeed": "5 mph",
-              "windDirection": "SE",
-              "icon": "https://api.weather.gov/icons/land/day/hot/tsra_hi,20?size=medium",
-              "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms after 3pm. Mostly sunny, with a high near 95."
+              "detailedForecast": "A chance of showers and thunderstorms before 2am. Partly cloudy, with a low around 71."
             }
           ]
         }
@@ -7164,7 +7164,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_bf638000",
-      "lastUpdated": "2025-07-17T19:56:39.943446",
+      "lastUpdated": "2025-07-17T19:16:40.143095",
       "nickname": "Farmers Branch",
       "siteType": "plant",
       "weatherConditions": {
@@ -7500,7 +7500,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_36a59344",
-      "lastUpdated": "2025-07-17T19:56:39.943453",
+      "lastUpdated": "2025-07-17T19:16:40.143105",
       "nickname": "Brampton",
       "siteType": "warehouse"
     },
@@ -7519,7 +7519,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_189bf5aa",
-      "lastUpdated": "2025-07-17T19:56:39.943457",
+      "lastUpdated": "2025-07-17T19:16:40.143110",
       "nickname": "Richmond - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -7857,7 +7857,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_6ea0bcde",
-      "lastUpdated": "2025-07-17T19:56:39.943465",
+      "lastUpdated": "2025-07-17T19:16:40.143120",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -8195,7 +8195,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_35d4f7a0",
-      "lastUpdated": "2025-07-17T19:56:39.943473",
+      "lastUpdated": "2025-07-17T19:16:40.143131",
       "nickname": "Chicago - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8533,7 +8533,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e57be14b",
-      "lastUpdated": "2025-07-17T19:56:39.943481",
+      "lastUpdated": "2025-07-17T19:16:40.143141",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -8869,7 +8869,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_868bac9a",
-      "lastUpdated": "2025-07-17T19:56:39.943489",
+      "lastUpdated": "2025-07-17T19:16:40.143153",
       "nickname": "Toronto - Bagcraft",
       "siteType": "plant"
     },
@@ -8888,7 +8888,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_ad6631a3",
-      "lastUpdated": "2025-07-17T19:56:39.943493",
+      "lastUpdated": "2025-07-17T19:16:40.143159",
       "nickname": "Stockton - Eco/Vegware",
       "siteType": "3pl-warehouse",
       "weatherConditions": {
@@ -8933,9 +8933,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:35:49+00:00",
-          "updateTime": "2025-07-18T00:22:07+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT10H",
+          "generatedAt": "2025-07-17T20:07:46+00:00",
+          "updateTime": "2025-07-17T20:01:44+00:00",
+          "validTimes": "2025-07-17T14:00:00+00:00/P7DT14H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 4.8768
@@ -8944,7 +8944,7 @@
             {
               "number": 1,
               "name": "This Afternoon",
-              "startTime": "2025-07-17T17:00:00-07:00",
+              "startTime": "2025-07-17T13:00:00-07:00",
               "endTime": "2025-07-17T18:00:00-07:00",
               "isDaytime": true,
               "temperature": 89,
@@ -9226,7 +9226,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b5298ec1",
-      "lastUpdated": "2025-07-17T19:56:39.943501",
+      "lastUpdated": "2025-07-17T19:16:40.143170",
       "nickname": "North Vernon - Hilex",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9271,9 +9271,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:51:49+00:00",
-          "updateTime": "2025-07-18T00:45:32+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT7H",
+          "generatedAt": "2025-07-18T00:03:49+00:00",
+          "updateTime": "2025-07-17T23:51:53+00:00",
+          "validTimes": "2025-07-17T17:00:00+00:00/P7DT8H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 213.0552
@@ -9562,7 +9562,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f5f9bb60",
-      "lastUpdated": "2025-07-17T19:56:39.943510",
+      "lastUpdated": "2025-07-17T19:16:40.143181",
       "nickname": "Orangeville - Shields",
       "siteType": "plant"
     },
@@ -9581,7 +9581,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18375374",
-      "lastUpdated": "2025-07-17T19:56:39.943515",
+      "lastUpdated": "2025-07-17T19:16:40.143187",
       "nickname": "Lebanon - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -9919,7 +9919,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_da401efe",
-      "lastUpdated": "2025-07-17T19:56:39.943523",
+      "lastUpdated": "2025-07-17T19:16:40.143198",
       "nickname": "Downingtown - Pactiv",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10257,7 +10257,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_19eda8e9",
-      "lastUpdated": "2025-07-17T19:56:39.943532",
+      "lastUpdated": "2025-07-17T19:16:40.143210",
       "nickname": "Yakima - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -10595,7 +10595,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_f7eeebf7",
-      "lastUpdated": "2025-07-17T19:56:39.943541",
+      "lastUpdated": "2025-07-17T19:16:40.143222",
       "nickname": "Devens - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -10933,7 +10933,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_0c459c6f",
-      "lastUpdated": "2025-07-17T19:56:39.943549",
+      "lastUpdated": "2025-07-17T19:16:40.143232",
       "nickname": "Elizabeth - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11271,7 +11271,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_4761449f",
-      "lastUpdated": "2025-07-17T19:56:39.943558",
+      "lastUpdated": "2025-07-17T19:16:40.143242",
       "nickname": "Houston - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -11316,9 +11316,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:35:49+00:00",
-          "updateTime": "2025-07-18T00:20:53+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT19H",
+          "generatedAt": "2025-07-17T22:11:35+00:00",
+          "updateTime": "2025-07-17T22:01:41+00:00",
+          "validTimes": "2025-07-17T16:00:00+00:00/P7DT21H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 32.004
@@ -11326,8 +11326,27 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T17:00:00-05:00",
+              "endTime": "2025-07-17T18:00:00-05:00",
+              "isDaytime": true,
+              "temperature": 95,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 7
+              },
+              "windSpeed": "5 mph",
+              "windDirection": "S",
+              "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+              "shortForecast": "Partly Sunny",
+              "detailedForecast": "Partly sunny, with a high near 95. South wind around 5 mph."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
-              "startTime": "2025-07-17T19:00:00-05:00",
+              "startTime": "2025-07-17T18:00:00-05:00",
               "endTime": "2025-07-18T06:00:00-05:00",
               "isDaytime": false,
               "temperature": 78,
@@ -11344,7 +11363,7 @@
               "detailedForecast": "Patchy fog after 5am. Mostly cloudy, with a low around 78. Southwest wind around 5 mph."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-05:00",
               "endTime": "2025-07-18T18:00:00-05:00",
@@ -11363,7 +11382,7 @@
               "detailedForecast": "Patchy fog before 7am, then a chance of rain showers and patchy fog between 7am and 10am, then a chance of showers and thunderstorms between 10am and 11am, then a slight chance of showers and thunderstorms between 11am and noon, then a chance of showers and thunderstorms between noon and 1pm, then a chance of showers and thunderstorms. Mostly cloudy, with a high near 90. Southwest wind around 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-05:00",
               "endTime": "2025-07-19T06:00:00-05:00",
@@ -11379,10 +11398,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/night/tsra_sct,40/bkn?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind around 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind around 5 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-05:00",
               "endTime": "2025-07-19T18:00:00-05:00",
@@ -11398,10 +11417,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 7am. Partly sunny, with a high near 94. Heat index values as high as 105. South wind 5 to 10 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms after 7am. Partly sunny, with a high near 94. South wind 5 to 10 mph. Chance of precipitation is 30%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-05:00",
               "endTime": "2025-07-20T06:00:00-05:00",
@@ -11417,10 +11436,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/bkn?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind 5 to 10 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. Chance of precipitation is 30%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-05:00",
               "endTime": "2025-07-20T18:00:00-05:00",
@@ -11439,7 +11458,7 @@
               "detailedForecast": "Mostly sunny, with a high near 96."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-05:00",
               "endTime": "2025-07-21T06:00:00-05:00",
@@ -11458,7 +11477,7 @@
               "detailedForecast": "Partly cloudy, with a low around 78."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-05:00",
               "endTime": "2025-07-21T18:00:00-05:00",
@@ -11477,7 +11496,7 @@
               "detailedForecast": "Mostly sunny, with a high near 96."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-05:00",
               "endTime": "2025-07-22T06:00:00-05:00",
@@ -11496,7 +11515,7 @@
               "detailedForecast": "Mostly clear, with a low around 77."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-05:00",
               "endTime": "2025-07-22T18:00:00-05:00",
@@ -11515,7 +11534,7 @@
               "detailedForecast": "Sunny, with a high near 97."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-05:00",
               "endTime": "2025-07-23T06:00:00-05:00",
@@ -11534,7 +11553,7 @@
               "detailedForecast": "Mostly clear, with a low around 77."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-05:00",
               "endTime": "2025-07-23T18:00:00-05:00",
@@ -11553,7 +11572,7 @@
               "detailedForecast": "Sunny, with a high near 97."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-05:00",
               "endTime": "2025-07-24T06:00:00-05:00",
@@ -11570,25 +11589,6 @@
               "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
               "shortForecast": "Mostly Clear",
               "detailedForecast": "Mostly clear, with a low around 77."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-05:00",
-              "endTime": "2025-07-24T18:00:00-05:00",
-              "isDaytime": true,
-              "temperature": 96,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 19
-              },
-              "windSpeed": "0 to 5 mph",
-              "windDirection": "S",
-              "icon": "https://api.weather.gov/icons/land/day/sct/tsra_hi,20?size=medium",
-              "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms after 1pm. Mostly sunny, with a high near 96."
             }
           ]
         }
@@ -11609,7 +11609,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e46c54ff",
-      "lastUpdated": "2025-07-17T19:56:39.943567",
+      "lastUpdated": "2025-07-17T19:16:40.143252",
       "nickname": "Houston - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -11654,9 +11654,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:35:49+00:00",
-          "updateTime": "2025-07-18T00:20:53+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT19H",
+          "generatedAt": "2025-07-17T22:11:35+00:00",
+          "updateTime": "2025-07-17T22:01:41+00:00",
+          "validTimes": "2025-07-17T16:00:00+00:00/P7DT21H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 28.0416
@@ -11664,8 +11664,27 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T17:00:00-05:00",
+              "endTime": "2025-07-17T18:00:00-05:00",
+              "isDaytime": true,
+              "temperature": 95,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 7
+              },
+              "windSpeed": "0 mph",
+              "windDirection": "",
+              "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+              "shortForecast": "Partly Sunny",
+              "detailedForecast": "Partly sunny, with a high near 95. Heat index values as high as 101. South wind around 0 mph."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
-              "startTime": "2025-07-17T19:00:00-05:00",
+              "startTime": "2025-07-17T18:00:00-05:00",
               "endTime": "2025-07-18T06:00:00-05:00",
               "isDaytime": false,
               "temperature": 78,
@@ -11682,7 +11701,7 @@
               "detailedForecast": "Mostly cloudy, with a low around 78. South wind around 5 mph."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-05:00",
               "endTime": "2025-07-18T18:00:00-05:00",
@@ -11701,7 +11720,7 @@
               "detailedForecast": "A chance of rain showers and patchy fog before 10am, then a chance of showers and thunderstorms between 10am and 11am, then a slight chance of showers and thunderstorms between 11am and noon, then a chance of showers and thunderstorms between noon and 1pm, then a chance of showers and thunderstorms. Mostly cloudy, with a high near 89. Southwest wind around 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-05:00",
               "endTime": "2025-07-19T06:00:00-05:00",
@@ -11717,10 +11736,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/night/tsra_sct,40/bkn?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind around 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind around 5 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-05:00",
               "endTime": "2025-07-19T18:00:00-05:00",
@@ -11736,10 +11755,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/day/tsra_hi,30?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 7am. Partly sunny, with a high near 93. Heat index values as high as 105. South wind 5 to 10 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms after 7am. Partly sunny, with a high near 93. South wind 5 to 10 mph. Chance of precipitation is 30%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-05:00",
               "endTime": "2025-07-20T06:00:00-05:00",
@@ -11755,10 +11774,10 @@
               "windDirection": "S",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/bkn?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
-              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. South wind 5 to 10 mph. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. Chance of precipitation is 30%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-05:00",
               "endTime": "2025-07-20T18:00:00-05:00",
@@ -11777,7 +11796,7 @@
               "detailedForecast": "Mostly sunny, with a high near 95."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-05:00",
               "endTime": "2025-07-21T06:00:00-05:00",
@@ -11796,7 +11815,7 @@
               "detailedForecast": "Partly cloudy, with a low around 78."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-05:00",
               "endTime": "2025-07-21T18:00:00-05:00",
@@ -11815,7 +11834,7 @@
               "detailedForecast": "Mostly sunny, with a high near 96."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-05:00",
               "endTime": "2025-07-22T06:00:00-05:00",
@@ -11834,7 +11853,7 @@
               "detailedForecast": "Mostly clear, with a low around 77."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-05:00",
               "endTime": "2025-07-22T18:00:00-05:00",
@@ -11853,7 +11872,7 @@
               "detailedForecast": "Sunny, with a high near 96."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-05:00",
               "endTime": "2025-07-23T06:00:00-05:00",
@@ -11872,7 +11891,7 @@
               "detailedForecast": "Mostly clear, with a low around 77."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-05:00",
               "endTime": "2025-07-23T18:00:00-05:00",
@@ -11891,7 +11910,7 @@
               "detailedForecast": "Sunny, with a high near 97."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-05:00",
               "endTime": "2025-07-24T06:00:00-05:00",
@@ -11908,25 +11927,6 @@
               "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
               "shortForecast": "Partly Cloudy",
               "detailedForecast": "Partly cloudy, with a low around 77."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-05:00",
-              "endTime": "2025-07-24T18:00:00-05:00",
-              "isDaytime": true,
-              "temperature": 95,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 20
-              },
-              "windSpeed": "0 to 5 mph",
-              "windDirection": "S",
-              "icon": "https://api.weather.gov/icons/land/day/sct/tsra_hi,20?size=medium",
-              "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms after 1pm. Mostly sunny, with a high near 95."
             }
           ]
         }
@@ -11945,7 +11945,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_86d75473",
-      "lastUpdated": "2025-07-17T19:56:39.943576",
+      "lastUpdated": "2025-07-17T19:16:40.143262",
       "nickname": "Brampton - Waddington ",
       "siteType": "plant"
     },
@@ -11964,7 +11964,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3e361a43",
-      "lastUpdated": "2025-07-17T19:56:39.943581",
+      "lastUpdated": "2025-07-17T19:16:40.143267",
       "nickname": "Boulder - Eco-Products",
       "siteType": "office",
       "weatherConditions": {
@@ -12302,7 +12302,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_9debd5c8",
-      "lastUpdated": "2025-07-17T19:56:39.943590",
+      "lastUpdated": "2025-07-17T19:16:40.143278",
       "nickname": "Milesburg - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -12640,7 +12640,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_ca09ebdb",
-      "lastUpdated": "2025-07-17T19:56:39.943600",
+      "lastUpdated": "2025-07-17T19:16:40.143290",
       "nickname": "Elizabeth - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -12978,7 +12978,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a8d2c66e",
-      "lastUpdated": "2025-07-17T19:56:39.943610",
+      "lastUpdated": "2025-07-17T19:16:40.143301",
       "nickname": "City of Industry - Bagcraft",
       "siteType": "plant",
       "weatherConditions": {
@@ -13316,7 +13316,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_857852dc",
-      "lastUpdated": "2025-07-17T19:56:39.943619",
+      "lastUpdated": "2025-07-17T19:16:40.143311",
       "nickname": "West Chester - Heritage",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -13654,7 +13654,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_46d48e1a",
-      "lastUpdated": "2025-07-17T19:56:39.943628",
+      "lastUpdated": "2025-07-17T19:16:40.143322",
       "nickname": "Roanoke - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -13992,7 +13992,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d1f95665",
-      "lastUpdated": "2025-07-17T19:56:39.943638",
+      "lastUpdated": "2025-07-17T19:16:40.143332",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14037,9 +14037,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:51:49+00:00",
-          "updateTime": "2025-07-18T00:42:29+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT10H",
+          "generatedAt": "2025-07-18T00:03:49+00:00",
+          "updateTime": "2025-07-17T23:46:47+00:00",
+          "validTimes": "2025-07-17T17:00:00+00:00/P7DT11H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 59.1312
@@ -14330,7 +14330,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_881b361f",
-      "lastUpdated": "2025-07-17T19:56:39.943647",
+      "lastUpdated": "2025-07-17T19:16:40.143342",
       "nickname": "Vancouver - Bagcraft",
       "siteType": "office",
       "weatherConditions": {
@@ -14375,9 +14375,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:51:49+00:00",
-          "updateTime": "2025-07-18T00:42:29+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT10H",
+          "generatedAt": "2025-07-18T00:03:49+00:00",
+          "updateTime": "2025-07-17T23:46:47+00:00",
+          "validTimes": "2025-07-17T17:00:00+00:00/P7DT11H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 59.1312
@@ -14666,7 +14666,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_003f3860",
-      "lastUpdated": "2025-07-17T19:56:39.943656",
+      "lastUpdated": "2025-07-17T19:16:40.143353",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "plant"
     },
@@ -14685,7 +14685,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_8de8a0ab",
-      "lastUpdated": "2025-07-17T19:56:39.943662",
+      "lastUpdated": "2025-07-17T19:16:40.143359",
       "nickname": "Chicago - Specialty Laminations",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -15023,7 +15023,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_ee941cbc",
-      "lastUpdated": "2025-07-17T19:56:39.943672",
+      "lastUpdated": "2025-07-17T19:16:40.143371",
       "nickname": "Alsip - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -15361,7 +15361,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_0bc3b5a8",
-      "lastUpdated": "2025-07-17T19:56:39.943682",
+      "lastUpdated": "2025-07-17T19:16:40.143383",
       "nickname": "Carrolton - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -15700,7 +15700,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_83527cc5",
-      "lastUpdated": "2025-07-17T19:56:39.943692",
+      "lastUpdated": "2025-07-17T19:16:40.143394",
       "nickname": "City of Industry - Waddington",
       "siteType": "warehouse",
       "state": "CA",
@@ -16042,7 +16042,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5b8d284b",
-      "lastUpdated": "2025-07-17T19:56:39.943702",
+      "lastUpdated": "2025-07-17T19:16:40.143406",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant",
       "state": "CA",
@@ -16370,7 +16370,7 @@
     },
     {
       "address": "630 Erlanger Road, Erlanger, KY 41018",
-      "alertDescription": "* WHAT...Flooding caused by excessive rainfall remains possible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Repeated thunderstorm activity over any particular area will\nsubstantially increase the flooding threat. Storms will\nproduce torrential rainfall at times given the amount of\nmoisture available. This, along with already saturated soils\nin some spots will also increase the threat of flooding.",
+      "alertDescription": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight EDT tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Efficient rainfall rates, repeated rounds of storms, along\nwith antecedent wet soil conditions may result in flash\nflooding.",
       "alertEventType": "Flood Watch",
       "alertSource": "nws",
       "contactEmail": "",
@@ -16383,7 +16383,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_eef655b5",
-      "lastUpdated": "2025-07-17T19:56:39.943711",
+      "lastUpdated": "2025-07-17T19:16:40.143419",
       "nickname": "Erlanger - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -16721,7 +16721,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d60aacca",
-      "lastUpdated": "2025-07-17T19:56:39.943721",
+      "lastUpdated": "2025-07-17T19:16:40.143432",
       "nickname": "Chelmsford - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17059,7 +17059,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39279966",
-      "lastUpdated": "2025-07-17T19:56:39.943732",
+      "lastUpdated": "2025-07-17T19:16:40.143443",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17397,7 +17397,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_217b97f5",
-      "lastUpdated": "2025-07-17T19:56:39.943742",
+      "lastUpdated": "2025-07-17T19:16:40.143454",
       "nickname": "Lancaster - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -17735,7 +17735,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_18df5a03",
-      "lastUpdated": "2025-07-17T19:56:39.943752",
+      "lastUpdated": "2025-07-17T19:16:40.143465",
       "nickname": "City of Industry - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18073,7 +18073,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_f3ea1d7c",
-      "lastUpdated": "2025-07-17T19:56:39.943762",
+      "lastUpdated": "2025-07-17T19:16:40.143477",
       "nickname": "Dallas - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -18411,7 +18411,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_50a29d53",
-      "lastUpdated": "2025-07-17T19:56:39.943772",
+      "lastUpdated": "2025-07-17T19:16:40.143488",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -18749,7 +18749,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_b22ce5de",
-      "lastUpdated": "2025-07-17T19:56:39.943782",
+      "lastUpdated": "2025-07-17T19:16:40.143500",
       "nickname": "Chattanooga - Waddington",
       "siteType": "plant",
       "weatherConditions": {
@@ -19087,7 +19087,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_e52916bd",
-      "lastUpdated": "2025-07-17T19:56:39.943793",
+      "lastUpdated": "2025-07-17T19:16:40.143513",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19425,7 +19425,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_364d2cd9",
-      "lastUpdated": "2025-07-17T19:56:39.943804",
+      "lastUpdated": "2025-07-17T19:16:40.143527",
       "nickname": "Chattanooga - Waddington",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19763,7 +19763,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_96ffead8",
-      "lastUpdated": "2025-07-17T19:56:39.943816",
+      "lastUpdated": "2025-07-17T19:16:40.143539",
       "nickname": "Baxter Springs - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -19808,9 +19808,9 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-18T00:51:49+00:00",
-          "updateTime": "2025-07-18T00:45:22+00:00",
-          "validTimes": "2025-07-17T18:00:00+00:00/P7DT7H",
+          "generatedAt": "2025-07-17T23:31:47+00:00",
+          "updateTime": "2025-07-17T23:15:31+00:00",
+          "validTimes": "2025-07-17T17:00:00+00:00/P7DT8H",
           "elevation": {
             "unitCode": "wmoUnit:m",
             "value": 257.8608
@@ -19819,7 +19819,7 @@
             {
               "number": 1,
               "name": "Tonight",
-              "startTime": "2025-07-17T19:00:00-05:00",
+              "startTime": "2025-07-17T18:00:00-05:00",
               "endTime": "2025-07-18T06:00:00-05:00",
               "isDaytime": false,
               "temperature": 74,
@@ -19827,13 +19827,13 @@
               "temperatureTrend": "",
               "probabilityOfPrecipitation": {
                 "unitCode": "wmoUnit:percent",
-                "value": 36
+                "value": 64
               },
-              "windSpeed": "3 mph",
-              "windDirection": "E",
-              "icon": "https://api.weather.gov/icons/land/night/tsra_sct,40/tsra_sct,30?size=medium",
-              "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Some of the storms could produce heavy rain. Mostly cloudy, with a low around 74. Heat index values as high as 96. East wind around 3 mph. Chance of precipitation is 40%. New rainfall amounts between a quarter and half of an inch possible."
+              "windSpeed": "5 mph",
+              "windDirection": "SE",
+              "icon": "https://api.weather.gov/icons/land/night/tsra_sct,60/tsra_sct,30?size=medium",
+              "shortForecast": "Showers And Thunderstorms Likely",
+              "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 74. Heat index values as high as 97. Southeast wind around 5 mph. Chance of precipitation is 60%. New rainfall amounts between a quarter and half of an inch possible."
             },
             {
               "number": 2,
@@ -20101,7 +20101,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_04c529ea",
-      "lastUpdated": "2025-07-17T19:56:39.943827",
+      "lastUpdated": "2025-07-17T19:16:40.143552",
       "nickname": "Jacksonville - Hilex",
       "siteType": "plant",
       "weatherConditions": {
@@ -20439,7 +20439,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_39dc480c",
-      "lastUpdated": "2025-07-17T19:56:39.943838",
+      "lastUpdated": "2025-07-17T19:16:40.143564",
       "nickname": "Tolleson - Duro",
       "siteType": "plant",
       "weatherConditions": {
@@ -20777,7 +20777,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_d30603c5",
-      "lastUpdated": "2025-07-17T19:56:39.943849",
+      "lastUpdated": "2025-07-17T19:16:40.143576",
       "nickname": "Tolleson - Duro",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -21115,7 +21115,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_d21b6f10",
-      "lastUpdated": "2025-07-17T19:56:39.943861",
+      "lastUpdated": "2025-07-17T19:16:40.143589",
       "nickname": "McCook - Bagcraft",
       "siteType": "warehouse",
       "weatherConditions": {
@@ -21454,7 +21454,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_3e1e3d46",
-      "lastUpdated": "2025-07-17T19:56:39.943871",
+      "lastUpdated": "2025-07-17T19:16:40.143602",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "warehouse",
       "state": "IL",
@@ -21501,7 +21501,7 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-17T23:00:30+00:00",
+          "generatedAt": "2025-07-17T22:11:35+00:00",
           "updateTime": "2025-07-17T21:12:22+00:00",
           "validTimes": "2025-07-17T15:00:00+00:00/P7DT10H",
           "elevation": {
@@ -21511,6 +21511,25 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T17:00:00-05:00",
+              "endTime": "2025-07-17T18:00:00-05:00",
+              "isDaytime": true,
+              "temperature": 74,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 10
+              },
+              "windSpeed": "10 mph",
+              "windDirection": "NE",
+              "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+              "shortForecast": "Mostly Cloudy",
+              "detailedForecast": "Mostly cloudy. High near 74, with temperatures falling to around 70 in the afternoon. Northeast wind around 10 mph, with gusts as high as 20 mph. New rainfall amounts less than a tenth of an inch possible."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
               "startTime": "2025-07-17T18:00:00-05:00",
               "endTime": "2025-07-18T06:00:00-05:00",
@@ -21529,7 +21548,7 @@
               "detailedForecast": "Mostly cloudy, with a low around 63. North northeast wind 5 to 10 mph, with gusts as high as 20 mph. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-05:00",
               "endTime": "2025-07-18T18:00:00-05:00",
@@ -21548,7 +21567,7 @@
               "detailedForecast": "Mostly sunny, with a high near 82. East wind 5 to 10 mph."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-05:00",
               "endTime": "2025-07-19T06:00:00-05:00",
@@ -21564,10 +21583,10 @@
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/tsra_hi,40?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 7pm. Partly cloudy. Low around 70, with temperatures rising to around 72 overnight. Southeast wind around 5 mph, with gusts as high as 10 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms after 7pm. Partly cloudy, with a low around 70. Southeast wind around 5 mph, with gusts as high as 10 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-05:00",
               "endTime": "2025-07-19T18:00:00-05:00",
@@ -21583,10 +21602,10 @@
               "windDirection": "SW",
               "icon": "https://api.weather.gov/icons/land/day/tsra_sct,60/tsra_sct,70?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely. Partly sunny, with a high near 88. Heat index values as high as 95. Southwest wind 5 to 10 mph. Chance of precipitation is 70%."
+              "detailedForecast": "Showers and thunderstorms likely. Partly sunny, with a high near 88. Southwest wind 5 to 10 mph. Chance of precipitation is 70%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-05:00",
               "endTime": "2025-07-20T06:00:00-05:00",
@@ -21602,10 +21621,10 @@
               "windDirection": "NW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_sct,70/tsra_sct,40?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 70. Northwest wind 5 to 10 mph. Chance of precipitation is 70%."
+              "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 70. Chance of precipitation is 70%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-05:00",
               "endTime": "2025-07-20T18:00:00-05:00",
@@ -21621,10 +21640,10 @@
               "windDirection": "NE",
               "icon": "https://api.weather.gov/icons/land/day/tsra_sct,30?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 79. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 79."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-05:00",
               "endTime": "2025-07-21T06:00:00-05:00",
@@ -21643,7 +21662,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 7pm, then a chance of showers and thunderstorms between 7pm and 1am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 67."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-05:00",
               "endTime": "2025-07-21T18:00:00-05:00",
@@ -21662,7 +21681,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 83."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-05:00",
               "endTime": "2025-07-22T06:00:00-05:00",
@@ -21681,7 +21700,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 71."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-05:00",
               "endTime": "2025-07-22T18:00:00-05:00",
@@ -21700,7 +21719,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 89."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-05:00",
               "endTime": "2025-07-23T06:00:00-05:00",
@@ -21719,7 +21738,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly cloudy, with a low around 74."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-05:00",
               "endTime": "2025-07-23T18:00:00-05:00",
@@ -21738,7 +21757,7 @@
               "detailedForecast": "A slight chance of showers and thunderstorms. Mostly sunny, with a high near 95."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-05:00",
               "endTime": "2025-07-24T06:00:00-05:00",
@@ -21755,25 +21774,6 @@
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20?size=medium",
               "shortForecast": "Slight Chance Showers And Thunderstorms",
               "detailedForecast": "A slight chance of showers and thunderstorms. Partly cloudy, with a low around 77."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-05:00",
-              "endTime": "2025-07-24T18:00:00-05:00",
-              "isDaytime": true,
-              "temperature": 93,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 22
-              },
-              "windSpeed": "5 to 10 mph",
-              "windDirection": "WSW",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20?size=medium",
-              "shortForecast": "Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms. Mostly sunny, with a high near 93."
             }
           ]
         }
@@ -21795,7 +21795,7 @@
       ],
       "currentAlert": "advisory",
       "id": "loc_f20e21aa",
-      "lastUpdated": "2025-07-17T19:56:39.943883",
+      "lastUpdated": "2025-07-17T19:16:40.143615",
       "nickname": "Bedford Park - Pactiv",
       "siteType": "plant",
       "weatherConditions": {
@@ -21840,7 +21840,7 @@
         "properties": {
           "units": "us",
           "forecastGenerator": "BaselineForecastGenerator",
-          "generatedAt": "2025-07-17T23:00:30+00:00",
+          "generatedAt": "2025-07-17T22:11:35+00:00",
           "updateTime": "2025-07-17T21:12:22+00:00",
           "validTimes": "2025-07-17T15:00:00+00:00/P7DT10H",
           "elevation": {
@@ -21850,6 +21850,25 @@
           "periods": [
             {
               "number": 1,
+              "name": "This Afternoon",
+              "startTime": "2025-07-17T17:00:00-05:00",
+              "endTime": "2025-07-17T18:00:00-05:00",
+              "isDaytime": true,
+              "temperature": 74,
+              "temperatureUnit": "F",
+              "temperatureTrend": "",
+              "probabilityOfPrecipitation": {
+                "unitCode": "wmoUnit:percent",
+                "value": 10
+              },
+              "windSpeed": "10 mph",
+              "windDirection": "NE",
+              "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+              "shortForecast": "Mostly Cloudy",
+              "detailedForecast": "Mostly cloudy. High near 74, with temperatures falling to around 70 in the afternoon. Northeast wind around 10 mph, with gusts as high as 20 mph. New rainfall amounts less than a tenth of an inch possible."
+            },
+            {
+              "number": 2,
               "name": "Tonight",
               "startTime": "2025-07-17T18:00:00-05:00",
               "endTime": "2025-07-18T06:00:00-05:00",
@@ -21868,7 +21887,7 @@
               "detailedForecast": "Mostly cloudy, with a low around 63. North northeast wind 5 to 10 mph, with gusts as high as 20 mph. New rainfall amounts less than a tenth of an inch possible."
             },
             {
-              "number": 2,
+              "number": 3,
               "name": "Friday",
               "startTime": "2025-07-18T06:00:00-05:00",
               "endTime": "2025-07-18T18:00:00-05:00",
@@ -21887,7 +21906,7 @@
               "detailedForecast": "Mostly sunny, with a high near 82. East wind 5 to 10 mph."
             },
             {
-              "number": 3,
+              "number": 4,
               "name": "Friday Night",
               "startTime": "2025-07-18T18:00:00-05:00",
               "endTime": "2025-07-19T06:00:00-05:00",
@@ -21903,10 +21922,10 @@
               "windDirection": "SE",
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20/tsra_hi,40?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms after 7pm. Partly cloudy. Low around 70, with temperatures rising to around 72 overnight. Southeast wind around 5 mph, with gusts as high as 10 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible."
+              "detailedForecast": "A chance of showers and thunderstorms after 7pm. Partly cloudy, with a low around 70. Southeast wind around 5 mph, with gusts as high as 10 mph. Chance of precipitation is 40%."
             },
             {
-              "number": 4,
+              "number": 5,
               "name": "Saturday",
               "startTime": "2025-07-19T06:00:00-05:00",
               "endTime": "2025-07-19T18:00:00-05:00",
@@ -21922,10 +21941,10 @@
               "windDirection": "SW",
               "icon": "https://api.weather.gov/icons/land/day/tsra_sct,60/tsra_sct,70?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely. Partly sunny, with a high near 88. Heat index values as high as 95. Southwest wind 5 to 10 mph. Chance of precipitation is 70%."
+              "detailedForecast": "Showers and thunderstorms likely. Partly sunny, with a high near 88. Southwest wind 5 to 10 mph. Chance of precipitation is 70%."
             },
             {
-              "number": 5,
+              "number": 6,
               "name": "Saturday Night",
               "startTime": "2025-07-19T18:00:00-05:00",
               "endTime": "2025-07-20T06:00:00-05:00",
@@ -21941,10 +21960,10 @@
               "windDirection": "NW",
               "icon": "https://api.weather.gov/icons/land/night/tsra_sct,70/tsra_sct,40?size=medium",
               "shortForecast": "Showers And Thunderstorms Likely",
-              "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 70. Northwest wind 5 to 10 mph. Chance of precipitation is 70%."
+              "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 70. Chance of precipitation is 70%."
             },
             {
-              "number": 6,
+              "number": 7,
               "name": "Sunday",
               "startTime": "2025-07-20T06:00:00-05:00",
               "endTime": "2025-07-20T18:00:00-05:00",
@@ -21960,10 +21979,10 @@
               "windDirection": "NE",
               "icon": "https://api.weather.gov/icons/land/day/tsra_sct,30?size=medium",
               "shortForecast": "Chance Showers And Thunderstorms",
-              "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 79. Chance of precipitation is 30%."
+              "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 79."
             },
             {
-              "number": 7,
+              "number": 8,
               "name": "Sunday Night",
               "startTime": "2025-07-20T18:00:00-05:00",
               "endTime": "2025-07-21T06:00:00-05:00",
@@ -21982,7 +22001,7 @@
               "detailedForecast": "A chance of showers and thunderstorms before 7pm, then a chance of showers and thunderstorms between 7pm and 1am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 67."
             },
             {
-              "number": 8,
+              "number": 9,
               "name": "Monday",
               "startTime": "2025-07-21T06:00:00-05:00",
               "endTime": "2025-07-21T18:00:00-05:00",
@@ -22001,7 +22020,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 83."
             },
             {
-              "number": 9,
+              "number": 10,
               "name": "Monday Night",
               "startTime": "2025-07-21T18:00:00-05:00",
               "endTime": "2025-07-22T06:00:00-05:00",
@@ -22020,7 +22039,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a low around 71."
             },
             {
-              "number": 10,
+              "number": 11,
               "name": "Tuesday",
               "startTime": "2025-07-22T06:00:00-05:00",
               "endTime": "2025-07-22T18:00:00-05:00",
@@ -22039,7 +22058,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 89."
             },
             {
-              "number": 11,
+              "number": 12,
               "name": "Tuesday Night",
               "startTime": "2025-07-22T18:00:00-05:00",
               "endTime": "2025-07-23T06:00:00-05:00",
@@ -22058,7 +22077,7 @@
               "detailedForecast": "A chance of showers and thunderstorms. Partly cloudy, with a low around 74."
             },
             {
-              "number": 12,
+              "number": 13,
               "name": "Wednesday",
               "startTime": "2025-07-23T06:00:00-05:00",
               "endTime": "2025-07-23T18:00:00-05:00",
@@ -22077,7 +22096,7 @@
               "detailedForecast": "A slight chance of showers and thunderstorms. Mostly sunny, with a high near 95."
             },
             {
-              "number": 13,
+              "number": 14,
               "name": "Wednesday Night",
               "startTime": "2025-07-23T18:00:00-05:00",
               "endTime": "2025-07-24T06:00:00-05:00",
@@ -22094,25 +22113,6 @@
               "icon": "https://api.weather.gov/icons/land/night/tsra_hi,20?size=medium",
               "shortForecast": "Slight Chance Showers And Thunderstorms",
               "detailedForecast": "A slight chance of showers and thunderstorms. Partly cloudy, with a low around 77."
-            },
-            {
-              "number": 14,
-              "name": "Thursday",
-              "startTime": "2025-07-24T06:00:00-05:00",
-              "endTime": "2025-07-24T18:00:00-05:00",
-              "isDaytime": true,
-              "temperature": 93,
-              "temperatureUnit": "F",
-              "temperatureTrend": "",
-              "probabilityOfPrecipitation": {
-                "unitCode": "wmoUnit:percent",
-                "value": 22
-              },
-              "windSpeed": "5 to 10 mph",
-              "windDirection": "WSW",
-              "icon": "https://api.weather.gov/icons/land/day/tsra_hi,20?size=medium",
-              "shortForecast": "Slight Chance Showers And Thunderstorms",
-              "detailedForecast": "A slight chance of showers and thunderstorms. Mostly sunny, with a high near 93."
             }
           ]
         }
@@ -22120,7 +22120,7 @@
     },
     {
       "address": "50 East River Center Boulevard, Covington, GA 41011",
-      "alertDescription": "* WHAT...Flooding caused by excessive rainfall remains possible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Repeated thunderstorm activity over any particular area will\nsubstantially increase the flooding threat. Storms will\nproduce torrential rainfall at times given the amount of\nmoisture available. This, along with already saturated soils\nin some spots will also increase the threat of flooding.",
+      "alertDescription": "* WHAT...Flooding caused by excessive rainfall continues to be\npossible.\n\n* WHERE...The following counties, in southeast Indiana, Ohio and\nSwitzerland, the following counties, in Kentucky, Boone, Bracken,\nCampbell, Carroll, Gallatin, Grant, Kenton, Lewis, Mason, Owen,\nPendleton and Robertson, and the following counties, in Ohio,\nAdams, Brown, Clermont, Hamilton, Highland, Hocking, Pike, Ross\nand Scioto.\n\n* WHEN...Until midnight EDT tonight.\n\n* IMPACTS...Excessive runoff may result in flooding of rivers,\ncreeks, streams, and other low-lying and flood-prone locations.\n\n* ADDITIONAL DETAILS...\n- Efficient rainfall rates, repeated rounds of storms, along\nwith antecedent wet soil conditions may result in flash\nflooding.",
       "alertEventType": "Flood Watch",
       "alertSource": "nws",
       "contactEmail": "",
@@ -22133,7 +22133,7 @@
       ],
       "currentAlert": "warning",
       "id": "loc_356c4f89",
-      "lastUpdated": "2025-07-17T19:56:39.943894",
+      "lastUpdated": "2025-07-17T19:16:40.143628",
       "nickname": "Covington - Waddington",
       "siteType": "office",
       "weatherConditions": {
@@ -22471,7 +22471,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_622f91b3",
-      "lastUpdated": "2025-07-17T19:56:39.943905",
+      "lastUpdated": "2025-07-17T19:16:40.143641",
       "nickname": "Shawano - Shields",
       "siteType": "plant",
       "weatherConditions": {
@@ -22809,7 +22809,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_027ff0a2",
-      "lastUpdated": "2025-07-17T19:56:39.943916",
+      "lastUpdated": "2025-07-17T19:16:40.143653",
       "nickname": "Rancho Cucamonga",
       "siteType": "plant",
       "weatherConditions": {
@@ -23147,7 +23147,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_5c8c2787",
-      "lastUpdated": "2025-07-17T19:56:39.943927",
+      "lastUpdated": "2025-07-17T19:16:40.143666",
       "nickname": "Logan Township - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23485,7 +23485,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_02bbb600",
-      "lastUpdated": "2025-07-17T19:56:39.943939",
+      "lastUpdated": "2025-07-17T19:16:40.143679",
       "nickname": "Fairfield - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -23823,7 +23823,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_3a91284e",
-      "lastUpdated": "2025-07-17T19:56:39.943950",
+      "lastUpdated": "2025-07-17T19:16:40.143691",
       "nickname": "Villa Rica - Heritage",
       "siteType": "plant",
       "weatherConditions": {
@@ -24162,7 +24162,7 @@
       ],
       "currentAlert": "none",
       "id": "loc_a2c2073b",
-      "lastUpdated": "2025-07-17T19:56:39.943962",
+      "lastUpdated": "2025-07-17T19:16:40.143704",
       "nickname": "Chelmsford - Waddington",
       "siteType": "warehouse",
       "state": "MA",
@@ -24505,8 +24505,8 @@
       "detailedForecast": "Could not fetch Environment Canada alerts.",
       "humidity": null,
       "id": "loc_cf8aa2a1",
-      "lastUpdated": "2025-07-17T19:56:39.943975",
-      "lastWeatherUpdate": "2025-07-18T00:56:39.548Z",
+      "lastUpdated": "2025-07-17T19:16:40.143718",
+      "lastWeatherUpdate": "2025-07-18T00:16:39.415Z",
       "nickname": "Brampton - Waddington",
       "shortForecast": "Weather data error",
       "siteType": "plant",
@@ -24517,5 +24517,5 @@
       "zipcode": "L6R 4E6"
     }
   ],
-  "lastUpdated": "2025-07-17T19:56:39.943977"
+  "lastUpdated": "2025-07-17T19:16:40.143721"
 }

@@ -36,11 +36,8 @@ class WeatherAlertMonitor {
         this.NWS_BASE_URL = 'https://api.weather.gov';
         this.GEOCODING_API = 'https://maps.googleapis.com/maps/api/geocode/json';
         this.GOOGLE_API_KEY = 'AIzaSyCLc97NiXejbt5gnpMOOECCB-cOFBE2RAE';
-        // Use the current protocol and hostname for the server API to work from remote computers
-        // Add port 8000 for local development, remove for production
-        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const port = isLocalhost ? ':8000' : '';
-        this.SERVER_API = `${window.location.protocol}//${window.location.hostname}${port}/api`;
+        // Use the current hostname for the server API to work from remote computers
+        this.SERVER_API = `http://${window.location.hostname}:8000/api`;
         this.updateInterval = null;
         this.lastUpdateTime = null;
         
@@ -55,15 +52,17 @@ class WeatherAlertMonitor {
             },
             'ca': {
                 name: 'Environment Canada (Canada)',
-                baseUrl: 'https://dd.weather.gc.ca/alerts/cap/',
-                alertsEndpoint: '', // We'll build this dynamically
-                supported: true
+                baseUrl: 'https://dd.weather.gc.ca',
+                alertsEndpoint: '/alerts/cap',
+                supported: false, // Will implement fallback
+                fallback: 'us' // Use US API as fallback for now
             },
             'mx': {
                 name: 'CONAGUA (Mexico)',
-                baseUrl: 'https://smn.conagua.gob.mx/feeds/',
-                alertsEndpoint: 'warningMX.xml',
-                supported: true
+                baseUrl: 'https://smn.conagua.gob.mx',
+                alertsEndpoint: '/api/alertas',
+                supported: false, // Will implement fallback
+                fallback: 'us' // Use US API as fallback for now
             }
         };
         
@@ -105,6 +104,8 @@ class WeatherAlertMonitor {
         };
 
         this.alertEventIcons = {
+            'hurricane': 'fa-hurricane',
+            'tornado': 'fa-tornado',
             'Tornado Warning': 'fa-tornado',
             'Tornado Watch': 'fa-tornado',
             'Severe Thunderstorm Warning': 'fa-bolt',
@@ -301,8 +302,15 @@ class WeatherAlertMonitor {
             console.log('Manual refresh button clicked');
             this.refreshAlerts();
         });
-        document.getElementById('legendBtn').addEventListener('click', () => this.openLegendModal());
-        document.getElementById('legendClose').addEventListener('click', () => this.closeLegendModal());
+        // Attach legend modal listeners only once
+        const legendBtn = document.getElementById('legendBtn');
+        const closeLegendModalBtn = document.getElementById('closeLegendModalBtn');
+        if (legendBtn && closeLegendModalBtn) {
+            legendBtn.addEventListener('click', () => this.openLegendModal());
+            closeLegendModalBtn.addEventListener('click', () => this.closeLegendModal());
+        } else {
+            console.warn('Legend modal elements not found:', { legendBtn, closeLegendModalBtn });
+        }
         document.getElementById('defaultZoomBtn').addEventListener('click', () => this.setDefaultZoom());
         
 
@@ -395,7 +403,7 @@ class WeatherAlertMonitor {
                     }
                 }
             }
-                });
+        });
         
         document.getElementById('legendModal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
@@ -406,20 +414,28 @@ class WeatherAlertMonitor {
 
     setupTabNavigation() {
         const liveTabBtn = document.getElementById('liveTabBtn');
+        const infoTabBtn = document.getElementById('infoTabBtn');
         
         // Live tab button - ensure live tab is always active
         liveTabBtn.addEventListener('click', () => {
             console.log('Switching to Live Alerts tab');
                 
-            // Update active tab button
+                // Update active tab button
             liveTabBtn.classList.add('active');
+            infoTabBtn.classList.remove('active');
                 
             // Ensure live tab content is active
             const liveTab = document.getElementById('liveTab');
             liveTab.classList.add('active');
                 
             // Initialize map for the live tab
-            this.initializeLiveMap();
+                    this.initializeLiveMap();
+            });
+        
+        // Info tab button - open info modal
+        infoTabBtn.addEventListener('click', () => {
+            console.log('Opening Info Modal');
+            this.openInfoModal();
         });
     }
 
@@ -849,9 +865,7 @@ class WeatherAlertMonitor {
                     console.log('Map invalidated size');
                     
                     // Add a test marker to verify map is working
-                    // const testMarker = L.marker([39.8283, -98.5795]).addTo(this.map);
-                    // testMarker.bindPopup('Test marker - map is working!');
-                    // console.log('Test marker added to verify map functionality');
+
                 }
             }, 100);
             
@@ -1092,11 +1106,21 @@ class WeatherAlertMonitor {
     }
 
     openLegendModal() {
+        console.log('Opening legend modal');
         document.getElementById('legendModal').classList.add('active');
     }
 
     closeLegendModal() {
+        console.log('Closing legend modal');
         document.getElementById('legendModal').classList.remove('active');
+    }
+    
+    openInfoModal() {
+        document.getElementById('infoModal').classList.add('active');
+    }
+    
+    closeInfoModal() {
+        document.getElementById('infoModal').classList.remove('active');
     }
 
     async handleLocationSubmit(e) {
@@ -3509,26 +3533,33 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
 
     // Add missing method to update alert counts in the UI
     updateAlertCounts() {
-        // Count locations by alert type
-        const counts = { warning: 0, watch: 0, advisory: 0, none: 0 };
+        // Map all possible alert values to UI categories
+        const severityMap = {
+            warning: 'severe',
+            severe: 'severe',
+            watch: 'moderate',
+            moderate: 'moderate',
+            advisory: 'minor',
+            minor: 'minor',
+            none: 'none'
+        };
+        const counts = { severe: 0, moderate: 0, minor: 0, none: 0 };
         this.locations.forEach(loc => {
-            if (counts.hasOwnProperty(loc.currentAlert)) {
-                counts[loc.currentAlert]++;
-            } else {
-                counts['none']++;
-            }
+            const mapped = severityMap[loc.currentAlert] || 'none';
+            counts[mapped]++;
         });
-        // Update the UI elements if present
         if (document.getElementById('severeCount')) {
-            document.getElementById('severeCount').textContent = counts.warning;
+            document.getElementById('severeCount').textContent = counts.severe;
         }
         if (document.getElementById('moderateCount')) {
-            document.getElementById('moderateCount').textContent = counts.watch;
+            document.getElementById('moderateCount').textContent = counts.moderate;
         }
         if (document.getElementById('minorCount')) {
-            document.getElementById('minorCount').textContent = counts.advisory;
+            document.getElementById('minorCount').textContent = counts.minor;
         }
-        // No element for 'none' in the summary circles
+        if (document.getElementById('noneCount')) {
+            document.getElementById('noneCount').textContent = counts.none;
+        }
     }
 
     updateLocationsList() {
@@ -3662,24 +3693,6 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
             });
         });
         
-        // Add click listeners to alert-card-location-name to zoom map to location
-        document.querySelectorAll('.alert-card-location-name').forEach(nameEl => {
-            nameEl.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const card = nameEl.closest('.alert-card');
-                if (!card) return;
-                const locationId = card.dataset.locationId;
-                const location = this.locations.find(loc => loc.id === locationId);
-                if (location && this.map && location.coordinates && location.coordinates.length === 2) {
-                    // Smooth zoom animation with easing
-                    this.map.flyTo(location.coordinates, 14, {
-                        duration: 1.5,
-                        easeLinearity: 0.25
-                    });
-                }
-            });
-        });
-        
         // Add listeners for edit buttons in alert cards
         document.querySelectorAll('.alert-edit-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -3729,15 +3742,9 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
         console.log('=== updateMarkers called ===');
         console.log('Map initialized:', !!this.map);
         console.log('Number of locations:', this.locations.length);
-        console.log('Locations array:', this.locations);
         
         if (!this.map) {
             console.error('Map not initialized!');
-            return;
-        }
-        
-        if (this.locations.length === 0) {
-            console.log('No locations to create markers for');
             return;
         }
         
@@ -3745,26 +3752,8 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
         this.markers.forEach(marker => this.map.removeLayer(marker));
         this.markers = [];
         
-        this.locations.forEach((location, index) => {
-            console.log(`Processing location ${index + 1}:`, location.nickname, location.coordinates);
-            
-            if (!location.coordinates || !Array.isArray(location.coordinates) || location.coordinates.length !== 2) {
-                console.error(`Invalid coordinates for ${location.nickname}:`, location.coordinates);
-                return;
-            }
-            
-            const [lat, lng] = location.coordinates;
-            if (isNaN(lat) || isNaN(lng)) {
-                console.error(`Invalid lat/lng for ${location.nickname}:`, lat, lng);
-                return;
-            }
-            
+        this.locations.forEach(location => {
             const alertInfo = this.alertSeverity[location.currentAlert];
-            if (!alertInfo) {
-                console.error(`No alert info for ${location.nickname} with alert type:`, location.currentAlert);
-                return;
-            }
-            
             const isNoneAlert = location.currentAlert === 'none';
             const isNoneGhosted = isNoneAlert && !this.alertLevelFilters['none'];
             const isAlertLevelFiltered = !this.alertLevelFilters[location.currentAlert];
@@ -3816,75 +3805,69 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
                 </div>
             `;
             
-            try {
-                const marker = L.marker(location.coordinates, {
-                    icon: L.divIcon({
-                        html: iconHtml,
-                        className: 'custom-div-icon',
-                        iconSize: [30, 30],
-                        iconAnchor: [15, 15]
-                    })
-                }).addTo(this.map);
-                
-                console.log(`Marker added for ${location.nickname} at [${location.coordinates[0]}, ${location.coordinates[1]}]`);
-                
-                // Add hover effects
-                marker.on('mouseover', function() {
-                    const iconElement = this.getElement();
-                    if (iconElement) {
-                        const markerDiv = iconElement.querySelector('.custom-marker');
-                        if (markerDiv) {
-                            markerDiv.style.transform = 'scale(1.2)';
-                            markerDiv.style.transition = 'transform 0.2s ease';
-                        }
-                        iconElement.style.zIndex = '1000';
+            const marker = L.marker(location.coordinates, {
+                icon: L.divIcon({
+                    html: iconHtml,
+                    className: 'custom-div-icon',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                })
+            }).addTo(this.map);
+            
+            console.log(`Marker added for ${location.nickname} at [${location.coordinates[0]}, ${location.coordinates[1]}]`);
+            
+            // Add hover effects
+            marker.on('mouseover', function() {
+                const iconElement = this.getElement();
+                if (iconElement) {
+                    const markerDiv = iconElement.querySelector('.custom-marker');
+                    if (markerDiv) {
+                        markerDiv.style.transform = 'scale(1.2)';
+                        markerDiv.style.transition = 'transform 0.2s ease';
                     }
-                });
-                
-                marker.on('mouseout', function() {
-                    const iconElement = this.getElement();
-                    if (iconElement) {
-                        const markerDiv = iconElement.querySelector('.custom-marker');
-                        if (markerDiv) {
-                            markerDiv.style.transform = 'scale(1)';
-                        }
-                        iconElement.style.zIndex = 'auto';
+                    iconElement.style.zIndex = '1000';
+                }
+            });
+            
+            marker.on('mouseout', function() {
+                const iconElement = this.getElement();
+                if (iconElement) {
+                    const markerDiv = iconElement.querySelector('.custom-marker');
+                    if (markerDiv) {
+                        markerDiv.style.transform = 'scale(1)';
                     }
-                });
-                
-                // Add popup
-                marker.bindPopup(`
-                    <div class="popup-content">
-                        <h4>${location.nickname}</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> ${location.address}</p>
-                        <p><i class="fas ${this.siteIcons[location.siteType]}"></i> ${location.siteType}</p>
-                        ${location.contactName ? `<p><i class="fas fa-user"></i> ${location.contactName}</p>` : ''}
-                    ${location.contactTitle ? `<p><i class="fas fa-id-badge"></i> ${location.contactTitle}</p>` : ''}
-                        ${location.contactPhone ? `<p><i class="fas fa-phone"></i> ${location.contactPhone}</p>` : ''}
-                        <div class="popup-alert ${alertInfo.class}${isNoneGhosted || isAlertLevelFiltered ? ' filtered' : ''}">
-                            <i class="fas ${this.getEventIcon(location)}"></i>
-                            ${this.getAlertText(location.currentAlert, location)}
-                            ${isNoneGhosted || isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
-                        </div>
-                        <div class="popup-alert-details">
-                            ${location.alertEventType ? `<strong>${location.alertEventType}</strong><br>` : ''}
-                            ${this.getAlertDescription(location.currentAlert, location)}
-                        </div>
+                    iconElement.style.zIndex = 'auto';
+                }
+            });
+            
+            // Add popup
+            marker.bindPopup(`
+                <div class="popup-content">
+                    <h4>${location.nickname}</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ${location.address}</p>
+                    <p><i class="fas ${this.siteIcons[location.siteType]}"></i> ${location.siteType}</p>
+                    ${location.contactName ? `<p><i class="fas fa-user"></i> ${location.contactName}</p>` : ''}
+                ${location.contactTitle ? `<p><i class="fas fa-id-badge"></i> ${location.contactTitle}</p>` : ''}
+                    ${location.contactPhone ? `<p><i class="fas fa-phone"></i> ${location.contactPhone}</p>` : ''}
+                    <div class="popup-alert ${alertInfo.class}${isNoneGhosted || isAlertLevelFiltered ? ' filtered' : ''}">
+                        <i class="fas ${this.getEventIcon(location)}"></i>
+                        ${this.getAlertText(location.currentAlert, location)}
+                        ${isNoneGhosted || isAlertLevelFiltered ? '<span style="color: #6b7280; font-size: 0.8em;"> (Filtered out)</span>' : ''}
                     </div>
-                `);
-                
-                // Add click event to select location in alerts pane
-                marker.on('click', () => {
-                    this.selectLocationInPane(location.id);
-                });
-                
-                this.markers.push(marker);
-            } catch (error) {
-                console.error(`Error creating marker for ${location.nickname}:`, error);
-            }
+                    <div class="popup-alert-details">
+                        ${location.alertEventType ? `<strong>${location.alertEventType}</strong><br>` : ''}
+                        ${this.getAlertDescription(location.currentAlert, location)}
+                    </div>
+                </div>
+            `);
+            
+            // Add click event to select location in alerts pane
+            marker.on('click', () => {
+                this.selectLocationInPane(location.id);
+            });
+            
+            this.markers.push(marker);
         });
-        
-        console.log(`Created ${this.markers.length} markers`);
     }
 
     // Clear all alert polygons from the map
@@ -4358,123 +4341,44 @@ if (alertsData && alertsData.features && alertsData.features.length > 0) {
 
     async fetchCanadianWeatherData(location) {
         console.log(`Fetching Canadian weather data for ${location.nickname}`);
-        // Try to extract province code from address or state field
-        let province = '';
-        if (location.state) {
-            province = location.state.toUpperCase();
-        } else if (location.address) {
-            // Try to match province code in address
-            const match = location.address.match(/,\s*([A-Za-z]{2})\s*[A-Za-z0-9 ]*$/);
-            if (match) province = match[1].toUpperCase();
-        }
-        // List of valid province codes for Environment Canada
-        const validProvinces = [
-            'AB','BC','MB','NB','NL','NS','NT','NU','ON','PE','QC','SK','YT'
-        ];
-        if (!validProvinces.includes(province)) {
-            console.warn(`Could not determine valid province for Canadian location: ${location.nickname}`);
-            location.currentAlert = 'none';
-            location.currentAlertDescription = 'No valid province found for this location.';
-            return location;
-        }
-        const feedUrl = `https://dd.weather.gc.ca/alerts/cap/${province}.xml`;
-        try {
-            const response = await fetch(feedUrl);
-            if (!response.ok) throw new Error(`Failed to fetch Environment Canada feed: ${response.status}`);
-            const xmlText = await response.text();
-            // Parse XML
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const entries = Array.from(xmlDoc.getElementsByTagName('entry'));
-            // Find alerts relevant to this location (by city or region in summary/title)
-            const city = location.city ? location.city.toLowerCase() : '';
-            const nickname = location.nickname ? location.nickname.toLowerCase() : '';
-            let relevantEntry = null;
-            for (const entry of entries) {
-                const title = entry.getElementsByTagName('title')[0]?.textContent?.toLowerCase() || '';
-                const summary = entry.getElementsByTagName('summary')[0]?.textContent?.toLowerCase() || '';
-                if ((city && (title.includes(city) || summary.includes(city))) ||
-                    (nickname && (title.includes(nickname) || summary.includes(nickname)))) {
-                    relevantEntry = entry;
-                    break;
-                }
-            }
-            if (relevantEntry) {
-                const alertTitle = relevantEntry.getElementsByTagName('title')[0]?.textContent || 'Weather Alert';
-                const alertSummary = relevantEntry.getElementsByTagName('summary')[0]?.textContent || '';
-                location.currentAlert = 'alert';
-                location.currentAlertDescription = alertTitle + ': ' + alertSummary;
-                location.shortForecast = alertTitle;
-                location.detailedForecast = alertSummary;
-            } else {
-                location.currentAlert = 'none';
-                location.currentAlertDescription = 'No active alerts for this location.';
-                location.shortForecast = 'No alerts';
-                location.detailedForecast = 'No active weather alerts.';
-            }
-            location.lastWeatherUpdate = new Date().toISOString();
-            return location;
-        } catch (error) {
-            console.error('Error fetching or parsing Environment Canada alerts:', error);
-            location.currentAlert = 'none';
-            location.currentAlertDescription = 'Error fetching Canadian weather data.';
-            location.shortForecast = 'Weather data error';
-            location.detailedForecast = 'Could not fetch Environment Canada alerts.';
-            location.lastWeatherUpdate = new Date().toISOString();
-            return location;
-        }
+        
+        // For Canadian locations, we'll skip weather data fetching for now
+        // since the US API doesn't support Canadian coordinates
+        // In the future, this could use Environment Canada's API
+        console.log(`Skipping weather data for Canadian location: ${location.nickname} (not supported by US API)`);
+        
+        // Set default values for Canadian locations
+        location.currentAlert = 'none';
+        location.currentAlertDescription = 'Weather data not available for Canadian locations';
+        location.shortForecast = 'Weather data not available';
+        location.detailedForecast = 'Canadian weather data is not currently supported. This location will be monitored for future weather API integration.';
+        location.temperature = null;
+        location.humidity = null;
+        location.windSpeed = null;
+        location.lastWeatherUpdate = new Date().toISOString();
+        
+        return location;
     }
 
     async fetchMexicanWeatherData(location) {
         console.log(`Fetching Mexican weather data for ${location.nickname}`);
-        const feedUrl = 'https://smn.conagua.gob.mx/feeds/warningMX.xml';
-        try {
-            const response = await fetch(feedUrl);
-            if (!response.ok) throw new Error(`Failed to fetch CONAGUA feed: ${response.status}`);
-            const xmlText = await response.text();
-            // Parse XML
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-            const items = Array.from(xmlDoc.getElementsByTagName('item'));
-            // Try to match by state or city in title/description
-            const state = location.state ? location.state.toLowerCase() : '';
-            const city = location.city ? location.city.toLowerCase() : '';
-            const nickname = location.nickname ? location.nickname.toLowerCase() : '';
-            let relevantItem = null;
-            for (const item of items) {
-                const title = item.getElementsByTagName('title')[0]?.textContent?.toLowerCase() || '';
-                const description = item.getElementsByTagName('description')[0]?.textContent?.toLowerCase() || '';
-                if ((state && (title.includes(state) || description.includes(state))) ||
-                    (city && (title.includes(city) || description.includes(city))) ||
-                    (nickname && (title.includes(nickname) || description.includes(nickname)))) {
-                    relevantItem = item;
-                    break;
-                }
-            }
-            if (relevantItem) {
-                const alertTitle = relevantItem.getElementsByTagName('title')[0]?.textContent || 'Weather Alert';
-                const alertDescription = relevantItem.getElementsByTagName('description')[0]?.textContent || '';
-                location.currentAlert = 'alert';
-                location.currentAlertDescription = alertTitle + ': ' + alertDescription;
-                location.shortForecast = alertTitle;
-                location.detailedForecast = alertDescription;
-            } else {
-                location.currentAlert = 'none';
-                location.currentAlertDescription = 'No active alerts for this location.';
-                location.shortForecast = 'No alerts';
-                location.detailedForecast = 'No active weather alerts.';
-            }
-            location.lastWeatherUpdate = new Date().toISOString();
-            return location;
-        } catch (error) {
-            console.error('Error fetching or parsing CONAGUA alerts:', error);
-            location.currentAlert = 'none';
-            location.currentAlertDescription = 'Error fetching Mexican weather data.';
-            location.shortForecast = 'Weather data error';
-            location.detailedForecast = 'Could not fetch CONAGUA alerts.';
-            location.lastWeatherUpdate = new Date().toISOString();
-            return location;
-        }
+        
+        // For Mexican locations, we'll skip weather data fetching for now
+        // since the US API doesn't support Mexican coordinates
+        // In the future, this could use CONAGUA's API
+        console.log(`Skipping weather data for Mexican location: ${location.nickname} (not supported by US API)`);
+        
+        // Set default values for Mexican locations
+        location.currentAlert = 'none';
+        location.currentAlertDescription = 'Weather data not available for Mexican locations';
+        location.shortForecast = 'Weather data not available';
+        location.detailedForecast = 'Mexican weather data is not currently supported. This location will be monitored for future weather API integration.';
+        location.temperature = null;
+        location.humidity = null;
+        location.windSpeed = null;
+        location.lastWeatherUpdate = new Date().toISOString();
+        
+        return location;
     }
     
     // Helper method to parse address into components
@@ -4695,99 +4599,3 @@ markerStyles.textContent = `
     }
 `;
 document.head.appendChild(markerStyles); 
-
-// --- Login/Session Logic ---
-function showLoginModal() {
-    document.getElementById('loginModal').style.display = 'flex';
-    document.body.classList.add('login-active');
-}
-function hideLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-    document.body.classList.remove('login-active');
-}
-function setAddLocationVisibility(role) {
-    const btn = document.getElementById('addLocationBtn');
-    if (btn) {
-        btn.style.display = (role === 'admin') ? 'flex' : 'none';
-    }
-}
-function setSession(token, role, username) {
-    localStorage.setItem('sessionToken', token);
-    localStorage.setItem('userRole', role);
-    localStorage.setItem('username', username);
-}
-function clearSession() {
-    localStorage.removeItem('sessionToken');
-    localStorage.removeItem('userRole');
-    localStorage.removeItem('username');
-}
-function getSession() {
-    return {
-        token: localStorage.getItem('sessionToken'),
-        role: localStorage.getItem('userRole'),
-        username: localStorage.getItem('username')
-    };
-}
-
-// On page load, check session
-window.addEventListener('DOMContentLoaded', () => {
-    const session = getSession();
-    if (!session.token) {
-        showLoginModal();
-        setAddLocationVisibility('none');
-    } else {
-        hideLoginModal();
-        setAddLocationVisibility(session.role);
-    }
-});
-
-// Login form handler
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const username = document.getElementById('loginUsername').value.trim();
-        const password = document.getElementById('loginPassword').value;
-        const errorDiv = document.getElementById('loginError');
-        errorDiv.style.display = 'none';
-        errorDiv.textContent = '';
-        try {
-            const resp = await fetch(`/api/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
-            });
-            const data = await resp.json();
-            if (resp.ok && data.token) {
-                setSession(data.token, data.role, data.username);
-                hideLoginModal();
-                setAddLocationVisibility(data.role);
-                window.location.reload(); // reload to ensure app picks up session
-            } else {
-                errorDiv.textContent = data.error || 'Login failed.';
-                errorDiv.style.display = 'block';
-            }
-        } catch (err) {
-            errorDiv.textContent = 'Network error. Please try again.';
-            errorDiv.style.display = 'block';
-        }
-    });
-}
-
-// Logout button handler
-const logoutBtn = document.getElementById('logoutBtn');
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', async () => {
-        const session = getSession();
-        clearSession();
-        try {
-            await fetch('/api/logout', {
-                method: 'POST',
-                headers: { 'Authorization': session.token }
-            });
-        } catch (e) {}
-        showLoginModal();
-        setAddLocationVisibility('none');
-        window.location.reload();
-    });
-}
